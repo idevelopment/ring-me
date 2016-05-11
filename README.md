@@ -1,8 +1,7 @@
 # Ring Me
-
+Ring me is a customer support tool an addon for Time Control, that allows your customers to make a callback appointment with a particular employee at the time the customer wishes.
 
 ## Official Documentation
-Ring me is a customer support tool an addon for Time Control, that allows your customers to make a callback appointment with a particular employee at the time the customer wishes.
 
 
 ## Contributing
