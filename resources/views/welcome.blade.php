@@ -51,7 +51,7 @@
        <h1>Marrie Doi</h1>
        <h2>Technical</h2>
        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-       <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bel mij</button></p>
+       <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">{{ trans('app.available') }}</button></p>
      </div>
     
      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
