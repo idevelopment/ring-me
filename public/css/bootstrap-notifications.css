@@ -248,7 +248,7 @@ a.notification:hover {
 .notification-icon:after {
   position: absolute;
   content: attr(data-count);
-  margin-left: -6.8775px;
+  margin-left: -2.8000px;
   margin-top: -6.8775px;
   padding: 0 4px;
   min-width: 13.755px;

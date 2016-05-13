@@ -18,73 +18,52 @@
     <link rel="stylesheet" href="{{ asset('js/icheck-1/skins/all.css') }}">
 
     <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn{ margin-right: 6px; }
-        .team{ padding: 1px 0; }
-    h6.description{
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #999;
-    border-bottom: 1px solid rgba(0, 0, 0,0.1);
+ body {font-family: 'Lato';}
+.fa-btn{ margin-right: 6px; }
+.team{ padding: 1px 0; }
+h6.description{font-weight: bold; letter-spacing: 2px; color: #999; border-bottom: 1px solid rgba(0, 0, 0,0.1);
     padding-bottom: 5px;
 }
-.modal-full.modal-dialog {
-    width: 99%;
+
+.bg-red{background-color: #af1f2e;}
+.bg-green{background-color: #2d9340;}
+
+.jumbotron{background-color: #fcfcfc;}
+.navbar-default{ 
+    background-color: #fff;
+    box-shadow: 0px 3px 0px #4a88ce;
+    font-size: 15px; 
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    box-shadow: 0px 2px 0px #3668a0;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: gray;
+    box-shadow: 0px 3px 0px #3668a0;
 }
 
-.white-overlay {
-    background-color: rgba(255,255,255,0.85);
-}
-.dark-overlay {
-    background-color: rgba(0,0,0,0.85);
-}
+.panel-default .panel-heading{background-color: #fff; border-bottom-color: #f1f1f1 ;}
 
-.modal-content {
-    border-radius: 4px !important;
-}
+.modal-full.modal-dialog {width: 99%;}
+.white-overlay {background-color: rgba(255,255,255,0.85);}
+.dark-overlay {background-color: rgba(0,0,0,0.85);}
+.modal-content {border-radius: 4px !important;}
+.modal-title {margin-bottom: 0; font-weight: bold;}
+.modal-content {border: none; box-shadow: 0 5px 10px rgba(0,0,0,0.2); border-radius: 0 !important;}
+.modal-content .form-horizontal .control-label{text-align: left;}
+.modal-header, .modal-footer {border: none;}
 
-.modal-title {
-    margin-bottom: 0;
-    font-weight: bold;
-}
-
-.modal-content {
-    border: none;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    border-radius: 0 !important;
-}
-
-.modal-content .form-horizontal .control-label{
-    text-align: left;
-}
-
-.modal-header, .modal-footer {
-    border: none;
-}
-
-.profile{
-    margin-top: 25px;
-}
-.profile h1{
-    font-weight: normal;
-    font-size: 20px;
-    margin:10px 0 0 0;
-}
-.profile h2{
-    font-size: 13px;
-    margin-top: 6px;
-    color: #000000;
-}
-.profile .img-box{
-    opacity: 1;
-    display: block;
-    position: relative;
-}
+.profile{margin-top: 25px;}
+.profile h1{font-weight: normal; font-size: 20px; margin:10px 0 0 0;}
+.profile h2{font-size: 13px; margin-top: 6px; color: #000000;}
+.profile .img-box{ opacity: 1; display: block; position: relative;}
     </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 
 </head>
 <body id="app-layout">
@@ -128,9 +107,10 @@
                 </ul>
                  <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-<li class="dropdown dropdown-notifications">
-            <a href="#notifications-panel" class="dropdown-toggle">
-              <i data-count="2" class="glyphicon glyphicon-bell notification-icon"></i>
+
+            <li class="dropdown dropdown-notifications">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i data-count="1" class="fa fa-bell notification-icon"></i>
             </a>
 
             <div class="dropdown-container">
@@ -139,15 +119,31 @@
                 <div class="dropdown-toolbar-actions">
                   <a href="#">Mark all as read</a>
                 </div>
-                <h3 class="dropdown-toolbar-title">Notifications (2)</h3>
+                <h3 class="dropdown-toolbar-title">Notifications (1)</h3>
               </div><!-- /dropdown-toolbar -->
 
               <ul class="dropdown-menu">
-                  ...
+                   <li class="notification">
+      <div class="media">
+        <div class="media-left">
+          <div class="media-object">
+            <img src="http://placemi.com/50x50?bg=cccccc" class="img-circle" alt="Name">
+          </div>
+        </div>
+        <div class="media-body">
+          <strong class="notification-title"><a href="#">James Bond</a> resolved <a href="#">B-007 - Desolve Spectre organization</a></strong>
+
+          <div class="notification-meta">
+            <small class="timestamp">1. 9. 2015, 08:00</small>
+          </div>
+
+        </div>
+      </div>
+  </li>
               </ul>
 
               <div class="dropdown-footer text-center">
-                <a href="#">View All</a>
+                <a href="{{ url('notifications') }}">View All</a>
               </div><!-- /dropdown-footer -->
 
             </div><!-- /dropdown-container -->
