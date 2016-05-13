@@ -29,6 +29,7 @@ return [
     'available' => 'Available',
     'unavailable' => 'Unavailable',
     'first_name' => 'First name',
+    
     'name' => 'Name',
     'phone' => 'Phone',
     'email' => 'Email',
