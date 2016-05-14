@@ -1,0 +1,10 @@
+ body {font-family: 'Lato';}
+.fa-btn{ margin-right: 6px; }
+.team{ padding: 1px 0; }
+h6.description{font-weight: bold; letter-spacing: 2px; color: #999; border-bottom: 1px solid rgba(0, 0, 0,0.1);
+    padding-bottom: 5px;
+}
+
+.bg-red{background-color: #af1f2e;}
+.bg-green{background-color: #2d9340;}
+.jumbotron{background-color: $jumbotronBG; color: $jumbotronText;}
