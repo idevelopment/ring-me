@@ -21,7 +21,7 @@
                    <tr>
                     <td><a href="javascript:;">John Porter</a></td>
                      <td><a href="javascript:;">Glenn Hermans</a></td>
-                     <td>Callback</td>
+                     <td>Administration</td>
                      <td><span class="text-danger">12 min</span></td>
                      <td><span class="badge bg-red">Waiting</span></td>
                      <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
