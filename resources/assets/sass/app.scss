@@ -1,2 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import '_modules/variables';
+
+@import '_partials/typography';
+@import '_partials/contacts';
+@import '_partials/navbar';
+
+@import '_partials/modal';
+@import '_partials/panel';
