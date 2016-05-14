@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <ul class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Customers</a></li>
-    </ul>
-
-
-
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
