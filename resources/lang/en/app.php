@@ -1,6 +1,20 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | General
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used for the public pages
+    |
+    */
+    'close' => 'Close',
+    'save' => 'Save',
+    'update' => 'Save changes',
+    'details' => 'Read more',
+    'search'  => 'Search',
+    'dateregistered' => 'Date registered',
 
     /*
     |--------------------------------------------------------------------------
@@ -12,10 +26,10 @@ return [
     */
 
     'home' => 'Home',
-    'settings' => 'Settings',
-
-    'staff' => 'Staff',
+    'customers' => 'Customers',
     'departments' => 'Departments',
+    'roles' => 'Roles',
+    'staff' => 'Staff',
     'settings' => 'Settings',
 
     /*
@@ -28,9 +42,4 @@ return [
     */
     'available' => 'Available',
     'unavailable' => 'Unavailable',
-    'first_name' => 'First name',
-    
-    'name' => 'Name',
-    'phone' => 'Phone',
-    'email' => 'Email',
 ];

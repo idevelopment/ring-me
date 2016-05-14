@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">Customers</a></li>
+    </ul>
+
+
+
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -24,7 +31,7 @@
                      <td>Callback</td>
                      <td><span class="text-danger">12 min</span></td>
                      <td><span class="badge bg-red">Waiting</span></td>
-                     <td><a href="#"><i class="fa fa-info-circle fa-lg"></i></a></td>
+                     <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
                     </tr>
                   </tbody>
                  </table>
