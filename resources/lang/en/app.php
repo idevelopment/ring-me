@@ -16,6 +16,7 @@ return [
     'search'  => 'Search',
     'dateregistered' => 'Date registered',
     'setStatus' => 'Change status',
+    'general'  => 'General',
     /*
     |--------------------------------------------------------------------------
     | Menu Links

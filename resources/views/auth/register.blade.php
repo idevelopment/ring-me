@@ -68,8 +68,8 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i>Register
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    {{ trans('app.save') }}
                                 </button>
                             </div>
                         </div>
