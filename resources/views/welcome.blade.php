@@ -46,7 +46,7 @@
     <section class="team">
      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
       <div class="img-box">
-       <img src="http://placemi.com/200x230" class="img-responsive">
+       <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
       </div>
        <h1>Marrie Doi</h1>
        <h2>Technical</h2>
@@ -56,32 +56,32 @@
     
      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
       <div class="img-box">
-       <img src="http://placemi.com/200x230" class="img-responsive">
+       <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
               </div>
               <h1>Christopher Di</h1>
               <h2>Technical</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bel mij</button></p>
+              <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">{{ trans('app.available') }}</button></p>
             </div>
+
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://placemi.com/200x230" class="img-responsive">
+                <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
               </div>
               <h1>Heather H</h1>
               <h2>Technical</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bel mij</button></p>
+              <p class="text-center"><button class="btn btn-success" data-toggle="modal" data-target="#myModal">{{ trans('app.available') }}</button></p>
             </div>
+
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://placemi.com/200x230" class="img-responsive">
+                <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
               </div>
-              <h1>Nancy Doe</h1>
-              <h2>Designer</h2>
+              <h1>Heather H</h1>
+              <h2>Technical</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <p class="text-center">
-               <button class="btn btn-danger" disabled="">{{ trans('welcome.unavailable') }}</button>
-              </p>
+              <p class="text-center"><button class="btn btn-danger" data-toggle="modal" data-target="#myModal" disabled="">{{ trans('app.unavailable') }}</button></p>
             </div>
         </section>
 
@@ -98,7 +98,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.close')}}" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Callback request</h4>
       </div>
       <div class="modal-body">

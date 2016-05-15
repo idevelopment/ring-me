@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+   <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Open Call Requests</div>
@@ -21,10 +21,10 @@
                    <tr>
                     <td><a href="javascript:;">John Porter</a></td>
                      <td><a href="javascript:;">Glenn Hermans</a></td>
-                     <td>Callback</td>
+                     <td>Administration</td>
                      <td><span class="text-danger">12 min</span></td>
                      <td><span class="badge bg-red">Waiting</span></td>
-                     <td><a href="#"><i class="fa fa-info-circle fa-lg"></i></a></td>
+                     <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
                     </tr>
                   </tbody>
                  </table>

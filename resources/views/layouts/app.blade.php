@@ -47,7 +47,7 @@
               @if (Auth::guest())
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">{{ trans('app.home')}}</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -84,9 +84,9 @@
 
               <div class="dropdown-toolbar">
                 <div class="dropdown-toolbar-actions">
-                  <a href="#">Mark all as read</a>
+                  <a href="#">{{ trans('notifications.markAll') }}</a>
                 </div>
-                <h3 class="dropdown-toolbar-title">Notifications (1)</h3>
+                <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => '1']) }}</h3>
               </div><!-- /dropdown-toolbar -->
 
               <ul class="dropdown-menu">
@@ -94,7 +94,7 @@
                  <div class="media">
                   <div class="media-left">
                    <div class="media-object">
-                    <img src="{{ asset('img/user-icon.png') }}" class="img-circle" alt="Name">
+                    <img src="{{ asset('img/user-icon.png') }}" width="50" height="50" class="img-circle" alt="Name">
                    </div>
                   </div>
 
@@ -110,7 +110,7 @@
               </ul>
 
               <div class="dropdown-footer text-center">
-                <a href="{{ url('notifications') }}">View All</a>
+                <a href="{{ url('notifications') }}">{{ trans('notifications.viewAll') }}</a>
               </div><!-- /dropdown-footer -->
 
             </div><!-- /dropdown-container -->
@@ -122,6 +122,13 @@
 
                 <ul class="dropdown-menu" role="menu">
                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-key"></i>Change password</a></li>
+                 <li role="separator" class="divider"></li>
+                            <li class="navbar-menu-item">
+                                <div class="label">{{ Lang::get('app.setStatus') }}</div>
+                            </li>
+                            <li><a href=""><i class="fa fa-check"></i> {{ Lang::get('app.available') }}</a></li>
+                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ Lang::get('app.unavailable') }}</a></li>
+                            <li role="separator" class="divider"></li>                 
                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
               </li>
@@ -140,6 +147,7 @@
     <script src="{{ asset('js/icheck-1/icheck.js') }}"></script>
     <script>
     $(document).ready(function(){
+     $('[data-toggle="tooltip"]').tooltip()
      $('input').iCheck({
         checkboxClass: 'icheckbox_square-grey',
         radioClass: 'iradio_square-grey',
