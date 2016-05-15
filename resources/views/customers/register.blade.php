@@ -8,14 +8,14 @@
     </ul>
 
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
-       <div class="form-group formSep">
+       <div class="form-group form-sep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}}</label>
          <div class="col-md-8">
            <input type="text" name="company" id="company" class="form-control">
          </div>
         </div>
 
-       <div class="form-group formSep">
+       <div class="form-group form-sep">
         <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}}</label>
          <div class="col-md-8">
            <input type="text" name="vat" id="vat" class="form-control">
