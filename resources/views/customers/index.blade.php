@@ -52,7 +52,8 @@
                   <div class="form-group">
                    <label class="col-md-3 control-label">&nbsp;</label>
                    <div class="col-md-8">
-                    <button name="search" id="search" class="btn btn-primary">{{ trans('app.search')}}</button>
+                    <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ trans('app.search')}}</button>
+                    <button type="button" onclick="location.href='{{url('customers/register')}}';" class="btn btn-sm btn-default">{{ trans('customers.register')}}</button>
                    </div>
                   </div>
                 </div>

@@ -15,7 +15,7 @@ return [
     'details' => 'Read more',
     'search'  => 'Search',
     'dateregistered' => 'Date registered',
-
+    'setStatus' => 'Change status',
     /*
     |--------------------------------------------------------------------------
     | Menu Links

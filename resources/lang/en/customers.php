@@ -29,5 +29,6 @@ return [
 
     'recent'     => 'Recently registered customers',
     'history'    => 'Customer history',
-    'search'     => 'Search customer'
+    'search'     => 'Search customer',
+    'register'   => 'New customer',
 ];
