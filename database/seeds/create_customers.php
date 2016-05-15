@@ -14,8 +14,8 @@ class create_customers extends Seeder
     {
         Customer::create(array(
         	'company' =>  'iDevelopment',
-        	'fname' => 'Ringme',
-            'name' => 'Admin',
+        	'fname' => 'Demo',
+            'name' => 'Customer',
             'address' => 'Foobar street 4',
             'zipcode' => '3800',
             'city' => 'Sint-Truiden',

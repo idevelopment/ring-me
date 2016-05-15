@@ -78,13 +78,15 @@
                    <th class="col-md-1"></th>
                   </thead>
                   <tbody>
+                  @foreach($customers as $customer_item)
                    <tr>
-                    <td><a href="javascript:;">Telenet</a></td>
-                     <td><a href="javascript:;">John Porter</a></td>
-                     <td>011 22 33 44</td>
-                     <td><span class="text-center">14/05/2016</span></td>
+                    <td><a href="javascript:;">{{ $customer_item->company }}</a></td>
+                     <td><a href="javascript:;">{{ $customer_item->fname }} {{ $customer_item->name }}</a></td>
+                     <td><a href="callto:{{$customer_item->phone}}">{{ $customer_item->phone }}</a></td>
+                     <td><span class="text-center">{{ $customer_item->created_at }}</span></td>
                      <td><a href="{{url('/customers/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
                     </tr>
+                    @endforeach
                   </tbody>
                  </table>
                 </div>
