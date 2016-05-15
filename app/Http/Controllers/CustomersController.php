@@ -33,6 +33,7 @@ class CustomersController extends Controller
 
     public function edit($id)
     {
-        return view('customers/edit');
+        $data['customer'] = Customer::where('id', $id)->get();
+        return view('customers/edit', $data);
     }
 }

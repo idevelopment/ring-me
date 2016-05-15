@@ -13,25 +13,25 @@
                 <div class="panel-heading">{{ trans('customers.details') }}</div>
                 <div class="panel-body">
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
-
+   @foreach($customer as $customer_item)
        <div class="form-group formSep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}}</label>
          <div class="col-md-8">
-           <p class="form-control-static">Telenet</p>
+           <p class="form-control-static">{{ $customer_item['company'] }}</p>
          </div>
         </div>
 
        <div class="form-group formSep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.vat')}}</label>
          <div class="col-md-8">
-           <p class="form-control-static">BE</p>
+           <p class="form-control-static">{{ $customer_item['vat'] }}</p>
          </div>
         </div>        
 
         <div class="form-group formSep">
          <label for="firstname" class="col-md-3 control-label">{{trans('customers.contact')}}</label>
           <div class="col-md-8">
-            <p class="form-control-static">John Porter</p>
+            <p class="form-control-static">{{ $customer_item['fname'] }} {{ $customer_item['name'] }}</p>
           </div>
         </div>
 
@@ -40,9 +40,9 @@
            <div class="col-md-8">
             <p class="form-control-static">
             <address>
-             Liersesteenweg 4<br>
-             2800 Mechelen<br>
-             Belgium
+             {{ $customer_item['address'] }}<br>
+             {{ $customer_item['zipcode'] }} {{ $customer_item['city'] }}<br>
+             {{ $customer_item['country'] }}
             </address>
             </p>
            </div>
@@ -51,23 +51,24 @@
        <div class="form-group formSep">
          <label for="name" class="col-md-3 control-label">{{trans('customers.email')}}</label>
           <div class="col-md-8">
-           <p class="form-control-static">-</p>
+           <p class="form-control-static">{{ $customer_item['email'] }}</p>
           </div>
         </div>         
 
         <div class="form-group formSep">
           <label for="phone" class="col-md-3 control-label">{{trans('customers.phone')}}</label>
            <div class="col-md-8">
-             <p class="form-control-static">015666666</p>
+             <p class="form-control-static">{{ $customer_item['phone'] }}</p>
            </div>
         </div>
 
        <div class="form-group">
          <label for="name" class="col-md-3 control-label">{{trans('customers.mobile')}}</label>
           <div class="col-md-8">
-           <p class="form-control-static">-</p>
+           <p class="form-control-static">{{ $customer_item['mobile'] }}</p>
           </div>
-        </div>         
+        </div> 
+        @endforeach        
   </form>
       </div>
 

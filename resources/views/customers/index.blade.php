@@ -84,7 +84,7 @@
                      <td><a href="javascript:;">{{ $customer_item->fname }} {{ $customer_item->name }}</a></td>
                      <td><a href="callto:{{$customer_item->phone}}">{{ $customer_item->phone }}</a></td>
                      <td><span class="text-center">{{ $customer_item->created_at }}</span></td>
-                     <td><a href="{{url('/customers/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
+                     <td><a href="{{url('/customers/display/')}}/{{ $customer_item->id }}" data-toggle="tooltip" data-placement="bottom" title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
                     </tr>
                     @endforeach
                   </tbody>
