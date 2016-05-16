@@ -13,11 +13,10 @@ class userTableSeeder extends Seeder
     public function run()
     {
         User::truncate();
-
-        $data['name']     = 'ringme';
-        $data['email']    = 'user@ringme.be';
+        $data['fname']     = 'Ringme';
+        $data['name']     = 'Administrator';
+        $data['email']    = 'user@ringme.eu';
         $data['password'] = bcrypt('demo123456');
-
         User::create($data);
     }
 }

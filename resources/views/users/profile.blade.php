@@ -47,9 +47,9 @@
 						<label for="password" class="control-label col-sm-2">{{trans('staff.password')}}</label>
 						<div class="col-sm-8">
 								<input type="password" id="password" class="form-control" value="password">
-								<span class="help-block">Enter your password</span>
+								<span class="help-block">{{ trans('staff.passwordHelper') }}</span>
 							<input type="password" id="verify_password" name="verify_password" class="form-control">
-							<span class="help-block">Repeat password</span>
+							<span class="help-block">{{ trans('staff.passwordConfirm') }}</span>
 						</div>
 					</div>
 
@@ -59,6 +59,7 @@
 							<textarea name="bio" id="bio" class="form-control">{{ Auth::user()->bio	 }}</textarea>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<div class="col-sm-8 col-sm-offset-2">
 							<button class="btn btn-primary" type="submit">{{ trans('app.update') }}</button>
