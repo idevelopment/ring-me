@@ -25,4 +25,6 @@ Route::post('/customers', 'CustomersController@store')->name('customers.store');
 
 
 
-Route::get('/profile', 'StaffController@profile')->name('profile');
+Route::get('/profile', 'StaffController@profile')->name('staff.index');
+
+Route::get('/staff', 'StaffController@index')->name('profile');
