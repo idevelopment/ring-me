@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-
     <link rel="stylesheet" href="{{ asset('css/bootstrap-notifications.css') }}">
     <link rel="stylesheet" href="{{ asset('js/icheck-1/skins/all.css') }}">
     
@@ -99,7 +98,7 @@
               <i data-count="1" class="fa fa-bell notification-icon"></i>
             </a>
 
-            <div class="dropdown-container">
+            <div class="dropdown-container dropdown-menu-right">
 
               <div class="dropdown-toolbar">
                 <div class="dropdown-toolbar-actions">
