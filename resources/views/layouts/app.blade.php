@@ -83,6 +83,16 @@
                 </ul>
                  <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-language"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?lang=nl">Nederlands</a></li>
+                            <li><a href="?lang=fr">Frans</a></li>
+                            <li><a href="?lang=en">Engels</a></li>
+                        </ul>
+                    </li>
 
             <li class="dropdown dropdown-notifications">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
