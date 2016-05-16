@@ -10,23 +10,41 @@ use App\Http\Requests;
 class CustomersController extends Controller
 {
 
+    /**
+     * CustomersController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('lang');
     }
 
+    /**
+     * The costumer index view.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $data['customers'] = Customer::paginate(15);
         return view('customers/index', $data);
     }
-   
+
+    /**
+     * The register view
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function register()
     {
         return view('customers/register');
     }
 
+    /**
+     * Store a new costumer in the database.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store()
     {
         Costumer::create([
@@ -46,6 +64,12 @@ class CustomersController extends Controller
         return redirect()->back(302);
     }
 
+    /**
+     * The edit view for a costumer
+     *
+     * @param  int $id the id in the database costumer table.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id)
     {
         $data['customer'] = Customer::where('id', $id)->get();
