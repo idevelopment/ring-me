@@ -20,6 +20,7 @@ return [
     
     'password'     => 'Password',
     'vat'        => 'VAT identification number',
+    'bio'        => 'Biography',
 
     'recent'     => 'Recently registered customers',
     'history'    => 'Customer history',

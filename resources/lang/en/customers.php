@@ -31,4 +31,5 @@ return [
     'history'    => 'Customer history',
     'search'     => 'Search customer',
     'register'   => 'New customer',
+    'details'    => 'Customer Details',
 ];

@@ -5,39 +5,44 @@
         <li><a href="{{ url('/') }}">Home</a></li>
         <li class="active">Profile</li>
     </ul>
+
+    <div class="row">
+        <div class="col-md-12">
+
 			<form class="form-horizontal">
 				<fieldset>
 					<div class="form-group formSep">
-						<label for="fileinput" class="control-label col-sm-2">User avatar</label>
+						<label for="avatar" class="control-label col-sm-2">User avatar</label>
 						<div class="col-sm-8">
 								<div class="thumbnail" style="width: 80px; height: 80px;">
 								  <img src="{{asset('img/user-icon.png')}}" /></div>
 								  <span class="btn btn-default btn-file">
-								   <input type="file" />
+								   <input type="file" name="avatar" id="avatar" />
 								  </span>
 							</div>
 						</div>
 
 					<div class="form-group formSep">
-						<label for="fname" class="control-label col-sm-2">{{trans('staff.fname')}}</label>
+						<label for="fname" class="control-label col-sm-2">{{trans('staff.fname')}} <span class="text-danger">*</span></label>
 						<div class="col-sm-8">
-							<input id="fname" class="form-control" value="John" type="text">
+							<input id="fname" class="form-control" value="{{ Auth::user()->fname }}" type="text">
 						</div>
 					</div>
 
 					<div class="form-group formSep">
-						<label for="name" class="control-label col-sm-2">{{trans('staff.name')}}</label>
+						<label for="name" class="control-label col-sm-2">{{trans('staff.name')}} <span class="text-danger">*</span></label>
 						<div class="col-sm-8">
-							<input type="text" id="name" name="name"  value="Smith" class="form-control">
+							<input type="text" id="name" name="name"  value="{{ Auth::user()->name }}" class="form-control">
 						</div>
 					</div>
 
 					<div class="form-group formSep">
-						<label for="email" class="control-label col-sm-2">{{trans('staff.email')}}</label>
+						<label for="email" class="control-label col-sm-2">{{trans('staff.email')}} <span class="text-danger">*</span></label>
 						<div class="col-sm-8">
-							<input type="text" id="email"  name="email" value="john.Smith@ringme.eu" class="form-control">
+							<input type="text" id="email"  name="email" value="{{ Auth::user()->email }}" class="form-control">
 						</div>
 					</div>
+
 					<div class="form-group formSep">
 						<label for="password" class="control-label col-sm-2">{{trans('staff.password')}}</label>
 						<div class="col-sm-8">
@@ -47,10 +52,11 @@
 							<span class="help-block">Repeat password</span>
 						</div>
 					</div>
+
 					<div class="form-group formSep">
-						<label for="bio" class="control-label col-sm-2">{{trans('staff.bio')}}:</label>
+						<label for="bio" class="control-label col-sm-2">{{trans('staff.bio')}}</label>
 						<div class="col-sm-8">
-							<textarea name="bio" id="bio" class="form-control"></textarea>
+							<textarea name="bio" id="bio" class="form-control">{{ Auth::user()->bio	 }}</textarea>
 						</div>
 					</div>
 					<div class="form-group">
@@ -62,4 +68,6 @@
 				 </fieldset>					
 			   </form>
 			</div>
-			@endsection
+		</div>
+	</div>
+@endsection
