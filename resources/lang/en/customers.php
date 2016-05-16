@@ -19,6 +19,7 @@ return [
     'address'    => 'Address',
     'zipcode'    => 'Postalcode',
     'city'       => 'City',
+    'country'    => 'Country',
 
     'phone'      => 'Phone',
     'mobile'     => 'Mobile',

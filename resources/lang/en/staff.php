@@ -19,6 +19,8 @@ return [
     'email'      => 'Email',
     
     'password'     => 'Password',
+    'passwordHelper' => 'Enter your password',
+    'passwordConfirm' => 'Confirm password',
     'vat'        => 'VAT identification number',
     'bio'        => 'Biography',
 
