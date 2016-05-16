@@ -1,8 +1,35 @@
-.modal-full.modal-dialog {width: 99%;}
-.white-overlay {background-color: rgba(255,255,255,0.85);}
-.dark-overlay {background-color: rgba(0,0,0,0.85);}
-.modal-content {border-radius: 4px !important;}
-.modal-title {margin-bottom: 0; font-weight: bold;}
-.modal-content {border: none; box-shadow: 0 5px 10px rgba(0,0,0,0.2); border-radius: 0 !important;}
-.modal-content .form-horizontal .control-label{text-align: left;}
-.modal-header, .modal-footer {border: none;}
+.modal-full.modal-dialog {
+  width: 99%;
+}
+
+.white-overlay {
+  background-color: rgba(255, 255, 255, .85);
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, .85);
+}
+
+.modal-content {
+  border-radius: 4px !important;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  border-radius: 0 !important;
+}
+
+.modal-content .form-horizontal .control-label {
+  text-align: left;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}

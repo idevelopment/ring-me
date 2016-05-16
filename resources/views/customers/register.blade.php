@@ -8,15 +8,25 @@
     </ul>
 
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
+<<<<<<< HEAD
+       <div class="form-group form-sep">
+        <label for="company" class="col-md-3 control-label">{{trans('customers.company')}}</label>
+=======
        <div class="form-group formSep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}} <span class="text-danger">*</span></label>
+>>>>>>> master
          <div class="col-md-8">
            <input type="text" name="company" id="company" class="form-control">
          </div>
         </div>
 
+<<<<<<< HEAD
+       <div class="form-group form-sep">
+        <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}}</label>
+=======
        <div class="form-group formSep">
         <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}} <span class="text-danger">*</span></label>
+>>>>>>> master
          <div class="col-md-8">
            <input type="text" name="vat" id="vat" class="form-control">
          </div>

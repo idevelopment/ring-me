@@ -14,7 +14,7 @@
                 <div class="panel-body">
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
    @foreach($customer as $customer_item)
-       <div class="form-group formSep">
+       <div class="form-group form-sep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}}</label>
          <div class="col-md-8">
            <p class="form-control-static">{{ $customer_item['company'] }}</p>
