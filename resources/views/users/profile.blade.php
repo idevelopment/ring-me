@@ -61,7 +61,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-8 col-sm-offset-2">
-							<button class="btn btn-primary" type="submit">Save changes</button>
+							<button class="btn btn-primary" type="submit">{{ trans('app.update') }}</button>
 						<button type="reset" class="btn btn-default">Cancel</button>
 						</div>
 					</div>
