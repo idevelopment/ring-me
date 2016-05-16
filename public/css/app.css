@@ -5742,11 +5742,11 @@ body {
 .team {
   padding: 1px 0; }
 
-h6.description {
+h6 .description {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #999;
   font-weight: bold;
   letter-spacing: 2px;
-  color: #999;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 5px; }
 
 .bg-red {
@@ -5761,59 +5761,53 @@ h6.description {
 
 .profile {
   margin-top: 25px; }
-
-.profile h1 {
-  font-weight: normal;
-  font-size: 20px;
-  margin: 10px 0 0 0; }
-
-.profile h2 {
-  font-size: 13px;
-  margin-top: 6px;
-  color: #000000; }
-
-.profile .img-box {
-  opacity: 1;
-  display: block;
-  position: relative; }
+  .profile h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 10px 0 0; }
+  .profile h2 {
+    color: #000;
+    font-size: 13px;
+    margin-top: 6px; }
+  .profile .img-box {
+    display: block;
+    opacity: 1;
+    position: relative; }
 
 .navbar-default {
   background-color: #fff;
-  box-shadow: 0px 3px 0px #4a88ce;
-  font-size: 15px;
-  border: 0; }
+  border: 0;
+  box-shadow: 0 3px 0 #4a88ce;
+  font-size: 15px; }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  box-shadow: 0px 2px 0px #3668a0;
+  box-shadow: 0 2px 0 #3668a0;
   color: #3668a0; }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #dd4b39;
-  box-shadow: 0px 3px 0px #3668a0; }
+  box-shadow: 0 3px 0 #3668a0;
+  color: #dd4b39; }
 
 .navbar-menu-item {
-  padding: 0.3em 1.5em;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
+  padding: .1em 1.5em;
   color: #333; }
-
-.navbar-menu-item .label {
-  color: #000;
-  font-size: 1em;
-  padding: 0; }
+  .navbar-menu-item .label {
+    color: #000;
+    font-size: 1em;
+    padding: 0; }
 
 .menu-language {
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
+  padding-top: .1em;
+  padding-bottom: .1em;
   color: #333; }
 
 .form-horizontal .control-label {
   text-align: left; }
 
-.formSep {
+.form-sep {
   border-bottom: 1px dashed #dcdcdc;
   margin-bottom: 6px;
   padding-bottom: 6px; }
@@ -5846,12 +5840,13 @@ h6.description {
 .modal-content .form-horizontal .control-label {
   text-align: left; }
 
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
   border: none; }
 
 .nav-tabs {
   margin-bottom: 1px;
-  border-bottom: 0px solid #ddd; }
+  border-bottom: 0 solid #ddd; }
 
 .nav-tabs > li > a {
   color: #000000; }
@@ -5869,7 +5864,7 @@ h6.description {
 .pill-content > .pill-pane {
   display: none;
   background: #fff;
-  border-width: 0 0px 0px; }
+  border-width: 0 0 0; }
 
 .tab-content > .active,
 .pill-content > .active {
@@ -5879,7 +5874,7 @@ h6.description {
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0 0 5px 5px;
   padding: 10px;
   min-height: 300px; }
 
@@ -5906,10 +5901,9 @@ h6.description {
   color: #fff !important; }
 
 .panel-default {
-  box-shadow: 0px 10px 13px 0px #f7f4f7; }
-
-.panel-default .panel-heading {
-  background-color: #fff;
-  border-bottom-color: #f1f1f1; }
+  box-shadow: 0 10px 13px 0 #f7f4f7; }
+  .panel-default .panel-heading {
+    background-color: #fff;
+    border-bottom-color: #f1f1f1; }
 
 /*# sourceMappingURL=app.css.map */
