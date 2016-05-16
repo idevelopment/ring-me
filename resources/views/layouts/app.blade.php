@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap-notifications.css') }}">
     <link rel="stylesheet" href="{{ asset('js/icheck-1/skins/all.css') }}">
@@ -130,7 +129,7 @@
                 </a>
 
                 <ul class="dropdown-menu" role="menu">
-                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-key"></i>Change password</a></li>
+                 <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-key"></i>Change password</a></li>
                  <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.setStatus') }}</div>

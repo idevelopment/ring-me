@@ -4,32 +4,26 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Customers 
+    | Default vars 
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used for the customers pages
+    | The following language lines are used for the staff pages
     |
     */
 
-    'company'    => 'Company',
-    'contact'    => 'Contact person',
-    'first_name' => 'First name',
+    'fname' => 'First name',
     'name'       => 'Name',
-
-    'address'    => 'Address',
-    'zipcode'    => 'Postalcode',
-    'city'       => 'City',
-
     'phone'      => 'Phone',
+
     'mobile'     => 'Mobile',
     'email'      => 'Email',
     
-    'number'     => 'Customer number',
+    'password'     => 'Password',
     'vat'        => 'VAT identification number',
+    'bio'        => 'Biography',
 
     'recent'     => 'Recently registered customers',
     'history'    => 'Customer history',
     'search'     => 'Search customer',
     'register'   => 'New customer',
-    'details'    => 'Customer Details',
 ];
