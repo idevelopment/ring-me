@@ -8,57 +8,67 @@
     </ul>
 
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
+<<<<<<< HEAD
        <div class="form-group form-sep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}}</label>
+=======
+       <div class="form-group formSep">
+        <label for="company" class="col-md-3 control-label">{{trans('customers.company')}} <span class="text-danger">*</span></label>
+>>>>>>> master
          <div class="col-md-8">
            <input type="text" name="company" id="company" class="form-control">
          </div>
         </div>
 
+<<<<<<< HEAD
        <div class="form-group form-sep">
         <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}}</label>
+=======
+       <div class="form-group formSep">
+        <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}} <span class="text-danger">*</span></label>
+>>>>>>> master
          <div class="col-md-8">
            <input type="text" name="vat" id="vat" class="form-control">
          </div>
         </div>        
         
         <div class="form-group formSep">
-         <label for="name" class="col-md-3 control-label">{{trans('customers.name')}}</label>
+         <label for="name" class="col-md-3 control-label">{{trans('customers.name')}} <span class="text-danger">*</span></label>
           <div class="col-md-8">
             <input type="text" name="name" id="name" class="form-control">
           </div>
         </div>
 
         <div class="form-group formSep">
-         <label for="firstname" class="col-md-3 control-label">{{trans('customers.first_name')}}</label>
+         <label for="firstname" class="col-md-3 control-label">{{trans('customers.first_name')}} <span class="text-danger">*</span></label>
           <div class="col-md-8">
             <input type="text" name="firstname" id="firstname" class="form-control">
           </div>
         </div>
 
         <div class="form-group formSep">
-          <label for="address" class="col-md-3 control-label">{{trans('customers.address')}}</label>
+          <label for="address" class="col-md-3 control-label">{{trans('customers.address')}} <span class="text-danger">*</span></label>
            <div class="col-md-8">
             <input type="text" name="address" id="address" class="form-control">
            </div>
         </div> 
 
         <div class="form-group formSep">
-          <label for="zipcode" class="col-md-3 control-label">{{trans('customers.zipcode')}}</label>
+          <label for="zipcode" class="col-md-3 control-label">{{trans('customers.zipcode')}} <span class="text-danger">*</span></label>
            <div class="col-md-8">
             <input type="text" name="zipcode" id="zipcode" class="form-control">
            </div>
         </div>
 
         <div class="form-group formSep">
-          <label for="city" class="col-md-3 control-label">{{trans('customers.city')}}</label>
+          <label for="city" class="col-md-3 control-label">{{trans('customers.city')}} <span class="text-danger">*</span></label>
            <div class="col-md-8">
             <input type="text" name="city" id="city" class="form-control">
            </div>
         </div>
 
         <div class="form-group formSep">
-          <label for="city" class="col-md-3 control-label">{{trans('customers.country')}}</label>
+          <label for="city" class="col-md-3 control-label">{{trans('customers.country')}} <span class="text-danger">*</span></label>
            <div class="col-md-8">
             <select name="country" id="country" class="form-control">
              <option value="" selected=""></option>
@@ -69,14 +79,14 @@
         </div> 
 
        <div class="form-group formSep">
-         <label for="name" class="col-md-3 control-label">{{trans('customers.email')}}</label>
+         <label for="name" class="col-md-3 control-label">{{trans('customers.email')}} <span class="text-danger">*</span></label>
           <div class="col-md-8">
             <input type="text" name="email" id="email" class="form-control">
           </div>
         </div>         
 
         <div class="form-group formSep">
-          <label for="phone" class="col-md-3 control-label">{{trans('customers.phone')}}</label>
+          <label for="phone" class="col-md-3 control-label">{{trans('customers.phone')}} <span class="text-danger">*</span></label>
            <div class="col-md-8">
             <input type="text" name="phone" id="phone" class="form-control">
            </div>

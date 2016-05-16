@@ -51,21 +51,21 @@
        <div class="form-group formSep">
          <label for="name" class="col-md-3 control-label">{{trans('customers.email')}}</label>
           <div class="col-md-8">
-           <p class="form-control-static">{{ $customer_item['email'] }}</p>
+           <p class="form-control-static"><a href="mailto:{{ $customer_item['email'] }}">{{ $customer_item['email'] }}</a></p>
           </div>
         </div>         
 
         <div class="form-group formSep">
           <label for="phone" class="col-md-3 control-label">{{trans('customers.phone')}}</label>
            <div class="col-md-8">
-             <p class="form-control-static">{{ $customer_item['phone'] }}</p>
+             <p class="form-control-static"><a href="callto:{{ $customer_item['phone'] }}">{{ $customer_item['phone'] }}</a></p>
            </div>
         </div>
 
        <div class="form-group">
          <label for="name" class="col-md-3 control-label">{{trans('customers.mobile')}}</label>
           <div class="col-md-8">
-           <p class="form-control-static">{{ $customer_item['mobile'] }}</p>
+           <p class="form-control-static"><a href="callto:{{ $customer_item['phone'] }}"> {{ $customer_item['mobile'] }}</a></p>
           </div>
         </div> 
         @endforeach        

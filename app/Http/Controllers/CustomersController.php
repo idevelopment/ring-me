@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Customer as Customer;
 
 class CustomersController extends Controller
 {
@@ -17,7 +17,7 @@ class CustomersController extends Controller
 
     public function index()
     {
-        $data['customers'] = Customer::All();
+        $data['customers'] = Customer::paginate(15);
         return view('customers/index', $data);
     }
    
@@ -28,7 +28,21 @@ class CustomersController extends Controller
 
     public function store()
     {
-    	
+        Costumer::create([
+            'company' => $input->company,
+            'fname'   => $input->fname,
+            'name'    => $input->name,
+            'address' => $input->address,
+            'zipcode' => $input->zipcode,
+            'city'    => $input->city,
+            'country' => $input->country,
+            'phone'   => $input->phone,
+            'mobile'  => $input->mobile,
+            'vat'     => $input->vat
+        ]);
+
+        session()->flash('message', 'Costumer created');
+        return redirect()->back(302);
     }
 
     public function edit($id)
