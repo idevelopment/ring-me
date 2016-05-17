@@ -9,12 +9,12 @@
     <title>Ring Me</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     
-    <!-- Fonts -->
+    {{-- Fonts --}}
     <link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/bootstrap.css') !!}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- Styles -->
+    {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('css/bootstrap-notifications.css') }}">
     <link rel="stylesheet" href="{{ asset('js/icheck-1/skins/all.css') }}">
     
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
+                {{-- Collapsed Hamburger --}}
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding -->
+                {{-- Branding --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <i class="fa fa-phone fa-lg"></i> Ring Me
                 </a>
@@ -44,19 +44,19 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
               @if (Auth::guest())
-                <!-- Left Side Of Navbar -->
+                {{-- Left Side Of Navbar --}}
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">{{ trans('app.home')}}</a></li>
                 </ul>
 
-                <!-- Right Side Of Navbar -->
+                {{-- Right Side Of Navbar --}}
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
+                    {{-- Authentication Links --}}
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                  </ul>                        
                     @else
-                <!-- Left Side Of Navbar -->
+                {{-- Left Side Of Navbar --}}
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">{{ trans('app.home')}}</a></li>
                     <li><a href="{{ url('/customers') }}">{{ trans('app.customers')}}</a></li>                    
@@ -80,7 +80,7 @@
           </ul>
         </li>
                 </ul>
-                 <!-- Right Side Of Navbar -->
+                 {{-- Right Side Of Navbar --}}
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -105,7 +105,7 @@
                   <a href="#">{{ trans('notifications.markAll') }}</a>
                 </div>
                 <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => '1']) }}</h3>
-              </div><!-- /dropdown-toolbar -->
+              </div>{{-- /dropdown-toolbar --}}
 
               <ul class="dropdown-menu">
                 <li class="notification">
@@ -129,10 +129,10 @@
 
               <div class="dropdown-footer text-center">
                 <a href="{{ url('notifications') }}">{{ trans('notifications.viewAll') }}</a>
-              </div><!-- /dropdown-footer -->
+              </div>{{-- /dropdown-footer --}}
 
-            </div><!-- /dropdown-container -->
-          </li><!-- /dropdown -->
+            </div>{{-- /dropdown-container --}}
+          </li>{{-- /dropdown --}}
                 <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <i class="fa fa-user"></i> <span class="caret"></span>
@@ -179,7 +179,7 @@
 
     @yield('content')
 
-    <!-- JavaScripts -->
+    {{-- JavaScripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script src="{{ asset('js/icheck-1/icheck.js') }}"></script>
