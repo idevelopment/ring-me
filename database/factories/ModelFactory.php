@@ -38,3 +38,21 @@ $factory->define(App\Callback::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Customer::class, function (Faker\Generator $faker) {
+    return [
+        'company' => $faker->company,
+        'fname'   => $faker->firstName,
+        'name'    => $faker->name,
+        'address' => $faker->address,
+        'zipcode' => $faker->citySuffix,
+        'city'    => $faker->city,
+        'country' => $faker->country,
+        'phone'   => $faker->phoneNumber,
+        'mobile'  => $faker->phoneNumber,
+        'email'   => $faker->email,
+        'vat'     => $faker->creditCardNumber
+    ];
+});
+
+
+
