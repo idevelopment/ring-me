@@ -9,6 +9,7 @@ app/storage/
 
 # Laravel 5 & Lumen specific
 /.vagrant
+/coverage
 bootstrap/cache/
 storage/
 .env.*.php
