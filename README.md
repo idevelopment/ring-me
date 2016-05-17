@@ -13,6 +13,9 @@ Thank you for considering contributing to Ring Me.
 For transparency into our release cycle and in striving to maintain backward compatibility,
 this repo is maintained under the [Semantic Versioning guidelines](http://semver.org/).
 
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Voicetank, please send an e-mail to Idevelopment at info@idevelopment.be. All security vulnerabilities will be promptly addressed.
 
 ### License
 
