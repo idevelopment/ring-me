@@ -27,3 +27,13 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Callback::class, function (Faker\Generator $faker) {
+    return [
+        'type'        => $faker->numberBetween(0, 120),
+        'costumer'    => $faker->name,
+        'agent'       => $faker->name,
+        'description' => $faker->text(150),
+        'agent_id'    => $faker->numberBetween(0, 120)
+    ];
+});
+
