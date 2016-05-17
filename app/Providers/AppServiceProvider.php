@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
             Bouncer::allow('Agent')->to('');
             Bouncer::allow('Administrator')->to('');
             Bouncer::allow('Manager')->to('');
-            Bouncer::allow('Costumer')->to('');
+            Bouncer::allow('Custumer')->to('');
         });
     }
 
