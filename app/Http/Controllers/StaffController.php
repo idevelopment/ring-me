@@ -17,7 +17,12 @@ class StaffController extends Controller
         $this->middleware('lang');
     }
 
-	public function index()
+    /**
+     * Display all the staff.
+     * 
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
 	{
 		$data['users'] = User::all();
     	return view('users/index', $data);
@@ -51,6 +56,11 @@ class StaffController extends Controller
         return redirect()->back(302);
     }
 
+    /**
+     * Display the profile.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function profile()
     {
     	return view('users/profile');
