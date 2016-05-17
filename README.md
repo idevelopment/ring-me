@@ -15,7 +15,8 @@ this repo is maintained under the [Semantic Versioning guidelines](http://semver
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within RingMe, please send an e-mail to Idevelopment at info@idevelopment.be. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within RingMe, please send an e-mail to iDevelopment at info@idevelopment.be.
+All security vulnerabilities will be promptly addressed.
 
 ### License
 
