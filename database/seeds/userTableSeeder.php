@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\DB;
 
 class userTableSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class userTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        DB::table('users')->delete();
         $data['fname']     = 'Ringme';
         $data['name']     = 'Administrator';
         $data['email']    = 'user@ringme.eu';
