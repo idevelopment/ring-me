@@ -16,7 +16,11 @@ var pathJs    = '';
 var node      = '../../../node_modules';
 
 elixir(function(mix) {
+    // Compoile the theme css
     mix.sass('app.scss')
+
+        // BrowserSync
+        .browserSync()
 
     // Bootstrap
     .less(node + '/bootstrap/less/bootstrap.less', 'public/css/bootstrap.css')
@@ -38,5 +42,5 @@ elixir(function(mix) {
             'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
             'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
             'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
-        ],  'public/fonts')
+        ],  'public/fonts');
 });
