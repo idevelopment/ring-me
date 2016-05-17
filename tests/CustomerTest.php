@@ -12,66 +12,106 @@ class CostumerTest extends TestCase
     use DatabaseMigrations, DatabaseTransactions;
 
     /**
-     * POST: /costumers
+     * GET: /customers
      *
      * @group all
-     * @group costumer
+     * @group customer
      */
-    public function testCustomerPost()
+    public function testCustomerIndex()
     {
         $user = factory(App\User::class)->create();
 
         $this->actingAs($user)
-            ->seeInDatabase('users', $user)
             ->seeIsAuthenticatedAs($user)
-            ->visit('costumers');
+            ->visit('/customers')
+            ->seeStatusCode(200);
     }
-
+    
     /**
-     * GET: /costumers
-     *
-     * @group all
-     * @group costumer
+     * GET: /customers/register
+     * 
+     * @group all 
+     * @group customer
      */
-    public function testCustomer()
+    public function testCustomerRegisterView()
     {
         $user = factory(App\User::class)->create();
 
         $this->actingAs($user)
-            ->seeInDatabase('users', $user)
-            ->visit('costumers')
-            ->seeIsAuthenticatedAs($user);
-    }
-
-    /**
-     * GET: /costumer/register
-     *
-     * @group all
-     * @group costumer
-     */
-    public function testCustumerRegister()
-    {
-        $user = factory(App\User::class)->create();
-
-        $this->actingAs($user)
-            ->seeInDatabase('users', $user)
-            ->visit('/costumer/register')
-            ->seeIsAuthenticatedAs($user);
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/customers/register')
+            ->seeStatusCode(200);
     }
 
     /**
      * GET: /customers/display/{id}
      *
      * @group all
-     * @group costumer
+     * @group customer
      */
-    public function testCustomerSpecific()
+    public function testCustomerEditView()
     {
         $user     = factory(App\User::class)->create();
-        $costumer =
+        $costumer = factory(App\Customer::class)->create();
 
         $this->actingAs($user)
-            ->seeInDatabase('users', $user)
-            ->seeIsAuthenticatedAs($user);
+            ->seeIsAuthenticatedAs($user)
+            ->visit('customers/display/' . $costumer->id)
+            ->seeStatusCode(200);
+    }
+
+    /**
+     * POST: /customers
+     *
+     * - With validation errors
+     *
+     * @group all
+     * @group customer
+     */
+    public function testCustomerWithvalidationErrors()
+    {
+        $this->withoutMiddleware();
+
+        $user  = factory(App\User::class)->create();
+        $input = [];
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post('/customers', $input)
+            ->seeStatusCode(302)
+            ->assertHasOldInput();
+    }
+
+    /**
+     * POST: /customers
+     *
+     * - Without: /customers
+     *
+     * @group all
+     * @group customer
+     */
+    public function testCustomerWithOutValidationErrors()
+    {
+        $this->withoutMiddleware();
+        $user = factory(App\User::class)->create();
+
+        $input['company'] = 'company';
+        $input['fname']   = 'firstname';
+        $input['name']    = 'name';
+        $input['address'] = 'address';
+        $input['zipcode'] = 'zipcode';
+        $input['city']    = 'city';
+        $input['country'] = 'country';
+        $input['phone']   = 'phone number';
+        $input['mobile']  = 'mobile number';
+        $input['email']   = 'jhon@doe.com';
+        $input['vat']     = 'vat number';
+
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post('/customers', $input)
+            ->seeInDatabase('customers', $input)
+            ->seeStatusCode(302);
     }
 }
