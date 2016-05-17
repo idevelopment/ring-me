@@ -43,22 +43,12 @@ class CustomersController extends Controller
     /**
      * Store a new costumer in the database.
      *
+     * @param  Requests\CustomerValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(Requests\CustomerValidator $input)
     {
-        Costumer::create([
-            'company' => $input->company,
-            'fname'   => $input->fname,
-            'name'    => $input->name,
-            'address' => $input->address,
-            'zipcode' => $input->zipcode,
-            'city'    => $input->city,
-            'country' => $input->country,
-            'phone'   => $input->phone,
-            'mobile'  => $input->mobile,
-            'vat'     => $input->vat
-        ]);
+        Customer::create($input->except('_token'));
 
         session()->flash('message', 'Costumer created');
         return redirect()->back(302);
