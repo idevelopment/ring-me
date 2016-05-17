@@ -144,8 +144,28 @@
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.setStatus') }}</div>
                             </li>
-                            <li><a href=""><i class="fa fa-check"></i> {{ Lang::get('app.available') }}</a></li>
-                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ Lang::get('app.unavailable') }}</a></li>
+                            <li>
+                                <a href="{!! route('status.available') !!}">
+                                    @if(Auth::user()->is('available'))
+                                        <i class="fa fa-check"></i>
+                                    @elseif(Auth::user()->is('unavailable'))
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @endif
+
+                                    {{ Lang::get('app.available') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!! route('status.unavailable') !!}">
+                                    @if(Auth::user()->is('unavailable'))
+                                        <i class="fa fa-check"></i>
+                                    @elseif(Auth::user()->is('available'))
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @endif
+
+                                    {{ Lang::get('app.unavailable') }}
+                                </a>
+                            </li>
                             <li role="separator" class="divider"></li>                 
                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>

@@ -23,8 +23,9 @@ Route::get('/customers/register', 'CustomersController@register')->name('custome
 Route::get('/customers/display/{id}', 'CustomersController@edit')->name('customers.display');
 Route::post('/customers', 'CustomersController@store')->name('customers.store');
 
-
+// Status routes
+Route::get('/status/available', 'StaffController@setAvailable')->name('status.available');
+Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('status.unavailable');
 
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
-
 Route::get('/staff', 'StaffController@index')->name('profile');
