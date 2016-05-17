@@ -17,7 +17,7 @@ class CostumerTest extends TestCase
      * @group all
      * @group costumer
      */
-    public function testCostumerPost()
+    public function testCustomerPost()
     {
         $user = factory(App\User::class)->create();
 
@@ -33,7 +33,7 @@ class CostumerTest extends TestCase
      * @group all
      * @group costumer
      */
-    public function testCostumer()
+    public function testCustomer()
     {
         $user = factory(App\User::class)->create();
 
@@ -49,7 +49,7 @@ class CostumerTest extends TestCase
      * @group all
      * @group costumer
      */
-    public function testCostumerRegister()
+    public function testCustumerRegister()
     {
         $user = factory(App\User::class)->create();
 
@@ -65,7 +65,7 @@ class CostumerTest extends TestCase
      * @group all
      * @group costumer
      */
-    public function testCostumerSpecific()
+    public function testCustomerSpecific()
     {
         $user     = factory(App\User::class)->create();
         $costumer =
