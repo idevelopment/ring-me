@@ -29,3 +29,4 @@ Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('statu
 
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
 Route::get('/staff', 'StaffController@index')->name('profile');
+Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');

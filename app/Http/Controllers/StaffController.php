@@ -19,7 +19,7 @@ class StaffController extends Controller
 
     /**
      * Display all the staff.
-     * 
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -64,5 +64,17 @@ class StaffController extends Controller
     public function profile()
     {
     	return view('users/profile');
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        // Destroy the user.
+        $user->roles()->sync([]);
+        User::destroy($id);
+        session()->flash('message', 'User deleted');
+
+        return redirect()->to('/staff');
     }
 }

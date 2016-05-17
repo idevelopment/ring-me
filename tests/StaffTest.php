@@ -82,4 +82,29 @@ class StaffTest extends TestCase
             ->visit('/profile')
             ->seeStatusCode(200);
     }
+
+    /**
+     * GET: /staff/delete/{id}
+     *
+     * @group all
+     * @group staff
+     */
+    public function testStaffDelete()
+    {
+        $user        = factory(App\User::class, 2)->create();
+        $dbCheckUser = ['id' => $user[0]->id];
+        $dbCheckRole = ['user_id' => $user[0]->id];
+
+        Artisan::call('bouncer:seed');
+        Bouncer::assign('available')->to($user[0]);
+
+        $this->actingAs($user[1])
+            ->seeIsAuthenticatedAs($user[1])
+            ->seeInDatabase('users', $dbCheckUser)
+            ->seeInDatabase('user_roles', $dbCheckRole)
+            ->visit('/staff/delete/' . $user[0]->id)
+            ->dontSeeInDatabase('users', $dbCheckUser)
+            ->dontSeeInDatabase('user_roles', $dbCheckRole)
+            ->seeStatusCode(200);
+    }
 }
