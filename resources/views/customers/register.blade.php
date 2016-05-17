@@ -8,6 +8,8 @@
     </ul>
 
    <form action="{{ url('customers') }}"  method="post" class="form-horizontal">
+       {!! csrf_field() !!}
+
        <div class="form-group form-sep">
         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}} <span class="text-danger">*</span></label>
 
@@ -33,7 +35,7 @@
         <div class="form-group formSep">
          <label for="firstname" class="col-md-3 control-label">{{trans('customers.first_name')}} <span class="text-danger">*</span></label>
           <div class="col-md-8">
-            <input type="text" name="firstname" id="firstname" class="form-control">
+            <input type="text" name="fname" id="firstname" class="form-control">
           </div>
         </div>
 
