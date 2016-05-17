@@ -19,6 +19,7 @@ before_script:
   - composer self-update
   - touch database/database.sqlite
   - composer install
+  - mysql -e 'create database IF NOT EXISTS homestead;' -uroot
   - php artisan migrate --database=sqlite --force
   - php artisan key:generate
 
@@ -29,6 +30,5 @@ script:
 # code coverage
 before_install:
   - pip install --user codecov
-  - mysql -e 'create database homestead;'
 after_success:
     - bash <(curl -s https://codecov.io/bash)
