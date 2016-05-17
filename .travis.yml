@@ -19,7 +19,7 @@ before_script:
   - composer self-update
   - touch database/database.sqlite
   - composer install
-  - mysql -e 'create database IF NOT EXISTS homestead;' -uroot
+  - mysql -e 'create database IF NOT EXISTS homestead;'
   - php artisan migrate --database=sqlite --force
   - php artisan key:generate
 
