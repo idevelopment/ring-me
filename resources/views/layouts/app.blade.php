@@ -181,6 +181,7 @@
 
     {{-- JavaScripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{!! asset('js/vue.js') !!}"></script>
 
     <script src="{{ asset('js/icheck-1/icheck.js') }}"></script>
     <script>

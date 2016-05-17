@@ -42,5 +42,11 @@ elixir(function(mix) {
             'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
             'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
             'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
-        ],  'public/fonts');
+        ],  'public/fonts')
+
+    // Vue
+    .scripts([
+        node + '/vue/dist/vue.js',
+        node + '/vue-resource/dist/vue-resource.js'
+    ], 'public/js/vue.js');
 });
