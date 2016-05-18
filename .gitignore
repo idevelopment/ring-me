@@ -1,3 +1,4 @@
+/Homestead.yaml
 /offline-issues
 vendor/
 node_modules/
@@ -7,6 +8,8 @@ bootstrap/compiled.php
 app/storage/
 
 # Laravel 5 & Lumen specific
+/.vagrant
+/coverage
 bootstrap/cache/
 storage/
 .env.*.php

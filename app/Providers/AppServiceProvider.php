@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Bouncer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Bouncer::seeder(function () {
+            Bouncer::allow('available')->to('');
+            Bouncer::allow('unavailable')->to('');
+
+            Bouncer::allow('Agent')->to('');
+            Bouncer::allow('Administrator')->to('');
+            Bouncer::allow('Manager')->to('');
+            Bouncer::allow('Custumer')->to('');
+        });
     }
 
     /**

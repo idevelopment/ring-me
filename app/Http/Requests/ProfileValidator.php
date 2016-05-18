@@ -4,7 +4,11 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class costumerValidator extends Request
+/**
+ * Class ProfileValidator
+ * @package App\Http\Requests
+ */
+class ProfileValidator extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +28,9 @@ class costumerValidator extends Request
     public function rules()
     {
         return [
-            //
+            'fname' => 'required',
+            'name'  => 'required',
+            'email' => 'required|email'
         ];
     }
 }
