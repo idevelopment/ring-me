@@ -15,7 +15,7 @@ class CreateCallbacksTable extends Migration
         Schema::create('callbacks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('type');
-            $table->string('custumer');
+            $table->string('customer');
             $table->string('agent');
             $table->text('description');
             $table->integer('agent_id');
