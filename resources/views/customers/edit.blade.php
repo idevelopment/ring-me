@@ -93,7 +93,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a href="#">CB01</td>
+                      <td><a href="#">CB01</a></td>
                       <td>Administration</td>
                       <td>13/05/2016</td>
                       <td>Glenn Hermans</td>
@@ -101,7 +101,7 @@
                     </tr>
 
                     <tr>
-                      <td><a href="#">CB02</td>
+                      <td><a href="#">CB02</a></td>
                       <td>Technical</td>
                       <td>13/05/2016</td>
                       <td>Glenn Hermans</td>
