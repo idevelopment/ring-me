@@ -12,4 +12,10 @@ class CallbackController extends Controller
     {
     	return view('callbacks/list');
     }
+
+    public function edit($id)
+    {
+    	return view('callbacks/details');
+    }
+
 }
