@@ -9,14 +9,14 @@ return [
     | The following language lines are used for the public pages
     |
     */
-    'close' => 'Close',
-    'save' => 'Save',
-    'update' => 'Save changes',
-    'details' => 'Read more',
-    'search'  => 'Search',
-    'dateregistered' => 'Date registered',
-    'setStatus' => 'Change status',
-    'general'  => 'General',
+    'close' => 'Sluiten',
+    'save' => 'Opslaan',
+    'update' => 'Wijzigingen opslaan',
+    'details' => 'Meer info',
+    'search'  => 'Zoeken',
+    'dateregistered' => 'Datum geregistreerd',
+    'setStatus' => 'Wijzig status',
+    'general'  => 'Algemeen',
     /*
     |--------------------------------------------------------------------------
     | Menu Links
@@ -27,12 +27,12 @@ return [
     */
 
     'home' => 'Home',
-    'customers' => 'Customers',
-    'callbacks' => 'Callbacks',
-    'departments' => 'Departments',
-    'roles' => 'Roles',
-    'staff' => 'Staff',
-    'settings' => 'Settings',
+    'customers' => 'Klanten',
+    'callbacks' => 'Aanvragen',
+    'departments' => 'Departementen',
+    'roles' => 'Rechten',
+    'staff' => 'Personeel',
+    'settings' => 'Instellingen',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,6 +42,6 @@ return [
     | The following language lines are used for the public pages
     |
     */
-    'available' => 'Available',
-    'unavailable' => 'Unavailable',
+    'available' => 'Beschikbaar',
+    'unavailable' => 'Niet Beschikbaar',
 ];
