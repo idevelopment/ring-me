@@ -35,6 +35,17 @@ class StaffController extends Controller
     }
 
     /**
+     * Store the new member in the database
+     *
+     * @TODO:  Needs phpunit test.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        return redirect()->back(302);
+    }
+
+    /**
      * Edit view for a staff member.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -31,4 +31,5 @@ Route::get('/profile', 'StaffController@profile')->name('staff.index');
 Route::get('/staff', 'StaffController@index')->name('profile');
 Route::get('/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
 Route::get('/staff/create', 'StaffController@create')->name('staff.create');
+Route::post('/staff/create', 'StaffController@strore')->name('staff.store');
 Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');
