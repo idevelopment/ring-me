@@ -84,6 +84,38 @@ class StaffTest extends TestCase
     }
 
     /**
+     * GET: /staff/create
+     *
+     * @group all
+     * @group staff
+     */
+    public function testStaffCreateView()
+    {
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/staff/create')
+            ->seeStatusCode(200);
+    }
+
+    /**
+     * GET: /staff/edit/{id}
+     *
+     * @group all
+     * @group staff
+     */
+    public function testEditView()
+    {
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/staff/edit/' . $user->id)
+            ->seeStatusCode(200);
+    }
+
+    /**
      * GET: /staff/delete/{id}
      *
      * @group all
