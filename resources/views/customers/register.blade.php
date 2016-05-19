@@ -10,66 +10,78 @@
         <form action="{{ url('customers') }}" method="post" class="form-horizontal">
             {!! csrf_field() !!}
 
-            <div class="form-group form-sep">
-                <label for="company" class="col-md-3 control-label">{{trans('customers.company')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('company') ? ' has-error' : '' }}">
+                <label for="company" class="col-md-3 control-label">
+                    {{trans('customers.company')}} <span class="text-danger">*</span>
+                </label>
 
                 <div class="col-md-8">
-                    <input type="text" name="company" id="company" class="form-control">
+                    <input type="text" name="company" id="company" value="{{ old('company') }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group form-sep">
+            <div class="form-group form-sep {{ $errors->has('vat') ? ' has-error' : '' }}">
                 <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}} <span
                             class="text-danger">*</span></label>
                 <div class="col-md-8">
-                    <input type="text" name="vat" id="vat" class="form-control">
+                    <input type="text" name="vat" id="vat" value="{!! old('vat') !!}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="name" class="col-md-3 control-label">{{trans('customers.name')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('name') ? ' has-error' : '' }}">
+                <label for="name" class="col-md-3 control-label">
+                    {{trans('customers.name')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="name" id="name" class="form-control">
+                    <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="firstname" class="col-md-3 control-label">{{trans('customers.first_name')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('fname') ? ' has-error' : '' }}">
+                <label for="firstname" class="col-md-3 control-label">
+                    {{trans('customers.first_name')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="fname" id="firstname" class="form-control">
+                    <input type="text" name="fname" id="firstname" value="{{ old('fname')}}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="address" class="col-md-3 control-label">{{trans('customers.address')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('address') ? ' has-error' : '' }}">
+                <label for="address" class="col-md-3 control-label">
+                    {{trans('customers.address')}} <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="address" id="address" class="form-control">
+                    <input type="text" name="address" id="address" value="{{ old('address')  }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="zipcode" class="col-md-3 control-label">{{trans('customers.zipcode')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('zipcode') ? ' has-error' : '' }}">
+                <label for="zipcode" class="col-md-3 control-label">
+                    {{trans('customers.zipcode')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="zipcode" id="zipcode" class="form-control">
+                    <input type="text" name="zipcode" id="zipcode" value="{{ old('zipcode') }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="city" class="col-md-3 control-label">{{trans('customers.city')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('city') ? ' has-error' : '' }}">
+                <label for="city" class="col-md-3 control-label">
+                    {{trans('customers.city')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="city" id="city" class="form-control">
+                    <input type="text" name="city" id="city" value="{{ old('city') }}" lass="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="city" class="col-md-3 control-label">{{trans('customers.country')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group formSep {{ $errors->has('country') ? ' has-error' : '' }}">
+                <label for="city" class="col-md-3 control-label">
+                    {{trans('customers.country')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
                     <select name="country" id="country" class="form-control">
                         <option value="" selected=""></option>
@@ -79,31 +91,39 @@
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="name" class="col-md-3 control-label">{{trans('customers.email')}} <span class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('email') ? ' has-error' : '' }}">
+                <label for="name" class="col-md-3 control-label">
+                    {{trans('customers.email')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="email" id="email" class="form-control">
+                    <input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="phone" class="col-md-3 control-label">{{trans('customers.phone')}} <span
-                            class="text-danger">*</span></label>
+            <div class="form-group form-sep {{ $errors->has('phone') ? ' has-error' : '' }}">
+                <label for="phone" class="col-md-3 control-label">
+                    {{trans('customers.phone')}}
+                    <span class="text-danger">*</span>
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="phone" id="phone" class="form-control">
+                    <input type="text" name="phone" id="phone" value="{{ old('phone')  }}" class="form-control">
                 </div>
             </div>
 
-            <div class="form-group formSep">
-                <label for="name" class="col-md-3 control-label">{{trans('customers.mobile')}}</label>
+            <div class="form-group form-sep {{ $errors->has('mobile') ? ' has-error' : '' }}">
+                <label for="name" class="col-md-3 control-label">
+                    {{trans('customers.mobile')}}
+                </label>
                 <div class="col-md-8">
-                    <input type="text" name="mobile" id="mobile" class="form-control">
+                    <input type="text" name="mobile" id="mobile" value="{{ old('mobile') }}" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="name" class="col-md-3 control-label">&nbsp;</label>
                 <div class="col-md-8">
                     <button type="submit" class="btn btn-primary">{{ trans('app.save')}}</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
                 </div>
             </div>
         </form>
