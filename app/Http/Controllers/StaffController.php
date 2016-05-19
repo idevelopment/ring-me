@@ -35,13 +35,24 @@ class StaffController extends Controller
     }
 
     /**
+     * Edit view for a staff member.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $data['query'] = User::find($id);
+        return view('staff.edit', $data);
+    }
+
+    /**
      * Display all the staff.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
 	{
-		$data['users'] = User::all();
+		$data['users'] = User::paginate(15);
     	return view('users/index', $data);
     }
 

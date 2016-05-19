@@ -100,6 +100,22 @@ class StaffTest extends TestCase
     }
 
     /**
+     * GET: /staff/edit/{id}
+     *
+     * @group all
+     * @group staff
+     */
+    public function testEditView()
+    {
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/staff/edit/' . $user->id)
+            ->seeStatusCode(200);
+    }
+
+    /**
      * GET: /staff/delete/{id}
      *
      * @group all
