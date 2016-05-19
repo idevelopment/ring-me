@@ -27,6 +27,7 @@ class StaffController extends Controller
     /**
      * Create new staff member.
      *
+     * @TODO   Build up the view
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
@@ -38,6 +39,8 @@ class StaffController extends Controller
      * Store the new member in the database
      *
      * @TODO:  Needs phpunit test.
+     * @TODO:  Build up the controller logic.
+     * @TODO:  Build up the request validator.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
@@ -46,8 +49,23 @@ class StaffController extends Controller
     }
 
     /**
+     * Update the staff member.
+     *
+     * @TODO:  Needs phpunit test
+     * @TODO:  Build up the controller.
+     * @TODO:  BUild up the request validator.
+     * @param  int $id The staff member id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update($id)
+    {
+        return redirect()->back(302);
+    }
+
+    /**
      * Edit view for a staff member.
      *
+     * @TODO   Build up the view.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
