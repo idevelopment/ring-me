@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Manager<th>
+                                        <th>Manager</th>
                                         <th>Created:</th>
                                         <th>Last updated:</th>
                                         <th></th> {{-- Reserved for functions --}}
