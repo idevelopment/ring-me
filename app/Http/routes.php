@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::auth();
 
 // Department routes.
+Route::resource('departments', 'DepartmentController');
 
 // Home routes
 Route::get('/home', 'HomeController@index');
