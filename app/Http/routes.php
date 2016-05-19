@@ -23,21 +23,21 @@ Route::resource('departments', 'DepartmentController');
 
 // Home routes
 Route::get('/home', 'HomeController@index');
-
 // Costumers routes
+
 Route::get('/customers', 'CustomersController@index')->name('customers.index');
 Route::get('/customers/register', 'CustomersController@register')->name('customers.register');
 Route::get('/customers/display/{id}', 'CustomersController@edit')->name('customers.display');
 Route::post('/customers', 'CustomersController@store')->name('customers.store');
-
 // Status routes
+
 Route::get('/status/available', 'StaffController@setAvailable')->name('status.available');
 Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('status.unavailable');
-
 // Profile routes
-Route::get('/profile', 'StaffController@profile')->name('staff.index');
 
+Route::get('/profile', 'StaffController@profile')->name('staff.index');
 // Staff routes
+
 Route::get('/staff', 'StaffController@index')->name('profile');
 Route::get('/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
 Route::post('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
