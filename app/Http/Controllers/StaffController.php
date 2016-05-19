@@ -8,13 +8,30 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Bouncer;
 
+/**
+ * Class StaffController
+ * @package App\Http\Controllers
+ */
 class StaffController extends Controller
 {
 
+    /**
+     * StaffController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('lang');
+    }
+
+    /**
+     * Create new staff member.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('staff.create');
     }
 
     /**
@@ -66,12 +83,17 @@ class StaffController extends Controller
     	return view('users/profile');
     }
 
+    /**
+     * Destroy or multiple staff members.
+     *
+     * @param  int $id THe id off the staff member in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $user = User::find($id);
-
-        // Destroy the user.
         $user->roles()->sync([]);
+
         User::destroy($id);
         session()->flash('message', 'User deleted');
 
