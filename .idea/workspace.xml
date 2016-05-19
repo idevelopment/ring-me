@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b5bc44c-176b-4cd9-bcfa-1a3b987c1184" name="in wait" comment="not accurate">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/CallbackController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/en/callbacks.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/nl/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/callbacks/details.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/callbacks/list.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/app.php" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CallbackController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CallbackController.php" />
     </list>
     <ignored path="Iring-dev.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallbackController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CallbackController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallbackController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -70,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="445">
@@ -90,7 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/assets/sass/_partials/navbar.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_modules/_variables.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_partials/contacts.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_partials/modal.scss" />
@@ -141,6 +134,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/departments/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CallbackController.php" />
       </list>
     </option>
   </component>
@@ -351,7 +345,7 @@
       <workItem from="1463485583325" duration="236000" />
       <workItem from="1463485952624" duration="15823000" />
       <workItem from="1463647660383" duration="8544000" />
-      <workItem from="1463672639126" duration="149000" />
+      <workItem from="1463672639126" duration="243000" />
     </task>
     <task id="LOCAL-00001" summary="Fix scss-linting errors in _partials/typgraphy.scss">
       <created>1463304529646</created>
@@ -392,7 +386,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48784000" />
+    <option name="totallyTimeSpent" value="48878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,18 +795,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallbackController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CallbackController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding />
         </state>
       </provider>
