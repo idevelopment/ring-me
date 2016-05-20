@@ -124,7 +124,7 @@
 
                                      <div class="pull-right">
                                          <button type="button" data-toggle="modal" data-target="#revoke" class="btn btn-xs btn-danger">Revoke</button>
-                                         <a href="" class="btn btn-xs btn-danger">Delete</a>
+                                         <button type="button" data-toggle="modal" data-target="#delete" class="btn btn-xs btn-danger">Delete</button>
                                          <a href="" class="btn btn-xs btn-success">Get token</a>
                                      </div>
                                  </div>
@@ -202,4 +202,25 @@
         </div>
     </div>
     {{-- End revoke modal --}}
+
+    {{-- Delete modal --}}
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Delete token (Service name)</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to deletee this token? If deleted,
+                    API requests that attempt to authenticate using this token will no longer be accepted.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">NO, GO BACK</button>
+                    <button type="button" class="btn btn-danger">YES, DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- END delete modal --}}
 @endsection
