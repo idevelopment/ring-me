@@ -51,5 +51,7 @@ Route::get('/staff/create', 'StaffController@create')->name('staff.create');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');
 
+Route::get('/staff/getdepartments', 'DepartmentController@get_departments')->name('staff.getdepartments');
+
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');

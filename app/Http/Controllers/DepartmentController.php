@@ -105,4 +105,5 @@ class DepartmentController extends Controller
         Departments::destroy($id);
         return redirect()->back(302);
     }
+   
 }

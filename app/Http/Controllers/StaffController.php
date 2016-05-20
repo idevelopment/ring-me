@@ -142,4 +142,5 @@ class StaffController extends Controller
 
         return redirect()->to('/staff');
     }
+
 }
