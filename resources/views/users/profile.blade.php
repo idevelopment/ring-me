@@ -17,7 +17,7 @@
               <div role="tabpanel" class="tab-pane active" id="home">
                               <form class="form-horizontal">
                     <fieldset>
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="avatar" class="control-label col-sm-2">User avatar</label>
                             <div class="col-sm-8">
                                 <div class="thumbnail" style="width: 80px; height: 80px;">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="fname" class="control-label col-sm-2">{{trans('staff.fname')}} <span
                                         class="text-danger">*</span></label>
                             <div class="col-sm-8">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="name" class="control-label col-sm-2">{{trans('staff.name')}} <span
                                         class="text-danger">*</span></label>
                             <div class="col-sm-8">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="email" class="control-label col-sm-2">{{trans('staff.email')}} <span
                                         class="text-danger">*</span></label>
                             <div class="col-sm-8">
@@ -54,7 +54,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="password" class="control-label col-sm-2">{{trans('staff.password')}}</label>
                             <div class="col-sm-8">
                                 <input type="password" id="password" class="form-control" value="password">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group formSep">
+                        <div class="form-group form-sep">
                             <label for="bio" class="control-label col-sm-2">{{trans('staff.bio')}}</label>
                             <div class="col-sm-8">
                                 <textarea name="bio" id="bio"
