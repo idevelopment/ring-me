@@ -158,6 +158,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
+        Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
 
     ],
 
@@ -206,6 +207,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
+        'Apiguard' => Chrisbjr\ApiGuard\Http\Middleware\ApiGuard::class,
 
     ],
 
