@@ -8,17 +8,23 @@
 
         <div class="row">
             <div class="col-md-12">
+             <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
+              <li role="presentation"><a href="#tokens" aria-controls="tokens" role="tab" data-toggle="tab">API tokens</a></li>
+             </ul>
 
-                <form class="form-horizontal">
+             <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                              <form class="form-horizontal">
                     <fieldset>
                         <div class="form-group formSep">
                             <label for="avatar" class="control-label col-sm-2">User avatar</label>
                             <div class="col-sm-8">
                                 <div class="thumbnail" style="width: 80px; height: 80px;">
                                     <img src="{{asset('img/user-icon.png')}}"/></div>
-								  <span class="btn btn-default btn-file">
-								   <input type="file" name="avatar" id="avatar"/>
-								  </span>
+                                  <span class="btn btn-default btn-file">
+                                   <input type="file" name="avatar" id="avatar"/>
+                                  </span>
                             </div>
                         </div>
 
@@ -62,7 +68,7 @@
                             <label for="bio" class="control-label col-sm-2">{{trans('staff.bio')}}</label>
                             <div class="col-sm-8">
                                 <textarea name="bio" id="bio"
-                                          class="form-control">{{ Auth::user()->bio	 }}</textarea>
+                                          class="form-control">{{ Auth::user()->bio  }}</textarea>
                             </div>
                         </div>
 
@@ -73,7 +79,12 @@
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </form>                  
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tokens">...</div>
+            </div>
+
+
             </div>
         </div>
     </div>
