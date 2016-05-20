@@ -15,9 +15,10 @@
                       <div class="dropdown">
                        <button class="btn btn-default btn-xs dropdown-toggle " type="button" data-toggle="dropdown"> <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                         <li><a href="#">Start call</a></li>
-                         <li><a href="#">End call</a></li>
+                         <li><a href="#" data-toggle="modal" data-target="#callattempt">Call attempt</a></li>
                          <li><a href="#">Add comment</a></li>
+                         <li class="divider"></li>
+                         <li><a href="#"><i class="fa fa-lock"></i> End call</a></li>
                         </ul>
                       </div>
 
@@ -46,7 +47,7 @@
                                     <label for="firstname"
                                            class="col-md-3 control-label">{{ trans('callbacks.type') }}</label>
                                     <div class="col-md-8">
-                                        <p class="form-control-static"><a href="">Administration</a> </p>
+                                        <p class="form-control-static"><a href="#" id="type" data-type="select" data-pk="1" data-url="/update" data-title="Change type">Administration</a> </p>
                                     </div>
                                 </div>
 
@@ -148,4 +149,49 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal" id="callattempt" tabindex="-1" role="dialog" aria-labelledby="CallLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="CallLabel">Call attempt</h4>
+      </div>
+      <form class="form-horizontal">
+      <div class="modal-body">
+        <div class="form-group form-sep">
+         <label class="col-md-3 control-label">Reason</label>
+          <div class="col-md-9">
+           <select name="reason" class="form-control">
+           <option value="" selected=""></option>
+           	<option value="out-of-office">Out of office</option>
+           	<option value="busy">Busy</option>
+           	<option value="no-response">No response</option>           	
+           </select>
+          </div>
+        </div>       
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{!! trans('app.close') !!}</button>
+        <button type="button" class="btn btn-sm btn-primary">{!! trans('app.save') !!}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+	    $(document).ready(function() {
+	    $.fn.editable.defaults.mode = 'inline';
+        $('#type').editable({
+        value: 1,    
+        source: [
+              {value: 1, text: 'Administration'},
+              {value: 2, text: 'Technical'},
+           ]
+    });
+    });
+</script>
 @endsection

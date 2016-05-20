@@ -13,6 +13,12 @@ use App\Http\Requests;
  */
 class CallbackController extends Controller
 {
+	    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('lang');
+    }
+    
     /**
      * Display all the callbacks.
      *
