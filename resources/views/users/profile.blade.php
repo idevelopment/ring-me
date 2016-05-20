@@ -128,7 +128,6 @@
                                          <a href="" class="btn btn-xs btn-success">Get token</a>
                                      </div>
                                  </div>
-                                 <div class="list-group-item">Cras justo odio</div>
                              </div>
                          </div>
 
