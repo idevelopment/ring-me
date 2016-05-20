@@ -76,14 +76,14 @@
 
                                             <td>
                                                 <div class="btn-group btn-group-xs">
-                                                    <a class="btn btn-success">
+                                                    <a class="btn btn-link">
                                                         <span class="fa fa-info-circle"></span>
                                                     </a>
-                                                    <a href="" class="btn btn-success">
+                                                    <a href="" class="btn btn-link">
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
-                                                    <a href="" class="btn btn-danger">
-                                                        <span class="fa fa-minus"></span>
+                                                    <a href="" class="btn btn-link">
+                                                        <span class="fa fa-times"></span>
                                                     </a>
                                                 </div>
                                             </td>
