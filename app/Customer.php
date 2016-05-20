@@ -18,4 +18,12 @@ class Customer extends Model
         'zipcode', 'city', 'country', 'phone',
         'mobile', 'email', 'vat'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function callbacks()
+    {
+        return $this->belongsToMany('App\Callback');
+    }
 }

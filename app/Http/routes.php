@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function() {
+    dd(App\Customer::where('id', 1)->with('callbacks')->get());
+});
+
 // Authencation routes.
 Route::auth();
 
