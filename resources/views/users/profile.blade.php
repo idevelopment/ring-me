@@ -100,7 +100,7 @@
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-3">
-                                             <input type="text" placeholder="service name" id="email" name="service" class="form-control">
+                                             <input type="text" placeholder="Service name" id="email" name="service" class="form-control">
                                          </div>
                                      </div>
                                      <div class="form-group">
@@ -119,11 +119,11 @@
                              </div>
                              <div class="list-group">
                                  <div class="list-group-item">
-                                     Service <br/>
+                                     Service name<br/>
                                      <span class="text-muted"><small>Created at: 10/02/2016</small></span>
 
                                      <div class="pull-right">
-                                         <a href="" class="btn btn-xs btn-danger">Revoke</a>
+                                         <button type="button" data-toggle="modal" data-target="#revoke" class="btn btn-xs btn-danger">Revoke</button>
                                          <a href="" class="btn btn-xs btn-danger">Delete</a>
                                          <a href="" class="btn btn-xs btn-success">Get token</a>
                                      </div>
@@ -180,4 +180,26 @@
             </div>
         </div>
     </div>
+
+    {{-- MODALS--}}
+    {{-- Revoke modal --}}
+    <div class="modal fade" id="revoke" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Revoke token (Service name)</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to revoke this token? If revoked,
+                    API requests that attempt to authenticate using this token will no longer be accepted.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">NO, GO BACK</button>
+                    <button type="button" class="btn btn-danger">YES, REVOKE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- End revoke modal --}}
 @endsection
