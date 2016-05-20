@@ -81,7 +81,56 @@
                     </fieldset>
                 </form>                  
               </div>
-              <div role="tabpanel" class="tab-pane" id="tokens">...</div>
+
+                 {{-- API tokens --}}
+                  <div role="tabpanel" class="tab-pane" id="tokens">
+
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              New API token.
+                          </div>
+                          <div class="panel-body">
+                              <form action="" method="POST" class="form-horizontal">
+                                  <div class="form-group">
+                                      <label for="email" class="control-label col-sm-2">
+                                          Service
+                                          <span class="text-danger">*</span>
+                                      </label>
+                                      <div class="col-sm-3">
+                                          <input type="text" id="email" name="email" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-3 col-sm-offset-2">
+                                          <button class="btn btn-primary" type="submit">Add token</button>
+                                          <button type="reset" class="btn btn-default">Cancel</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              API tokens.
+                          </div>
+                          <div class="list-group">
+                              <div class="list-group-item">
+                                  Service <br/>
+                                  <span class="text-muted"><small>Created at: 10/02/2016</small></span>
+
+                                  <div class="pull-right">
+                                      <a href="" class="btn btn-xs btn-danger">Revoke</a>
+                                      <a href="" class="btn btn-xs btn-danger">Delete</a>
+                                      <a href="" class="btn btn-xs btn-success">Get token</a>
+                                  </div>
+                              </div>
+                              <div class="list-group-item">Cras justo odio</div>
+                          </div>
+                      </div>
+
+                  </div>
+                 {{-- END api tokens --}}
             </div>
 
 

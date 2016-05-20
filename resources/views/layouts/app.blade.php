@@ -66,8 +66,10 @@
                     <li><a href="{{ url('/customers') }}">{{ trans('app.customers')}}</a></li>
                     <li><a href="{{ url('/callbacks') }}">{{ trans('app.callbacks')}}</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">{{ trans('app.settings')}} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ trans('app.settings')}}
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
@@ -79,7 +81,7 @@
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
                             <li><a href="{!! route('departments.index') !!}">Departments</a></li>
-                            <li><a href="#">Staff</a></li>
+                            <li><a href="{!! url('staff') !!}">Staff</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Roles</a></li>
                         </ul>
