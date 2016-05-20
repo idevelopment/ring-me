@@ -15,6 +15,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
     <link rel="stylesheet" href="{!! asset('js/icheck-1/skins/all.css') !!}">
 
@@ -193,6 +194,7 @@
 <script src="{!! asset('js/vue.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-formhelpers.js') !!}"></script>
 <script src="{!! asset('js/icheck-1/icheck.js') !!}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()

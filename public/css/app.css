@@ -5867,16 +5867,6 @@ h6 .description {
 .nav-tabs {
   margin-bottom: 0; }
 
-.nav-pills + .nav-pills {
-  margin-left: 10px;
-  padding-left: 10px; }
-
-.nav-pills > li {
-  line-height: 17px; }
-
-.nav-pills > li > a {
-  padding: 5px 8px 5px; }
-
 .panel-default {
   box-shadow: 0 10px 13px 0 #f7f4f7; }
   .panel-default .panel-heading {
