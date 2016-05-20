@@ -160,7 +160,7 @@ return [
         Silber\Bouncer\BouncerServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
-
+        EricMakesStuff\ServerMonitor\ServerMonitorServiceProvider::class,
     ],
 
     /*
