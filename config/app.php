@@ -160,7 +160,7 @@ return [
         Silber\Bouncer\BouncerServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
-        EricMakesStuff\ServerMonitor\ServerMonitorServiceProvider::class,
+
     ],
 
     /*
@@ -208,7 +208,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
-        'Apiguard' => Chrisbjr\ApiGuard\Http\Middleware\ApiGuard::class,
+        'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
+
 
     ],
 

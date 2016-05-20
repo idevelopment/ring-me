@@ -122,8 +122,8 @@ class StaffController extends Controller
     public function profile()
     {
         $id = auth()->user()->id;
-        $data['query'] = ApiKey::where('user_id', $id)->get();
-    	return view('users/profile');
+        $data['tokens'] = ApiKey::where('user_id', $id)->get();
+    	return view('users/profile', $data);
     }
 
     /**

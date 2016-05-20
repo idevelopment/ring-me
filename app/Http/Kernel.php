@@ -51,5 +51,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'lang' => \App\Http\Middleware\languageMiddleware::class,
         'role' => \App\Http\Middleware\RoleMiddlware::class,
+        'apiguard' => \Chrisbjr\ApiGuard\Http\Middleware\ApiGuard::class,
     ];
 }
