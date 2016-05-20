@@ -159,6 +159,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
+        Themsaid\Langman\LangmanServiceProvider::class,
 
     ],
 

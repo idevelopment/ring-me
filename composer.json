@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "barryvdh/laravel-debugbar": "^2.2",
         "silber/bouncer": "^0.1.7",
-        "chrisbjr/api-guard": "3.1.*"
+        "chrisbjr/api-guard": "3.1.*",
+        "themsaid/laravel-langman": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
