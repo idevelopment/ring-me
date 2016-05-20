@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Chrisbjr\ApiGuard\Models\ApiKey;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -120,6 +121,8 @@ class StaffController extends Controller
      */
     public function profile()
     {
+        $id = auth()->user()->id;
+        $data['query'] = ApiKey::where('user_id', $id)->get();
     	return view('users/profile');
     }
 
