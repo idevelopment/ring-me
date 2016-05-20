@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function() {
-    dd(App\User::where('id', 5)->with('departments')->get());
-});
-
 // Authencation routes.
 Route::auth();
 
