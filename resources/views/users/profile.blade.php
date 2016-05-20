@@ -93,7 +93,8 @@
                                  New API token.
                              </div>
                              <div class="panel-body">
-                                 <form action="" method="POST" class="form-horizontal">
+                                 <form action="{{ route('token.create') }}" method="POST" class="form-horizontal">
+                                     {!! csrf_field() !!}
                                      <div class="form-group">
                                          <label for="email" class="control-label col-sm-2">
                                              Service
@@ -118,16 +119,18 @@
                                  API tokens.
                              </div>
                              <div class="list-group">
-                                 <div class="list-group-item">
-                                     Service name<br/>
-                                     <span class="text-muted"><small>Created at: 10/02/2016</small></span>
+                                 @foreach($tokens as $token)
+                                     <div class="list-group-item">
+                                         {!! $token->service !!}<br/>
+                                         <span class="text-muted"><small>Created at: {!! $token->created_at !!}</small></span>
 
-                                     <div class="pull-right">
-                                         <button type="button" data-toggle="modal" data-target="#revoke" class="btn btn-xs btn-danger">Revoke</button>
-                                         <button type="button" data-toggle="modal" data-target="#delete" class="btn btn-xs btn-danger">Delete</button>
-                                         <a href="" class="btn btn-xs btn-success">Get token</a>
+                                         <div class="pull-right">
+                                             <button type="button" data-toggle="modal" data-target="#revoke" class="btn btn-xs btn-danger">Revoke</button>
+                                             <button type="button" data-toggle="modal" data-target="#delete" class="btn btn-xs btn-danger">Delete</button>
+                                             <a href="" class="btn btn-xs btn-success">Get token</a>
+                                         </div>
                                      </div>
-                                 </div>
+                                 @endforeach
                              </div>
                          </div>
 

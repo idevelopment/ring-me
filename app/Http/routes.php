@@ -21,6 +21,9 @@ Route::auth();
 // Department routes.
 Route::resource('departments', 'DepartmentController');
 
+// API token routes.
+Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');
+
 // Home routes
 Route::get('/home', 'HomeController@index');
 
