@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function() {
-    dd(App\Customer::where('id', 1)->with('callbacks')->get());
+    dd(App\User::where('id', 5)->with('departments')->get());
 });
 
 // Authencation routes.
