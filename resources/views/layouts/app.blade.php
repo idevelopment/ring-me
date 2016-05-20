@@ -77,7 +77,7 @@
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
-                            <li><a href="#">Departments</a></li>
+                            <li><a href="{!! route('departments.index') !!}">Departments</a></li>
                             <li><a href="#">Staff</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Roles</a></li>

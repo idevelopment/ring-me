@@ -24,11 +24,13 @@ Route::resource('departments', 'DepartmentController');
 // Home routes
 Route::get('/home', 'HomeController@index');
 
+// Callback routes
 Route::get('/callbacks', 'CallbackController@index')->name('callbacks.index');
-Route::get('/callbacks/register', 'CallbackController@register')->name('callbacks.register');
+Route::get('/callbacks/register', 'CallbackController@create')->name('callbacks.register');
 Route::get('/callbacks/display/{id}', 'CallbackController@edit')->name('callbacks.display');
 Route::post('/callbacks', 'CallbackController@store')->name('callbacks.store');
 
+// Costumers routes
 Route::get('/customers', 'CustomersController@index')->name('customers.index');
 Route::get('/customers/register', 'CustomersController@register')->name('customers.register');
 Route::get('/customers/display/{id}', 'CustomersController@edit')->name('customers.display');
