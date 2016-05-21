@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+            <ul class="breadcrumb">
+            <li><a href="{{url('')}}">{!! trans('app.home') !!}</a></li>
+            <li class="active">{!! trans('app.callbacks') !!}</li>
+        </ul>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">

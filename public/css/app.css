@@ -5759,6 +5759,21 @@ h6 .description {
   background-color: #3668a0;
   color: #f1f1f1; }
 
+.user_list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.user_list li {
+  padding: 0 11px 11px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #dcdcdc;
+  line-height: normal; }
+
+.user_list small {
+  font-size: 11px;
+  color: #9b9b9b; }
+
 .profile {
   margin-top: 25px; }
   .profile h1 {

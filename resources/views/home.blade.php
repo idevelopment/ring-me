@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -36,9 +37,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-7">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Agent history</div>
+                    <div class="panel-heading">Recent activity</div>
                     <div class="panel-body">
                         <ul class="notifications">
                             <li class="notification">
@@ -103,6 +104,31 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">My Employees</div>
+                    <div class="panel-body">
+                     <ul class="user_list">
+                     <li>
+                      <span class="badge bg-green pull-right">online</span>
+                      <a href="#" class="sl_name">John Doe</a><br>
+                     </li>
+                <li>
+                    <span class="badge bg-green pull-right">online</span>
+                    <a href="#" class="sl_name">Kate Miller</a><br>
+                </li>
+                <li>
+                    <span class="badge bg-red pull-right">offline</span>
+                    <a href="#" class="">James Vandenberg</a><br>                   
+                </li>
+                <li>
+                    <span class="badge bg-red pull-right">offline</span>
+                    <a href="#" class="">Donna Doerr</a><br>                    
+                </li>
                     </div>
                 </div>
             </div>

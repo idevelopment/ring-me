@@ -97,7 +97,7 @@
                   <label for="firstname" class="col-md-3 control-label">{{ trans('staff.role') }}</label>
                   <div class="col-md-8">
                    <p class="form-control-static">
-                    <a href="#" id="role" data-type="select" data-pk="1" data-url="{{ url('staff/edit/') }}" data-title="Change role">Administration</a>
+                    <a href="#" id="role" data-type="select" data-pk="1" data-url="{{ url('staff/edit/') }}" data-title="Change role">Administrator</a>
                    </p>
                   </div>
                 </div>                
