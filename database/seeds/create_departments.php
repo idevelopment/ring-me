@@ -15,15 +15,21 @@ class create_departments extends Seeder
         DB::table('departments')->insert([
         	[
         	'name' =>  'Administration',
-        	'manager' =>  '1',        	
+        	'manager' =>  '1',
+        	'created_at' => date("Y-m-d H:i:s"),
+        	'updated_at' => date("Y-m-d H:i:s"),
         	],
         	[
         	'name' =>  'Sales',
-        	'manager' =>  '1',        	
+        	'manager' =>  '1',
+        	'created_at' => date("Y-m-d H:i:s"),
+        	'updated_at' => date("Y-m-d H:i:s"),       	
         	],
         	[
         	'name' =>  'Technical',
-        	'manager' =>  '1',        	
+        	'manager' =>  '1',
+        	'created_at' => date("Y-m-d H:i:s"),
+        	'updated_at' => date("Y-m-d H:i:s"),    	
         	]        	
            ]);
     }
