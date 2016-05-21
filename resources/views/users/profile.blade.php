@@ -18,6 +18,17 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="list-group">
+                        <a href="" class="list-group-item">
+                            <span class="fa fa-book"></span> API documentation
+                        </a>
+                        <a href="" class="list-group-item">
+                            <span class="fa fa-bug"></span> Report a bug
+                        </a>
+                    </div>
+                </div>
             </div>
 
              <div class="col-md-9">
