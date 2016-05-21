@@ -8,12 +8,11 @@
         </ul>
 
         <div class="row">
-            <div class="col-md-12">
-             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
-              <li role="presentation"><a href="#access" aria-controls="access" role="tab" data-toggle="tab">Access</a></li>               
-              <li role="presentation"><a href="#tokens" aria-controls="tokens" role="tab" data-toggle="tab">API tokens</a></li>           
-             </ul>
+         <div class="col-md-12">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
+              <li role="presentation"><a href="#access" aria-controls="access" role="tab" data-toggle="tab">Access</a></li>           
+          </ul>
 
              <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="home">
@@ -104,7 +103,6 @@
                    </fieldset>
                   </form>
               </div>
-              <div role="tabpanel" class="tab-pane" id="tokens">...</div>
             </div>
 
 
