@@ -25,7 +25,7 @@
                             <span class="fa fa-book"></span> API documentation
                         </a>
                         <a href="" class="list-group-item">
-                            <span class="fa fa-bug"></span> Report a bug
+                            <span class="fa fa-bug"></span> {{ trans('profile.bug') }}
                         </a>
                     </div>
                 </div>
