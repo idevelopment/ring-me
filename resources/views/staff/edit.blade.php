@@ -97,7 +97,7 @@
                   <label for="firstname" class="col-md-3 control-label">{{ trans('staff.role') }}</label>
                   <div class="col-md-8">
                    <p class="form-control-static">
-                    <a href="#" id="type" data-type="select" data-pk="1" data-url="{{ url('staff/edit/') }}" data-title="Change role">Administration</a>
+                    <a href="#" id="role" data-type="select" data-pk="1" data-url="{{ url('staff/edit/') }}" data-title="Change role">Administration</a>
                    </p>
                   </div>
                 </div>                
@@ -120,7 +120,13 @@
         value: 1,
         source: "<?php echo url('staff/getdepartments'); ?>",
         sourceCache: false           
-    });
+        });
+
+        $('#role').editable({
+        value: 1,
+        source: "<?php echo url('staff/getroles'); ?>",
+        sourceCache: false           
+        });        
     });
 </script>    
 @endsection

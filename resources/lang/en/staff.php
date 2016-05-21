@@ -28,4 +28,7 @@ return [
     'history'    => 'Customer history',
     'search'     => 'Search customer',
     'register'   => 'New customer',
-];
+
+    'department' => 'Department',
+    'role'      => 'Role',
+    ];
