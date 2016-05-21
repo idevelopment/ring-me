@@ -105,5 +105,19 @@ class DepartmentController extends Controller
         Departments::destroy($id);
         return redirect()->back(302);
     }
-   
+
+    public function get_departments()
+    {
+        $items = Departments::all();
+        $data2 = [];
+        foreach($items as $department)
+        {
+         $data2[] = [
+        'value' => $department["id"],
+        'text'  => $department["name"]
+        ];
+
+        }
+        return json_encode($data2);
+    }    
 }

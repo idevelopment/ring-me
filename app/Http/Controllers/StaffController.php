@@ -143,4 +143,19 @@ class StaffController extends Controller
         return redirect()->to('/staff');
     }
 
+    public function get_roles()
+    {
+        $items = Roles::all();
+        $data2 = [];
+        foreach($items as $role)
+        {
+         $data2[] = [
+        'value' => $role["id"],
+        'text'  => $role["name"]
+        ];
+
+        }
+        return json_encode($data2);
+    } 
+
 }
