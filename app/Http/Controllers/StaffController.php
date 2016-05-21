@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Roles;
+
 use Chrisbjr\ApiGuard\Models\ApiKey;
 use Illuminate\Http\Request;
 
