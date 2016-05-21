@@ -52,4 +52,30 @@ class ApiKeyController extends Controller
     {
 
     }
+
+    /**
+     * Get the apikey
+     *
+     * @param int $id the database id off the api key.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getKey($id)
+    {
+        return redirect()->back(302);
+    }
+
+    /**
+     * Delete a api key out off the system.
+     *
+     * @param int $id the database id off the api key.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteKey($id)
+    {
+        $this->apiKey->destroy($id);
+        session()->flash('message', 'The api key is deleted.');
+
+        return redirect()->back(302);
+    }
+
 }
