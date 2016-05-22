@@ -160,6 +160,7 @@ return [
         Silber\Bouncer\BouncerServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
 
     ],
 
@@ -209,8 +210,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
-
-
     ],
 
 ];
