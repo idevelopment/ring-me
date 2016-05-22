@@ -17,6 +17,11 @@ class SettingsController extends Controller
         $this->middleware('lang');
     }
 
+    /**
+     * Get the settings index page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
     	return view('settings.index');
