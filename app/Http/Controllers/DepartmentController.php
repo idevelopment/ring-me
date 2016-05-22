@@ -11,6 +11,7 @@ use App\Http\Requests;
  * Class DepartmentController
  * @package App\Http\Controllers
  *
+ * TODO: set routes.
  * TODO: the controller needs phpunit testing.
  */
 class DepartmentController extends Controller
@@ -106,18 +107,23 @@ class DepartmentController extends Controller
         return redirect()->back(302);
     }
 
+    /**
+     * Get all the departments
+     *
+     * @return string
+     */
     public function get_departments()
     {
         $items = Departments::all();
         $data2 = [];
-        foreach($items as $department)
-        {
-         $data2[] = [
-        'value' => $department["id"],
-        'text'  => $department["name"]
-        ];
 
+        foreach($items as $department) {
+            $data2[] = [
+                'value' => $department["id"],
+                'text'  => $department["name"]
+            ];
         }
+
         return json_encode($data2);
     }    
 }
