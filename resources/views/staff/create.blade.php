@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('staff.store') }}">
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
