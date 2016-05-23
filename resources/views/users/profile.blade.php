@@ -21,7 +21,7 @@
 
                 <div class="panel panel-default">
                     <div class="list-group">
-                        <a href="" class="list-group-item">
+                        <a href="https://ringme.readme.io" target="_blank" class="list-group-item">
                             <span class="fa fa-book"></span> API documentation
                         </a>
                         <a href="" class="list-group-item">
