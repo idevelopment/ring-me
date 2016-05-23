@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Departments;
 use App\User;
 use App\Roles;
 
@@ -35,7 +36,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('staff.create');
+        $data['departments'] = Departments::all();
+        return view('staff.create', $data);
     }
 
     /**
