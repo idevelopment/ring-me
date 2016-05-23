@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 class SettingsController extends Controller
 {
+    // TODO: Needs phpunit tests. -> create github issue
+
 	/**
      * SettingsController constructor.
      */
