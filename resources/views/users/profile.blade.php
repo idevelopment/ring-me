@@ -21,8 +21,8 @@
 
                 <div class="panel panel-default">
                     <div class="list-group">
-                        <a href="" class="list-group-item">
-                            <span class="fa fa-book"></span> API documentation
+                        <a href="https://ringme.readme.io" target="_blank" class="list-group-item">
+                            <span class="fa fa-book"></span> {{ trans('profile.api') }}
                         </a>
                         <a href="" class="list-group-item">
                             <span class="fa fa-bug"></span> {{ trans('profile.bug') }}
@@ -101,23 +101,23 @@
 
                          <div class="panel panel-default">
                              <div class="panel-heading">
-                                 New API token.
+                                 {{trans('profile.newApi')}}
                              </div>
                              <div class="panel-body">
                                  <form action="{{ route('token.create') }}" method="POST" class="form-horizontal">
                                      {!! csrf_field() !!}
                                      <div class="form-group">
                                          <label for="email" class="control-label col-sm-2">
-                                             Service
+                                             {{trans('profile.service')}}
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-3">
-                                             <input type="text" placeholder="Service name" id="email" name="service" class="form-control">
+                                             <input type="text" placeholder="{{trans('profile.serviceName')}}" id="email" name="service" class="form-control">
                                          </div>
                                      </div>
                                      <div class="form-group">
                                          <div class="col-sm-3 col-sm-offset-2">
-                                             <button class="btn btn-primary" type="submit">Add token</button>
+                                             <button class="btn btn-primary" type="submit">{{trans('profile.addToken')}}</button>
                                              <button type="reset" class="btn btn-default">Cancel</button>
                                          </div>
                                      </div>
@@ -127,7 +127,7 @@
 
                          <div class="panel panel-default">
                              <div class="panel-heading">
-                                 API tokens.
+                                 {{trans('profile.apiTokens')}}
                              </div>
                              <div class="list-group">
                                  @foreach($tokens as $token)
@@ -164,7 +164,7 @@
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-8">
-                                             <input type="password" placeholder="New password" name="password" id="password" class="form-control">
+                                          <input type="password" placeholder="{{trans('profile.newPass')}}" name="password" id="password" class="form-control">
                                              @if ($errors->has('password'))
                                                  <span class="help-block">
                                                     <strong>{{ $errors->first('password') }}</strong>
@@ -179,7 +179,7 @@
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-8">
-                                             <input type="password" placeholder="Password confirmation" name="password_confirmation" id="confirm" class="form-control">
+                                             <input type="password" placeholder="{{trans('profile.confirmPass')}}" name="password_confirmation" id="confirm" class="form-control">
                                              @if ($errors->has('password'))
                                                  <span class="help-block">
                                                     <strong>{{ $errors->first('password_confirmation') }}</strong>
