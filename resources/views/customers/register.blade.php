@@ -16,7 +16,7 @@
                 </label>
 
                 <div class="col-md-8">
-                    <input type="text" placeholder="Compnay name" name="company" id="company" value="{{ old('company') }}" class="form-control">
+                    <input type="text" placeholder="Company name" name="company" id="company" value="{{ old('company') }}" class="form-control">
                 </div>
             </div>
 
@@ -84,9 +84,10 @@
                 </label>
                 <div class="col-md-8">
                     <select name="country" id="country" class="form-control">
-                        <option value="" selected=""></option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Netherlands">Netherlands</option>
+                        <option value="" selected="">Select your country</option>
+                        @foreach($countries as $country)
+                            <option value="{!! $country->country !!}">{!! $country->country !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

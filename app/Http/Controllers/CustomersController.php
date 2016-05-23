@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Countries;
 use App\Customer;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,9 @@ class CustomersController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function register()
-    { 
-        return view('customers/register');
+    {
+        $data['countries'] = Countries::all();
+        return view('customers/register', $data);
     }
 
     /**
