@@ -1,6 +1,7 @@
 .nav-tabs {
-  margin-bottom: 1px;
   border-bottom: 1 solid #ddd;
+  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 
 .nav.nav-pills {
@@ -10,8 +11,8 @@
 
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
+  border-width: 0;
   display: none;
-  border-width: 0 0 0;
 }
 
 .tab-content > .active,
@@ -20,12 +21,8 @@
 }
 
 .tab-pane {
-  padding: 5px;
   min-height: 300px;
-}
-
-.nav-tabs {
-  margin-bottom: 0;
+  padding: 5px;
 }
 
 
