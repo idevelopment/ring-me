@@ -31,6 +31,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/callbacks', 'CallbackController@index')->name('callbacks.index');
 Route::get('/callbacks/register', 'CallbackController@create')->name('callbacks.register');
 Route::get('/callbacks/display/{id}', 'CallbackController@edit')->name('callbacks.display');
+Route::get('/callbacks/delete/{id}', 'CallbackController@destroy')->name('callbacks.destroy');
 Route::post('/callbacks', 'CallbackController@store')->name('callbacks.store');
 
 // Customers routes
@@ -45,6 +46,8 @@ Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('statu
 
 // Profile routes
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
+Route::post('/profile/update/password', 'ProfileController@updateSecurity')->name('profile.update.security');
+Route::post('/profile/update/profile', 'ProfileController@updateProfile')->name('profile.update.profile');
 
 // Staff routes
 Route::get('/staff', 'StaffController@index')->name('profile');

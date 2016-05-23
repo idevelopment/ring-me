@@ -12,7 +12,8 @@
         "chrisbjr/api-guard": "3.1.*",
         "themsaid/laravel-langman": "^1.2",
         "ericmakesstuff/laravel-server-monitor": "^1.2",
-        "spatie/laravel-backup": "^3.7"
+        "spatie/laravel-backup": "^3.7",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
