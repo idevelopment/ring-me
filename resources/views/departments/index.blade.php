@@ -18,7 +18,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Search department</div>
                     <div class="panel-body">
-                        <form action="" method="get" class="form-horizontal">
+                        <form action="{!! route('departments.search') !!}" method="post" class="form-horizontal">
+                            {!! csrf_field() !!}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -34,7 +35,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">&nbsp;</label>
                                         <div class="col-md-8">
-                                            <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">Search</button>
+                                            <button type="submit" class="btn btn-sm btn-primary">Search</button>
                                             <button type="button" onclick="location.href='';" class="btn btn-sm btn-default">New department</button>
                                         </div>
                                     </div>

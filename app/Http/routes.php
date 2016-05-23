@@ -20,6 +20,7 @@ Route::auth();
 
 // Department routes.
 Route::resource('departments', 'DepartmentController');
+Route::post('departments/search', 'DepartmentController@search')->name('departments.search');
 
 // API token routes.
 Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');

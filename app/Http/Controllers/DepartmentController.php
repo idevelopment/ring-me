@@ -47,6 +47,19 @@ class DepartmentController extends Controller
     }
 
     /**
+     * Search for a specific department
+     *
+     * @param  Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(Request $request)
+    {
+        $term = $request->get('name');
+        $data['query'] = Departments::where('name', 'LIKE', "%$term%")->with('managers')->paginate(15);
+        return view('departments.index', $data);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  Requests\DepartmentsValidator $input
