@@ -70,7 +70,11 @@
                                         <tr>
                                             <td><code>#D{!! $data->id !!}</code></td>
                                             <td>{!! $data->name !!}</td>
-                                            <td>{!! $data->manager !!}</td>
+                                            <td>
+                                                @foreach($data->managers as $manager)
+                                                    {!! $manager->fname !!} {!! $manager->name !!}
+                                                @endforeach
+                                            </td>
                                             <td>{!! $data->created_at !!}</td>
                                             <td>{!! $data->updated_at !!}</td>
 

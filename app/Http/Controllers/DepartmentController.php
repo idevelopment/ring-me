@@ -32,7 +32,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $data['query'] = Departments::paginate(15);
+        $data['query'] = Departments::with('managers')->paginate(15);
         return view('departments.index', $data);
     }
 
