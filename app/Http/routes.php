@@ -46,6 +46,8 @@ Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('statu
 
 // Profile routes
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
+Route::post('/profile/update/password', 'ProfileController@updateSecurity')->name('profile.update.security');
+Route::post('/profile/update/profile', 'ProfileController@updateProfile')->name('profile.update.profile');
 
 // Staff routes
 Route::get('/staff', 'StaffController@index')->name('profile');

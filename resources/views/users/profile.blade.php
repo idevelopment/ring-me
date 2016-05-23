@@ -37,39 +37,39 @@
                          <div class="panel panel-default">
                              <div class="panel-heading">Profile Settings</div>
                              <div class="panel-body">
-                                 <form class="form-horizontal">
+                                 <form method="POST" action="{!! route('profile.update.profile') !!}" class="form-horizontal">
+                                     {!! csrf_field() !!}
                                      <fieldset>
                                          <div class="form-group form-sep">
                                              <label for="avatar" class="control-label col-sm-2">User avatar</label>
                                              <div class="col-sm-8">
                                                  <div class="thumbnail" style="width: 80px; height: 80px;">
                                                      <img src="{{asset('img/user-icon.png')}}"/></div>
-                                  <span class="btn btn-default btn-file">
-                                   <input type="file" name="avatar" id="avatar"/>
-                                  </span>
+                                                    <span class="btn btn-default btn-file">
+                                                        <input type="file" name="avatar" id="avatar"/>
+                                                    </span>
                                              </div>
                                          </div>
 
                                          <div class="form-group form-sep">
-                                             <label for="fname" class="control-label col-sm-2">{{trans('staff.fname')}} <span
-                                                         class="text-danger">*</span></label>
+                                             <label for="fname" class="control-label col-sm-2">
+                                                 {{trans('staff.fname')}}<span class="text-danger">*</span></label>
                                              <div class="col-sm-8">
-                                                 <input id="fname" class="form-control" value="{{ Auth::user()->fname }}" type="text">
+                                                 <input id="fname" name="fname" class="form-control" value="{{ Auth::user()->fname }}" type="text">
                                              </div>
                                          </div>
 
                                          <div class="form-group form-sep">
-                                             <label for="name" class="control-label col-sm-2">{{trans('staff.name')}} <span
-                                                         class="text-danger">*</span></label>
+                                             <label for="name" class="control-label col-sm-2">
+                                                 {{trans('staff.name')}}<span class="text-danger">*</span>
+                                             </label>
                                              <div class="col-sm-8">
-                                                 <input type="text" id="name" name="name" value="{{ Auth::user()->name }}"
-                                                        class="form-control">
+                                                 <input type="text" id="name" name="name" value="{{ Auth::user()->name }}" class="form-control">
                                              </div>
                                          </div>
 
                                          <div class="form-group form-sep">
-                                             <label for="email" class="control-label col-sm-2">{{trans('staff.email')}} <span
-                                                         class="text-danger">*</span></label>
+                                             <label for="email" class="control-label col-sm-2">{{trans('staff.email')}} <span class="text-danger">*</span></label>
                                              <div class="col-sm-8">
                                                  <input type="text" id="email" name="email" value="{{ Auth::user()->email }}"
                                                         class="form-control">
@@ -79,7 +79,7 @@
                                          <div class="form-group form-sep">
                                              <label for="bio" class="control-label col-sm-2">{{trans('staff.bio')}}</label>
                                              <div class="col-sm-8">
-                                <textarea name="bio" id="bio"
+                                <textarea name="biography" id="bio"
                                           class="form-control">{{ Auth::user()->bio  }}</textarea>
                                              </div>
                                          </div>
@@ -155,24 +155,36 @@
                                  Security
                              </div>
                              <div class="panel-body">
-                                 <form action="" method="POST" class="form-horizontal">
-                                     <div class="form-group form-sep">
+                                 <form action="{!! route('profile.update.security') !!}" method="POST" class="form-horizontal">
+                                     {!! csrf_field() !!}
+
+                                     <div class="form-group form-sep {{ $errors->has('password') ? ' has-error' : '' }}">
                                          <label for="password" class="control-label col-sm-3">
                                              {{trans('staff.password')}}
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-8">
                                              <input type="password" placeholder="New password" name="password" id="password" class="form-control">
+                                             @if ($errors->has('password'))
+                                                 <span class="help-block">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                             @endif
                                          </div>
                                      </div>
 
-                                     <div class="form-group form-sep">
+                                     <div class="form-group form-sep {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                          <label for="confirm" class="control-label col-sm-3">
                                              Confirm password
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-8">
-                                             <input type="password" placeholder="Password confirmation" name="password" id="confirm" class="form-control">
+                                             <input type="password" placeholder="Password confirmation" name="password_confirmation" id="confirm" class="form-control">
+                                             @if ($errors->has('password'))
+                                                 <span class="help-block">
+                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                </span>
+                                             @endif
                                          </div>
                                      </div>
 
