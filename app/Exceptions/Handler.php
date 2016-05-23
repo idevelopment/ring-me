@@ -22,7 +22,6 @@ class Handler extends ExceptionHandler
         ModelNotFoundException::class,
         ValidationException::class,
     ];
-
     /**
      * Report or log an exception.
      *
@@ -35,7 +34,6 @@ class Handler extends ExceptionHandler
     {
         parent::report($e);
     }
-
     /**
      * Render an exception into an HTTP response.
      *
@@ -45,17 +43,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if (config('app.debug'))
-        {
-            $whoops = new \Whoops\Run;
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-
-            return response($whoops->handleException($e),
-                $e->getStatusCode(),
-                $e->getHeaders()
-            );
-        }
-        
         return parent::render($request, $e);
     }
 }
