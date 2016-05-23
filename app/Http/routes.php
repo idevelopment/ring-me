@@ -31,6 +31,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/callbacks', 'CallbackController@index')->name('callbacks.index');
 Route::get('/callbacks/register', 'CallbackController@create')->name('callbacks.register');
 Route::get('/callbacks/display/{id}', 'CallbackController@edit')->name('callbacks.display');
+Route::get('/callbacks/delete/{id}', 'CallbackController@destroy')->name('callbacks.destroy');
 Route::post('/callbacks', 'CallbackController@store')->name('callbacks.store');
 
 // Customers routes
