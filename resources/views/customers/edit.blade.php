@@ -44,9 +44,11 @@
                                     <div class="col-md-8">
                                         <p class="form-control-static">
                                         <address>
+                                        <a href="#" id="address">
                                             {!! $customer_item['address'] !!}<br>
                                             {!! $customer_item['zipcode'] !!} {!! $customer_item['city'] !!}<br>
                                             {!! $customer_item['country'] !!}
+                                            </a>
                                         </address>
                                         </p>
                                     </div>
