@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-
-use App\Roles as Roles;
+use App\Roles;
 
 class RolesController extends Controller
 {
@@ -21,7 +20,7 @@ class RolesController extends Controller
     }
 
     /**
-     * Search for a specific role.
+     * Search for a specific role. Through a search query.
      *
      * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -48,7 +47,7 @@ class RolesController extends Controller
 
     /**
      * Store a new role in the database.
-     * 
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
