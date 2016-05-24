@@ -29,7 +29,7 @@ class RolesController extends Controller
     public function search(Request $request)
     {
         $term = $request->get('term');
-        $data['roles'] = Roles::where('name', 'LIKE', "$term");
+        $data['roles'] = Roles::where('name', 'LIKE', "$term")->get();
         return view('roles.index', $data);
     }
 
@@ -41,5 +41,20 @@ class RolesController extends Controller
     public function store()
     {
 
-    }    
+    }
+
+    
+
+    /**
+     * Destroy a role out off the database.
+     *
+     * @param  int $id The id in the database for the role.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        Roles::destroy($id);
+        session()->flash('message', 'Role deleted');
+        return redirect()->back(302);
+    }
 }
