@@ -20,7 +20,6 @@ class RolesController extends Controller
     	return view('roles.index', $data);
     }
 
-<<<<<<< HEAD
     /**
      * Search for a specific role.
      *
@@ -51,13 +50,11 @@ class RolesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-=======
     public function edit($id)
     {
     	return view('roles.edit');
     }
 
->>>>>>> master
     public function store()
     {
         return redirect(302)->back();
@@ -107,3 +104,4 @@ class RolesController extends Controller
         return redirect()->back(302);
     }
 }
+
