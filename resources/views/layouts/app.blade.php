@@ -80,10 +80,10 @@
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
-                            <li><a href="{!! route('departments.index') !!}">Departments</a></li>
-                            <li><a href="{!! url('staff') !!}">Staff</a></li>
+                            <li><a href="{!! route('departments.index') !!}">{{ Lang::get('app.departments') }}</a></li>
+                            <li><a href="{!! url('staff') !!}">{{ Lang::get('app.staff') }}</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Roles</a></li>
+                            <li><a href="{!! url('roles') !!}">{{ Lang::get('app.roles') }}</a></li>
                         </ul>
                     </li>
                 </ul>

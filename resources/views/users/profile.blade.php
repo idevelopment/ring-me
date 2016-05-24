@@ -112,7 +112,7 @@
                                              <span class="text-danger">*</span>
                                          </label>
                                          <div class="col-sm-3">
-                                             <input type="text" placeholder="{{trans('profile.serviceName')}}" id="email" name="service" class="form-control">
+                                             <input type="text" placeholder="{{trans('profile.serviceName   ')}}" id="email" name="service" class="form-control">
                                          </div>
                                      </div>
                                      <div class="form-group">
