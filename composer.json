@@ -13,7 +13,9 @@
         "themsaid/laravel-langman": "^1.2",
         "ericmakesstuff/laravel-server-monitor": "^1.2",
         "spatie/laravel-backup": "^3.7",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "fenos/notifynder": "3.*",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
