@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Silber\Bouncer\Database\Constraints\Roles;
+
+use App\Roles as Roles;
 
 class RolesController extends Controller
 {
