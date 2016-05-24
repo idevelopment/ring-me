@@ -62,3 +62,7 @@ Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles
 
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');
+
+// Roles routes
+Route::get('/roles', 'RolesController@index')->name('roles');
+Route::post('/roles', 'RolesController@store')->name('roles.store');
