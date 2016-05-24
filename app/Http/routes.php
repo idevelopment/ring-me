@@ -66,7 +66,11 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
+<<<<<<< HEAD
 Route::post('/roles/create', 'RolesController@store')->name('roles.store');
+=======
+Route::post('/roles', 'RolesController@store')->name('roles.store');
+>>>>>>> master
 
 Route::get('/roles/edit/{id}', 'RolesController@edit')->name('roles.edit');
 Route::post('/roles/edit/{id}', 'RolesController@update')->name('roles.update');

@@ -11,13 +11,9 @@ return [
     |
     */
 
-    'search'    => 'Search role',
-    'name'    => 'Name',
-    'created' => 'Date created',
-    'updated'       => 'Last updated',
-
-    'new'    => 'Create role',
-    'zipcode'    => 'Postalcode',
-    'city'       => 'City',
-    'country'    => 'Country',
+    'search'   => 'Search role',
+    'name'     => 'Name',
+    'created'  => 'Date created',
+    'updated'  => 'Last updated',
+    'new'      => 'Create role',
 ];

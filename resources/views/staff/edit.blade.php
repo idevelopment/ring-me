@@ -2,8 +2,8 @@
 @section('content')
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/staff') }}">Staff</a></li>
+            <li><a href="{!!url('/')!!}">{{ Lang::get('app.home') }}</a></li>
+            <li><a href="{!!url('/roles')!!}">{{ Lang::get('app.roles') }}</a></li>
             <li class="active">Edit</li>
         </ul>
 
