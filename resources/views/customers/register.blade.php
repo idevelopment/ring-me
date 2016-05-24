@@ -16,7 +16,7 @@
                 </label>
 
                 <div class="col-md-8">
-                    <input type="text" name="company" id="company" value="{{ old('company') }}" class="form-control">
+                    <input type="text" placeholder="Company name" name="company" id="company" value="{{ old('company') }}" class="form-control">
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                 <label for="vat" class="col-md-3 control-label">{{trans('customers.vat')}} <span
                             class="text-danger">*</span></label>
                 <div class="col-md-8">
-                    <input type="text" name="vat" id="vat" value="{!! old('vat') !!}" class="form-control">
+                    <input type="text" name="vat" placeholder="VAT number" id="vat" value="{!! old('vat') !!}" class="form-control">
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control">
+                    <input type="text" name="name" placeholder="Lastname" id="name" value="{{ old('name') }}" class="form-control">
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="fname" id="firstname" value="{{ old('fname')}}" class="form-control">
+                    <input type="text" name="fname" placeholder="Firstname" id="firstname" value="{{ old('fname')}}" class="form-control">
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                     {{trans('customers.address')}} <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="address" id="address" value="{{ old('address')  }}" class="form-control">
+                    <input type="text" name="address" placeholder="Address" id="address" value="{{ old('address')  }}" class="form-control">
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="zipcode" id="zipcode" value="{{ old('zipcode') }}" class="form-control">
+                    <input type="text" name="zipcode" placeholder="Zipcode" id="zipcode" value="{{ old('zipcode') }}" class="form-control">
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="city" id="city" value="{{ old('city') }}" lass="form-control">
+                    <input type="text" name="city" id="city" value="{{ old('city') }}" placeholder="City" class="form-control">
                 </div>
             </div>
 
@@ -84,9 +84,10 @@
                 </label>
                 <div class="col-md-8">
                     <select name="country" id="country" class="form-control">
-                        <option value="" selected=""></option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Netherlands">Netherlands</option>
+                        <option value="" selected="">Select your country</option>
+                        @foreach($countries as $country)
+                            <option value="{!! $country->country !!}">{!! $country->country !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -97,7 +98,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control">
+                    <input type="text" name="email" placeholder="Email" id="email" value="{{ old('email') }}" class="form-control">
                 </div>
             </div>
 
@@ -107,7 +108,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="phone" id="phone" value="{{ old('phone')  }}" class="form-control">
+                    <input type="text" name="phone" id="phone" placeholder="Phone" value="{{ old('phone')  }}" class="form-control">
                 </div>
             </div>
 
@@ -116,7 +117,7 @@
                     {{trans('customers.mobile')}}
                 </label>
                 <div class="col-md-8">
-                    <input type="text" name="mobile" id="mobile" value="{{ old('mobile') }}" class="form-control">
+                    <input type="text" name="mobile" id="mobile" placeholder="Mobile" value="{{ old('mobile') }}" class="form-control">
                 </div>
             </div>
             <div class="form-group">

@@ -112,7 +112,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">My Employees</div>
                     <div class="panel-body">
-                     <ul class="user_list">
+                     <ul class="user-list">
                      <li>
                       <span class="badge bg-green pull-right">online</span>
                       <a href="#" class="sl_name">John Doe</a><br>

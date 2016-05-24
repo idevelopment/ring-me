@@ -57,7 +57,7 @@
                                         <label class="col-md-3 control-label">&nbsp;</label>
                                         <div class="col-md-8">
                                             <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">Search</button>
-                                            <button type="button" onclick="location.href='';" class="btn btn-sm btn-default">New employee</button>
+                                            <button type="button" onclick="location.href='{!! route('staff.create') !!}';" class="btn btn-sm btn-default">New employee</button>
                                         </div>
                                     </div>
                                 </div>

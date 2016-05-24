@@ -32,7 +32,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $data['query'] = Departments::paginate(15);
+        $data['query'] = Departments::with('managers')->paginate(15);
         return view('departments.index', $data);
     }
 
@@ -44,6 +44,19 @@ class DepartmentController extends Controller
     public function create()
     {
         return view('departments.insert');
+    }
+
+    /**
+     * Search for a specific department
+     *
+     * @param  Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(Request $request)
+    {
+        $term = $request->get('name');
+        $data['query'] = Departments::where('name', 'LIKE', "%$term%")->with('managers')->paginate(15);
+        return view('departments.index', $data);
     }
 
     /**

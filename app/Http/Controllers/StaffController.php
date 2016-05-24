@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Departments;
 use App\User;
 use App\Roles;
 
@@ -35,7 +36,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('staff.create');
+        $data['departments'] = Departments::all();
+        return view('staff.create', $data);
     }
 
     /**
@@ -43,11 +45,15 @@ class StaffController extends Controller
      *
      * @TODO:  Needs phpunit test.
      * @TODO:  Build up the controller logic.
-     * @TODO:  Build up the request validator.
+     * @param  Requests\NewStaffValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(Requests\NewStaffValidator $input)
     {
+        $newUser = User::create($input->except(['_token', 'department']))->id;
+        User::find($newUser)->departments()->attach($input->department);
+
+        session()->flash('message', 'New staff member created');
         return redirect()->back(302);
     }
 
@@ -56,7 +62,6 @@ class StaffController extends Controller
      *
      * @TODO:  Needs phpunit test
      * @TODO:  Build up the controller.
-     * @TODO:  BUild up the request validator.
      * @param  int $id The staff member id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */

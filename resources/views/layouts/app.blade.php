@@ -105,7 +105,7 @@
 
                     <li class="dropdown dropdown-notifications">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i data-count="1" class="fa fa-bell notification-icon"></i>
+                            <i data-count="{!! Auth::user()->countNotificationsNotRead() !!}" class="fa fa-bell notification-icon"></i>
                         </a>
 
                         <div class="dropdown-container dropdown-menu-right">
@@ -114,7 +114,7 @@
                                 <div class="dropdown-toolbar-actions">
                                     <a href="#">{{ trans('notifications.markAll') }}</a>
                                 </div>
-                                <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => '1']) }}</h3>
+                                <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => Auth::user()->countNotificationsNotRead()]) }}</h3>
                             </div>{{-- /dropdown-toolbar --}}
 
                             <ul class="dropdown-menu">
