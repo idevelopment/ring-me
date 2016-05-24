@@ -15,6 +15,11 @@ class RolesController extends Controller
     	return view('roles.index', $data);
     }
 
+    public function edit($id)
+    {
+    	return view('roles.edit');
+    }
+
     public function store()
     {
     	return view('roles.index');

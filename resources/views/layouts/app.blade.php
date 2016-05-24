@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
     <link rel="stylesheet" href="{!! asset('js/icheck-1/skins/all.css') !!}">
 
+    <link rel="stylesheet" href="{!! asset('css/pickList.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
             integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
@@ -196,6 +198,7 @@
 <script src="{!! asset('js/vue.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-formhelpers.js') !!}"></script>
 <script src="{!! asset('js/icheck-1/icheck.js') !!}"></script>
+<script src="{!! asset('js/pickList.js') !!}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script>
     $(document).ready(function () {
