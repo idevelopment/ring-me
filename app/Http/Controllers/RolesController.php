@@ -45,16 +45,12 @@ class RolesController extends Controller
         return view('roles.specific', $data);
     }
 
+
     /**
-     * Store the new role in the database.
-     *
+     * Store a new role in the database.
+     * 
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function edit($id)
-    {
-    	return view('roles.edit');
-    }
-
     public function store()
     {
         return redirect(302)->back();
