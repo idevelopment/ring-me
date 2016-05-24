@@ -41,7 +41,7 @@ class RolesController extends Controller
     public function show($id)
     {
         $data['query'] = Roles::find($id);
-        return view('', $data);
+        return view('roles.specific', $data);
     }
 
     /**
@@ -61,7 +61,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('');
+        return view('roles.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class RolesController extends Controller
     public function edit($id)
     {
         $data['query'] = Roles::find($id);
-        return view('', $data)
+        return view('roles.edit', $data);
     }
 
     /**

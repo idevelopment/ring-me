@@ -66,4 +66,4 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
-Route::post('/roles', 'RolesController@store')->name('roles.store');
+Route::post('/roles/create', 'RolesController@store')->name('roles.store');
