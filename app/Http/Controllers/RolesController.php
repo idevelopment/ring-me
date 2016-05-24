@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-
-use App\Roles;
+use Silber\Bouncer\Database\Constraints\Roles;
 
 class RolesController extends Controller
 {
@@ -34,16 +33,57 @@ class RolesController extends Controller
     }
 
     /**
-     * Create a role in the database.
+     * Get a specific role. and display it.
      *
+     * @param  int $id the id off the role in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $data['query'] = Roles::find($id);
+        return view('', $data);
+    }
+
+    /**
+     * Store the new role in the database.
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
     {
-
+        return redirect(302)->back();
     }
 
-    
+    /**
+     * Display the form for creating a new role.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('');
+    }
+
+    /**
+     * Get the edit form for the selected role.
+     * @param  int $id The role id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $data['query'] = Roles::find($id);
+        return view('', $data)
+    }
+
+    /**
+     * Update a role in the database.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update()
+    {
+        return redirect()->back(302);
+    }
 
     /**
      * Destroy a role out off the database.
