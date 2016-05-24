@@ -21,6 +21,19 @@ class RolesController extends Controller
     }
 
     /**
+     * Search for a specific role.
+     *
+     * @param  Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(Request $request)
+    {
+        $term = $request->get('term');
+        $data['roles'] = Roles::where('name', 'LIKE', "$term");
+        return view('roles.index', $data);
+    }
+
+    /**
      * Create a role in the database.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
