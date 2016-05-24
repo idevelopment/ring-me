@@ -20,6 +20,7 @@ Route::auth();
 
 // Department routes.
 Route::resource('departments', 'DepartmentController');
+Route::post('departments/search', 'DepartmentController@search')->name('departments.search'); 
 
 // API token routes.
 Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');
@@ -65,7 +66,7 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
-Route::post('/roles', 'RolesController@store')->name('roles.store');
+Route::post('/roles/create', 'RolesController@store')->name('roles.store');
 
 Route::get('/roles/edit/{id}', 'RolesController@edit')->name('roles.edit');
 Route::post('/roles/edit/{id}', 'RolesController@update')->name('roles.update');
