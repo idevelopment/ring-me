@@ -28,6 +28,5 @@ class SettingsController extends Controller
     {
     	return view('settings.index');
     }
-
-
+    
 }
