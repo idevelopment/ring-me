@@ -20,6 +20,8 @@ class Customer extends Model
     ];
 
     /**
+     * Customer -> callbacks relation.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function callbacks()
