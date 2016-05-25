@@ -70,3 +70,6 @@ Route::get('/roles/create', 'RolesController@create')->name('roles.create');
 Route::post('/roles/create', 'RolesController@store')->name('roles.store');
 Route::get('/roles/edit/{id}', 'RolesController@edit')->name('roles.edit');
 Route::post('/roles/edit/{id}', 'RolesController@update')->name('roles.update');
+Route::get('/roles/delete/{id}', 'RolesController@destroy')->name('roles.destroy');
+Route::post('/roles/search', 'RolesController@search')->name('roles.search');
+Route::get('/roles/show/{id}', 'RolesController@show')->name('roles.show');
