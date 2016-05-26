@@ -28,13 +28,14 @@
                            </div>
                            
 
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">&nbsp;</label>
-                                        <div class="col-md-6">
-                                            <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ Lang::get('app.search') }}</button>
-                                            <button type="button" onclick="location.href='roles/create';" class="btn btn-sm btn-default">{{ Lang::get('roles.new') }}</button>
-                                        </div>
-                                    </div>
+                            <div class="form-group">
+                             <label class="col-md-3 control-label">&nbsp;</label>
+                              <div class="col-md-6">
+                               <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ Lang::get('app.search') }}</button>
+                               <button type="button" onclick="location.href='roles/create';" class="btn btn-sm btn-default">{{ Lang::get('roles.new') }}</button>
+                             </div>
+                            </div>
+                            
                          </form>
                         </div>
                        </div>

@@ -76,7 +76,7 @@
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
-                            <li><a href="">{{ trans('app.general') }}</a></li>
+                            <li><a href="{!! route('settings') !!}">{{ trans('app.general') }}</a></li>
                             <li><a href="#">Email</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">

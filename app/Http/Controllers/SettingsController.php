@@ -20,7 +20,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Get the settings index page.
+     * Get the general settings page.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

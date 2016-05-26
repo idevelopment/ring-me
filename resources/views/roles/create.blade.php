@@ -35,7 +35,8 @@
                             <div class="col-md-7">
                              <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ Lang::get('app.save') }}</button>
                             </div>
-                                    </div>
+                          </div>
+                          
                          </form>
                         </div>
                        </div>
