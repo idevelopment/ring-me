@@ -20,6 +20,7 @@
                     <div class="panel-heading">{{ Lang::get('app.general') }}</div>
                     <div class="panel-body">
                      <form action="" method="post" class="form-horizontal">
+                     {!! csrf_field() !!}
                       <div class="form-group form-sep">
                        <label for="sitename" class="col-md-3 control-label">Site name</label>
                         <div class="col-md-6">
@@ -51,8 +52,7 @@
                         <div class="form-group">
                          <label class="col-md-3 control-label">&nbsp;</label>
                           <div class="col-md-7">
-                           <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ Lang::get('app.save') }}</button>
-                           <button type="reset" name="reset" id="reset" class="btn btn-sm btn-danger">{{ Lang::get('app.cancel') }}</button>                           
+                           <button type="submit" name="search" id="search" class="btn btn-sm btn-primary">{{ Lang::get('app.save') }}</button>                        
                           </div>
                          </div>
 
