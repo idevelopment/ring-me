@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 // Authencation routes.
 Route::auth();
@@ -64,11 +62,15 @@ Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');
 
+Route::get('/settings/backups', 'BackupController@index')->name('settings.backup');
+Route::put('/settings/backups', 'BackupController@index')->name('settings.saveBackup');
+
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
-
-Route::get('/roles/create', 'RolesController@create')->name('roles.store');
+Route::get('/roles/create', 'RolesController@create')->name('roles.create');
 Route::post('/roles/create', 'RolesController@store')->name('roles.store');
-
 Route::get('/roles/edit/{id}', 'RolesController@edit')->name('roles.edit');
 Route::post('/roles/edit/{id}', 'RolesController@update')->name('roles.update');
+Route::get('/roles/delete/{id}', 'RolesController@destroy')->name('roles.destroy');
+Route::post('/roles/search', 'RolesController@search')->name('roles.search');
+Route::get('/roles/show/{id}', 'RolesController@show')->name('roles.show');

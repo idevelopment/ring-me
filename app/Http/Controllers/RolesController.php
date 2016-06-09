@@ -48,11 +48,13 @@ class RolesController extends Controller
     /**
      * Store a new role in the database.
      *
+     * @param  Request $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(Request $input)
     {
-        return redirect(302)->back();
+        Roles::create($input->all());
+        return redirect()->back(302);
     }
 
     /**
@@ -79,10 +81,13 @@ class RolesController extends Controller
     /**
      * Update a role in the database.
      *
+     * @param  Request $input
+     * @param  int $id the role in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update()
+    public function update(Request $input, $id)
     {
+        Roles::find($id)->update($input->all());
         return redirect()->back(302);
     }
 

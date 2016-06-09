@@ -26,6 +26,7 @@ class ApiKeyController extends Controller
     /**
      * Create a new api token.
      *
+     * TODO: needs to be tested with PHPUNIT.
      * TODO: implement session to the view.
      * TODO: Build api key limit that the user can have max. 5 keys.
      * @param Request $request
@@ -48,19 +49,30 @@ class ApiKeyController extends Controller
         return redirect()->back(302);
     }
 
+    /**
+     * Revoke a key from the user.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function revokeKey()
     {
-
+        return redirect()->back(302);
     }
 
     /**
      * Get the apikey
      *
-     * @param int $id the database id off the api key.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function getKey($id)
+    public function getKey()
     {
+        // TODO: Needs phpunit testing.
+        // TODO: Mailing logic needs to be implemented.
+        // TODO: Set flash session to the view.
+
+        $id = auth()->user()->id;
+        $this->apiKey->find($id);
+
         return redirect()->back(302);
     }
 
@@ -72,6 +84,8 @@ class ApiKeyController extends Controller
      */
     public function deleteKey($id)
     {
+        // TODO: needs phpunit.
+        // TODO: set flash message to the view.
         $this->apiKey->destroy($id);
         session()->flash('message', 'The api key is deleted.');
 

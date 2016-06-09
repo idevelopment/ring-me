@@ -26,32 +26,27 @@
                                     </div>
                                 </div>
                                 &nbsp;
+                               @foreach($department as $department_item)
                                 <div class="form-group">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="department[]" id="administration"
-                                                   value="administration"> Administration</label>
+                                                   value="{!! $department_item['name'] !!}"> {!! $department_item['name'] !!}</label>
                                     </div>
                                 </div>
                                 &nbsp;
-
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="department[]" id="technical" value="technical">
-                                            Technical</label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </form>
                         </div>
 
                         <div class="panel-body">
                             <section class="team">
+                            @foreach($agents as $agent_item)
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
                                     <div class="img-box">
                                         <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
                                     </div>
-                                    <h1>Marrie Doi</h1>
+                                    <h1>{!! $agent_item['fname'] !!}</h1>
                                     <h2>Technical</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     <p class="text-center">
@@ -59,45 +54,8 @@
                                                 data-target="#myModal">{{ trans('app.available') }}</button>
                                     </p>
                                 </div>
+                            @endforeach
 
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                                    <div class="img-box">
-                                        <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
-                                    </div>
-                                    <h1>Christopher Di</h1>
-                                    <h2>Technical</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <p class="text-center">
-                                        <button class="btn btn-success" data-toggle="modal"
-                                                data-target="#myModal">{{ trans('app.available') }}</button>
-                                    </p>
-                                </div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                                    <div class="img-box">
-                                        <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
-                                    </div>
-                                    <h1>Heather H</h1>
-                                    <h2>Technical</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <p class="text-center">
-                                        <button class="btn btn-success" data-toggle="modal"
-                                                data-target="#myModal">{{ trans('app.available') }}</button>
-                                    </p>
-                                </div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                                    <div class="img-box">
-                                        <img src="{{ asset('img/user-icon.png') }}" width="200" height="230">
-                                    </div>
-                                    <h1>Heather H</h1>
-                                    <h2>Technical</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    <p class="text-center">
-                                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"
-                                                disabled="">{{ trans('app.unavailable') }}</button>
-                                    </p>
-                                </div>
                             </section>
 
                         </div>

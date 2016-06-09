@@ -33,6 +33,8 @@ return [
     'roles' => 'Roles',
     'staff' => 'Staff',
     'settings' => 'Settings',
+    'email'   => 'Email',
+    'backups' => 'Backups',
 
     /*
     |--------------------------------------------------------------------------

@@ -13,7 +13,7 @@ use App\Http\Requests;
  */
 class CallbackController extends Controller
 {
-	    public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('lang');

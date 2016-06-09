@@ -73,18 +73,15 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a href="{!! url('settings') !!}">{{ trans('app.general') }}</a></li>
+                            <li><a href="{!! url('settings/backups') !!}">{{ trans('app.backups') }}</a></li>
+                            <li><a href="{!! url('settings/email') !!}">{{ trans('app.email') }}</a></li>
+                             <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">
-                                <div class="label">{{ Lang::get('app.staff') }}</div>
-                            </li>
-                            <li><a href="">{{ trans('app.general') }}</a></li>
-                            <li><a href="#">Email</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="navbar-menu-item">
-                                <div class="label">{{ Lang::get('app.staff') }}</div>
+                              <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
                             <li><a href="{!! route('departments.index') !!}">{{ Lang::get('app.departments') }}</a></li>
                             <li><a href="{!! url('staff') !!}">{{ Lang::get('app.staff') }}</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="{!! url('roles') !!}">{{ Lang::get('app.roles') }}</a></li>
                         </ul>
                     </li>

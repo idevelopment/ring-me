@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Departments extends Model
 {
+    /**
+     * The mass-assign fields.
+     *
+     * @var array
+     */
     protected $fillable = ['name', 'manager'];
 
     /**
+     * Department -> managers relation.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function managers()
@@ -17,6 +24,8 @@ class Departments extends Model
     }
 
     /**
+     * Department -> users relation.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()

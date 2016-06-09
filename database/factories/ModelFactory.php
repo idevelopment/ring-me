@@ -59,5 +59,9 @@ $factory->define(App\Customer::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Roles::class, function(Faker\Generator $faker) {
+    return ['name' => 'Administrator'];
+});
+
 
 
