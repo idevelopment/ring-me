@@ -39,7 +39,11 @@
                                     <div class="form-group">
                                         <label for="department" class="col-md-3 control-label">Department</label>
                                         <div class="col-md-8">
-                                            <select id="department" name="department" class="form-control"></select>
+                                            <select id="department" name="department" class="form-control">
+                                                @foreach($departments as $department_item)
+                                                 <option value="{!! $department_item['name'] !!}">{!! $department_item['name'] !!}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div> 
 
