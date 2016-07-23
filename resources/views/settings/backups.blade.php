@@ -13,6 +13,19 @@
         </div>
         {{-- END pagination --}}
 
+        {{-- Flash session -> Save status --}}
+        <div class="row">
+            <div class="col-md-12">
+                @if (Session::has('message'))
+                    <div class="alert {{ Session::get('class') }} alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+        {{-- END Flash session -> Save status --}}
+
 
 {{-- general settings panel --}}
         <div class="row">
