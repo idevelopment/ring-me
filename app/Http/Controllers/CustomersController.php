@@ -38,6 +38,12 @@ class CustomersController extends Controller
      */
     public function register()
     {
+        $user = auth()->user();
+
+        if (! $user->is('Guest') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $data['countries'] = Countries::all();
         return view('customers/register', $data);
     }
@@ -50,8 +56,13 @@ class CustomersController extends Controller
      */
     public function store(Requests\CustomerValidator $input)
     {
-        Customer::create($input->except('_token'));
+        $user = auth()->user();
 
+        if (! $user->is('Guest') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
+        Customer::create($input->except('_token'));
         session()->flash('message', 'Customer created');
         return redirect()->to('/customers');
     }
@@ -64,6 +75,12 @@ class CustomersController extends Controller
      */
     public function edit($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Customer') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $data['customer'] = Customer::where('id', $id)->get();
         return view('customers/edit', $data);
     }

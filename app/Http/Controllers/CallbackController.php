@@ -13,6 +13,10 @@ use App\Http\Requests;
  */
 class CallbackController extends Controller
 {
+    // TODO: Create update method.
+    // TODO: Add logic for the callback destory method.
+    // TODO: Add logic for the store method.
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -38,6 +42,12 @@ class CallbackController extends Controller
      */
     public function create()
     {
+        $user = auth()->user();
+
+        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         return view('callbacks.create');
     }
 
@@ -48,6 +58,12 @@ class CallbackController extends Controller
      */
     public function store()
     {
+        $user = auth()->user();
+
+        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         return redirect()->back(302);
     }
 
@@ -59,6 +75,12 @@ class CallbackController extends Controller
      */
     public function edit($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
     	return view('callbacks/details');
     }
 
@@ -70,6 +92,12 @@ class CallbackController extends Controller
      */
     public function destroy($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         return redirect()->back(302);
     }
 
