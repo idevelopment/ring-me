@@ -37,7 +37,7 @@
 <div class="form-group form-sep">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">Store all backups</label>
   <div class="col-sm-6">
-   <input type="number" name="keepAllBackupsForDays" value="" id="keepAllBackupsForDays" class="form-control">
+   <input type="number" name="keepAllBackupsForDays" value="{{ $StoreAllBackups }}" id="keepAllBackupsForDays" class="form-control">
     <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
   </div>
  </div>
@@ -45,7 +45,7 @@
  <div class="form-group form-sep">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">keep Daily Backups</label>
   <div class="col-sm-6">
-   <input type="number" name="keepAllBackupsForDays" value="" id="keepAllBackupsForDays" class="form-control">
+   <input type="number" name="keepAllBackupsForDays" value="{{ $KeepDailyBackups }}" id="keepAllBackupsForDays" class="form-control">
     <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
   </div>
  </div>
@@ -53,7 +53,7 @@
  <div class="form-group form-sep">
  <label for="keepWeeklyBackupsForWeeks" class="col-sm-2 control-label">{{ trans('settings.backup_keepWeeklyBackupsForWeeks') }}</label>
   <div class="col-sm-6">
-   <input type="number" name="keepWeeklyBackupsForWeeks" value="" id="keepWeeklyBackupsForWeeks" class="form-control">
+   <input type="number" name="keepWeeklyBackupsForWeeks" value="{{ $WeeklyBackups }}" id="keepWeeklyBackupsForWeeks" class="form-control">
     <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_keepWeeklyBackupsForWeeksHelper') }}</span>
   </div>
  </div>
@@ -61,7 +61,7 @@
   <div class="form-group form-sep">
  <label for="keepMonthlyBackupsForWeeks" class="col-sm-2 control-label">{{ trans('settings.backup_keepMonthlyBackupsForWeeks') }}</label>
   <div class="col-sm-6">
-   <input type="number" name="keepMonthlyBackupsForWeeks" value="" id="keepMonthlyBackupsForWeeks" class="form-control">
+   <input type="number" name="keepMonthlyBackupsForWeeks" value="{{ $MonthlyBackups }}" id="keepMonthlyBackupsForWeeks" class="form-control">
     <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
   </div>
  </div>
@@ -69,7 +69,7 @@
   <div class="form-group">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">keep Yearly Backups</label>
   <div class="col-sm-6">
-   <input type="number" name="keepAllBackupsForDays" value="" id="keepAllBackupsForDays" class="form-control">
+   <input type="number" name="keepAllBackupsForDays" value="{{ $KeepYearlyBackups  }}" id="keepAllBackupsForDays" class="form-control">
     <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
   </div>
  </div>
