@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
             Bouncer::allow('available')->to('');
             Bouncer::allow('unavailable')->to('');
 
+            Bouncer::allow('Guest')->to('');
             Bouncer::allow('Agent')->to('');
             Bouncer::allow('Administrator')->to('');
             Bouncer::allow('Manager')->to('');
