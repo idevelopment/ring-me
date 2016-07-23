@@ -32,4 +32,15 @@ class BackupController extends Controller
 
     	return view('settings.backups', $data);
     }
+
+    /**
+     * Store the backup config.
+     *
+     * @url   POST: /settings/backups
+     * @param Requests\BackupSettingValidator $input
+     */
+    public function storeBackup(Requests\BackupSettingValidator $input)
+    {
+
+    }
 }

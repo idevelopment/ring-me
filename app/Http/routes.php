@@ -63,7 +63,7 @@ Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles
 Route::get('/settings', 'SettingsController@index')->name('settings');
 
 Route::get('/settings/backups', 'BackupController@index')->name('settings.backup');
-Route::put('/settings/backups', 'BackupController@index')->name('settings.saveBackup');
+Route::post('/settings/backups', 'BackupController@storeBackup')->name('settings.saveBackup');
 
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');

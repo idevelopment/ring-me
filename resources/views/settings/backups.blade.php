@@ -23,7 +23,10 @@
                      <form action="" method="post" class="form-horizontal">
                      {!! csrf_field() !!}
 
-<form action="" method="post" class="form-horizontal">
+<form action="{{ route('settings.saveBackup') }}" method="post" class="form-horizontal">
+    {{-- CSRF field --}}
+    {{ csrf_field() }}
+
    <div class="form-group form-sep">
 <label for="database" class="col-sm-2 control-label">{{ Lang::get('settings.backup_db') }}</label>
 <div class="col-sm-6">
@@ -34,43 +37,82 @@
  </div>
  </div>
 
-<div class="form-group form-sep">
+<div class="form-group form-sep {{ $errors->has('keepAllBackupsForDaysAll') ? ' has-error' : '' }}">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">Store all backups</label>
   <div class="col-sm-6">
-   <input type="number" name="keepAllBackupsForDays" value="{{ $StoreAllBackups }}" id="keepAllBackupsForDays" class="form-control">
-    <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+   <input type="number" name="keepAllBackupsForDaysAll" value="{{ $StoreAllBackups }}" id="keepAllBackupsForDays" class="form-control">
+
+      @if ($errors->has('keepAllBackupsForDaysAll'))
+          <span class="help-block">
+              <strong>{{ $errors->first('keepAllBackupsForDaysAll') }}</strong>
+          </span>
+      @else
+          <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+      @endif
   </div>
  </div>
 
- <div class="form-group form-sep">
+ <div class="form-group form-sep {{ $errors->has('keepAllBackupsForDays') ? ' has-error' : '' }}">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">keep Daily Backups</label>
   <div class="col-sm-6">
    <input type="number" name="keepAllBackupsForDays" value="{{ $KeepDailyBackups }}" id="keepAllBackupsForDays" class="form-control">
-    <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+
+      @if ($errors->has('keepAllBackupsForDays'))
+          <span class="help-block">
+              <strong>{{ $errors->first('keepAllBackupsForDays') }}</strong>
+          </span>
+      @else
+          <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+      @endif
+
   </div>
  </div>
 
- <div class="form-group form-sep">
+ <div class="form-group form-sep {{ $errors->has('keepWeeklyBackupsForWeeks') ? ' has-error' : '' }}">
  <label for="keepWeeklyBackupsForWeeks" class="col-sm-2 control-label">{{ trans('settings.backup_keepWeeklyBackupsForWeeks') }}</label>
   <div class="col-sm-6">
    <input type="number" name="keepWeeklyBackupsForWeeks" value="{{ $WeeklyBackups }}" id="keepWeeklyBackupsForWeeks" class="form-control">
-    <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_keepWeeklyBackupsForWeeksHelper') }}</span>
+
+      @if ($errors->has('keepWeeklyBackupsForWeeks'))
+          <span class="help-block">
+              <strong>{{ $errors->first('keepWeeklyBackupsForWeeks') }}</strong>
+          </span>
+      @else
+          <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_keepWeeklyBackupsForWeeksHelper') }}</span>
+      @endif
+
   </div>
  </div>
 
-  <div class="form-group form-sep">
+  <div class="form-group form-sep {{ $errors->has('keepMonthlyBackupsForWeeks') ? ' has-error' : '' }}">
  <label for="keepMonthlyBackupsForWeeks" class="col-sm-2 control-label">{{ trans('settings.backup_keepMonthlyBackupsForWeeks') }}</label>
   <div class="col-sm-6">
    <input type="number" name="keepMonthlyBackupsForWeeks" value="{{ $MonthlyBackups }}" id="keepMonthlyBackupsForWeeks" class="form-control">
-    <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+
+      @if ($errors->has('keepMonthlyBackupsForWeeks'))
+          <span class="help-block">
+              <strong>{{ $errors->first('keepMonthlyBackupsForWeeks') }}</strong>
+          </span>
+      @else
+          <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+      @endif
+
   </div>
  </div>
 
-  <div class="form-group">
+  <div class="form-group {{ $errors->has('keepAllBackupsYearly') ? ' has-error' : '' }}">
  <label for="keepAllBackupsForDays" class="col-sm-2 control-label">keep Yearly Backups</label>
   <div class="col-sm-6">
-   <input type="number" name="keepAllBackupsForDays" value="{{ $KeepYearlyBackups  }}" id="keepAllBackupsForDays" class="form-control">
-    <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+   <input type="number" name="keepAllBackupsYearly" value="{{ $KeepYearlyBackups }}" id="keepAllBackupsForDays" class="form-control">
+
+      @if ($errors->has('keepAllBackupsYearly'))
+          <span class="help-block">
+              <strong>{{ $errors->first('keepAllBackupsYearly') }}</strong>
+          </span>
+      @else
+          <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_store_all_helper') }}</span>
+      @endif
+
   </div>
  </div>
 
