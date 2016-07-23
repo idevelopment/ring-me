@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/idevelopment/RingMe.png?label=ready&title=Ready)](https://waffle.io/idevelopment/RingMe)
 # Ring Me
 [![Dependency Status](https://david-dm.org/idevelopment/RingMe.svg)](https://david-dm.org/idevelopment/RingMe)		
 [![Build Status](https://travis-ci.org/idevelopment/RingMe.svg?branch=master)](https://travis-ci.org/idevelopment/RingMe)		

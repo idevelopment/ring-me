@@ -15,7 +15,8 @@
         "spatie/laravel-backup": "^3.7",
         "intervention/image": "^2.3",
         "fenos/notifynder": "3.*",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "larapack/config-writer": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

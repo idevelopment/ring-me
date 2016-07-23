@@ -70,27 +70,27 @@ return [
             /*
              * The amount of days that all daily backups must be kept.
              */
-            'keepAllBackupsForDays' => 7,
+            'keepAllBackupsForDays' => '1',
 
             /*
              * The amount of days that all daily backups must be kept.
              */
-            'keepDailyBackupsForDays' => 16,
+            'keepDailyBackupsForDays' => '1',
 
             /*
              * The amount of weeks of which one weekly backup must be kept.
              */
-            'keepWeeklyBackupsForWeeks' => 8,
+            'keepWeeklyBackupsForWeeks' => '1',
 
             /*
              * The amount of months of which one monthly backup must be kept.
              */
-            'keepMonthlyBackupsForMonths' => 4,
+            'keepMonthlyBackupsForMonths' => '1',
 
             /*
              * The amount of years of which one yearly backup must be kept
              */
-            'keepYearlyBackupsForYears' => 2,
+            'keepYearlyBackupsForYears' => '1',
 
             /*
              * After cleaning up the backups remove the oldest backup until
@@ -116,7 +116,7 @@ return [
 
         /*
         [
-            'name' => 'name of the second app',
+            'name' => 'http://localhost',
             'disks' => ['local', 's3'],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
             'storageUsedMayNotBeHigherThanMegabytes' => 5000,
