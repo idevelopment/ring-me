@@ -1,0 +1,6 @@
+linters:
+  SelectorDepth:
+    enabled: false
+
+  ImportantRule:
+    enabled: false

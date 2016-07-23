@@ -89,6 +89,7 @@ class StaffController extends Controller
      */
     public function index()
 	{
+        $data["departments"] = Departments::all();
 		$data['users'] = User::paginate(15);
     	return view('users/index', $data);
     }
