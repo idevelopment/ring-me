@@ -1,5 +1,6 @@
+// scss-lint:disable DuplicateProperty
 .nav-tabs {
-  border-bottom: 1 solid #ddd;
+  border-bottom: 1px solid $tabs-gray;
   margin-bottom: 1px;
   margin-bottom: 0;
 }
