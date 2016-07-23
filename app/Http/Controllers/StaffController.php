@@ -36,6 +36,12 @@ class StaffController extends Controller
      */
     public function create()
     {
+        $user = auth()->user();
+
+        if (! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $data['departments'] = Departments::all();
         return view('staff.create', $data);
     }
@@ -44,12 +50,17 @@ class StaffController extends Controller
      * Store the new member in the database
      *
      * @TODO:  Needs phpunit test.
-     * @TODO:  Build up the controller logic.
      * @param  Requests\NewStaffValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Requests\NewStaffValidator $input)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $newUser = User::create($input->except(['_token', 'department']))->id;
         User::find($newUser)->departments()->attach($input->department);
 
@@ -67,6 +78,12 @@ class StaffController extends Controller
      */
     public function update($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         return redirect()->back(302);
     }
 
@@ -142,6 +159,12 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $user = User::find($id);
         $user->roles()->sync([]);
 

@@ -1,0 +1,7 @@
+# Changelog 
+
+## V1.0.0
+
+[IDEV RingMe-25] Add changelog file in the project repository.
+[IDEV RingMe-72] Fix all scss-lint errors and warnings.
+[IDEV RingMe-71] Permission schema implementation.
