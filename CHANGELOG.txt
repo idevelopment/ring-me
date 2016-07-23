@@ -5,3 +5,4 @@
 [IDEV RingMe-25] Add changelog file in the project repository.
 [IDEV RingMe-72] Fix all scss-lint errors and warnings.
 [IDEV RingMe-71] Permission schema implementation.
+[IDEV RingMe-65] Add backup settings page and save method.
