@@ -37,10 +37,28 @@ class BackupController extends Controller
      * Store the backup config.
      *
      * @url   POST: /settings/backups
-     * @param Requests\BackupSettingValidator $input
+     * @param  Requests\BackupSettingValidator $input
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function storeBackup(Requests\BackupSettingValidator $input)
     {
+        $config = new \Larapack\ConfigWriter\Repository('laravel-backup');
+        $config->set('cleanup.defaultStrategy.keepAllBackupsForDays',       $input->keepAllBackupsForDaysAll);
+        $config->set('cleanup.defaultStrategy.keepDailyBackupsForDays',     $input->keepAllBackupsForDays);
+        $config->set('cleanup.defaultStrategy.keepWeeklyBackupsForWeeks',   $input->keepWeeklyBackupsForWeeks);
+        $config->set('cleanup.defaultStrategy.keepMonthlyBackupsForMonths', $input->keepMonthlyBackupsForWeeks);
+        $config->set('cleanup.defaultStrategy.keepYearlyBackupsForYears',   $input->keepAllBackupsYearly);
+        $config->save();
 
+        if ($config) {
+            sleep(3);
+            session()->flash('message', 'The backup settings has been updated.');
+            session()->flash('class', 'alert-success');
+        } else {
+            session()->flash('message', 'The backup settings could not be updated.');
+            session()->flash('class', 'alert-danger');
+        }
+
+        return redirect()->back();
     }
 }
