@@ -72,11 +72,11 @@ class StaffController extends Controller
      * Update the staff member.
      *
      * @TODO:  Needs phpunit test
-     * @TODO:  Build up the controller.
+     * @param  Requests\NewStaffValidator $input
      * @param  int $id The staff member id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update(Requests\NewStaffValidator $input, $id)
     {
         $user = auth()->user();
 
@@ -84,6 +84,8 @@ class StaffController extends Controller
             return redirect()->back();
         }
 
+        User::find($id)-update($input->except('_token'));
+        session()->flash('message', 'Staff member has been updated');
         return redirect()->back(302);
     }
 
