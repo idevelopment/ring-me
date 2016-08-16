@@ -14,10 +14,13 @@ class userTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        $data['fname']     = 'Ringme';
+
+        $data['fname']    = 'Ringme';
         $data['name']     = 'Administrator';
         $data['email']    = 'user@ringme.eu';
         $data['password'] = bcrypt('demo123456');
-        User::create($data);
+        $user = User::create($data);
+
+        Bouncer::assign('Administrator')->to($user);
     }
 }
