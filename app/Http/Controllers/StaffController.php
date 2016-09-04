@@ -38,12 +38,12 @@ class StaffController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
+        if ($user->is('Manager') || $user->is('Administrator')) {
+            $data['departments'] = Departments::all();
+            return view('staff.create', $data);
         }
 
-        $data['departments'] = Departments::all();
-        return view('staff.create', $data);
+        return redirect()->back();
     }
 
     /**

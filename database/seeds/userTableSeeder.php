@@ -14,12 +14,11 @@ class userTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        $user = User::create(array('name' => 'Adminisrator',
-                    'fname' => 'RingMe',
-                    'email' => 'user@ringme.eu',
-                    'password' => bcrypt("demo123456"),
-                ));
-
+        $data['fname']    = 'Ringme';
+        $data['name']     = 'Administrator';
+        $data['email']    = 'user@ringme.eu';
+        $data['password'] = bcrypt('demo123456');
+        $user = User::create($data);
         Bouncer::assign('Administrator')->to($user);
     }
 }
