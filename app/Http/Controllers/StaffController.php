@@ -57,14 +57,13 @@ class StaffController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
+        if ($user->is('Manager') || $user->is('Administrator')) {
+            $newUser = User::create($input->except(['_token', 'department']))->id;
+            User::find($newUser)->departments()->attach($input->department);
+
+            session()->flash('message', 'New staff member created');
         }
 
-        $newUser = User::create($input->except(['_token', 'department']))->id;
-        User::find($newUser)->departments()->attach($input->department);
-
-        session()->flash('message', 'New staff member created');
         return redirect()->back(302);
     }
 
