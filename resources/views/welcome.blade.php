@@ -17,7 +17,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <form class="form-inline">
+                            <form action="" method="post" class="form-inline">
                                 <div class="form-group">
                                     <div class="radio">
                                         <label>
@@ -36,6 +36,9 @@
                                 </div>
                                 &nbsp;
                                 @endforeach
+                                <div class="form-group">
+                                  <button name="filter" id="filter" class="btn btn-sm btn-default">Filter</button>
+                                </div>
                             </form>
                         </div>
 

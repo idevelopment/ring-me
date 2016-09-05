@@ -22,7 +22,7 @@ class CallbackController extends Controller
         $this->middleware('auth');
         $this->middleware('lang');
     }
-    
+
     /**
      * Display all the callbacks.
      *
@@ -69,7 +69,7 @@ class CallbackController extends Controller
 
     /**
      * Show update form for a callback.
-     * 
+     *
      * @param  int $id the callback id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
