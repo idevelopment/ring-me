@@ -77,11 +77,11 @@ class CallbackController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
+        if ($user->is('Agent') || $user->is('Manager') || $user->is('Administrator')) {
+            return view('callbacks/details');
         }
 
-    	return view('callbacks/details');
+        return redirect()->back();
     }
 
     /**
