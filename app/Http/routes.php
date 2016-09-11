@@ -18,7 +18,7 @@ Route::auth();
 
 // Department routes.
 Route::resource('departments', 'DepartmentController');
-Route::post('departments/search', 'DepartmentController@search')->name('departments.search'); 
+Route::post('departments/search', 'DepartmentController@search')->name('departments.search');
 
 // API token routes.
 Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');
@@ -57,7 +57,10 @@ Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');
 
 Route::get('/staff/getdepartments', 'DepartmentController@get_departments')->name('staff.getdepartments');
+Route::get('/staff/departments/edit/{id}', 'DepartmentController@edit')->name('staff.editdepartment');
+
 Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles');
+
 
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');
