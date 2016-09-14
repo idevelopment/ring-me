@@ -37,14 +37,19 @@
                          <div class="panel panel-default">
                              <div class="panel-heading">Profile Settings</div>
                              <div class="panel-body">
-                                 <form method="POST" action="{!! route('profile.update.profile') !!}" class="form-horizontal">
+                                 <form method="POST" action="{!! route('profile.update.profile') !!}" enctype="multipart/form-data" class="form-horizontal">
                                      {!! csrf_field() !!}
                                      <fieldset>
                                          <div class="form-group form-sep">
                                              <label for="avatar" class="control-label col-sm-2">User avatar</label>
                                              <div class="col-sm-8">
                                                  <div class="thumbnail" style="width: 80px; height: 80px;">
-                                                     <img src="{{asset('img/user-icon.png')}}"/></div>
+                                                     @if(empty(auth()->user()->avatar))
+                                                         <img src="{{asset('img/user-icon.png')}}"/>
+                                                        @else
+                                                     <img src="{{ asset('avatars/' . auth()->user()->avatar) }}" />
+                                                 @endif
+                                                 </div>
                                                     <span class="btn btn-default btn-file">
                                                         <input type="file" name="avatar" id="avatar"/>
                                                     </span>
