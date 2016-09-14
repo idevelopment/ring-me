@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -35,9 +36,10 @@ class ProfileController extends Controller
         if (Input::file()) {
             $image    = Input::file('avatar');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $path     = public_path('profilepics/' . $filename);
+            $path     = public_path('avatars/' . $filename);
             
-            Image::make($image->getRealPath())->resize(80, 80)->save($path);
+            //Image::make($image->getRealPath())->resize(80, 80)->save($path);
+            $image->move(public_path('avatars'), $filename);
 
             $avatar         = User::find(auth()->user()->id);
             $avatar->avatar = $filename;
