@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Callback;
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
 
 /**
@@ -31,6 +31,7 @@ class CallbackController extends Controller
     public function index()
     {
         $data['query'] = Callback::all();
+        $data['users'] = User::all();
     	return view('callbacks/list', $data);
     }
 

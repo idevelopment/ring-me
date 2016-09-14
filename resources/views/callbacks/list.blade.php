@@ -15,10 +15,15 @@
 
 <form class="form-group">
   <div class="col-md-4">
-    <label for="customer">Customer</label> <input type="text" id="customer" name="customer" class="form-control"> 
+    <label for="customer">Customer</label> <input type="text" id="customer" name="customer" class="form-control">
   </div>
   <div class="col-md-4">
-    <label for="employee">Employee:</label> <input type="text" id="employee" name="employee" class="form-control">
+    <label for="employee">Employee:</label>
+    <select name="employee" id="employee" class="form-control">
+    @foreach($users as $user_item)
+     <option value="{!! $user_item["id"] !!}">{!! $user_item["fname"] !!} {!! $user_item["name"] !!}</option>
+    @endforeach
+  </select>
   </div>
   <div class="col-md-3">
     <label for="date">Date:</label> <input type="date" id="date" name="date" class="form-control">
