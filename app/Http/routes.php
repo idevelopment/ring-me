@@ -68,6 +68,9 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 Route::get('/settings/backups', 'BackupController@index')->name('settings.backup');
 Route::post('/settings/backups', 'BackupController@storeBackup')->name('settings.saveBackup');
 
+Route::get('/settings/email', 'SettingsController@email')->name('settings.email');
+Route::post('/settings/email', 'SettingsController@updateEmail')->name('settings.updateEmail');
+
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
 Route::get('/roles/create', 'RolesController@create')->name('roles.create');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Callback;
 use Illuminate\Http\Request;
 use App\User;
+use Mail;
 use App\Http\Requests;
 
 /**
@@ -61,11 +62,14 @@ class CallbackController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
-        }
+        Callback::create($input->except('_token'));
 
-        return redirect()->back(302);
+        Mail::send('emails.request', ['user' => $user], function ($m) use ($user) {
+           $m->from('requests@ringme.eu', 'Ring Me');
+
+           $m->to("glenn.hermans@idevelopment.be", 'Glenn')->subject('Call back request!');
+       });
+        return redirect()->back();
     }
 
     /**

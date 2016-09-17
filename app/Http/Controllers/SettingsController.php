@@ -28,5 +28,15 @@ class SettingsController extends Controller
     {
     	return view('settings.index');
     }
-    
+
+		/**
+		 * Get the email settings page.
+		 *
+		 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+		 */
+		public function email()
+		{
+			return view('settings.email');
+		}
+
 }
