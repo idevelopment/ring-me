@@ -51,7 +51,8 @@ Route::post('/profile/update/profile', 'ProfileController@updateProfile')->name(
 // Staff routes
 Route::get('/staff', 'StaffController@index')->name('profile');
 Route::get('/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
-Route::post('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
+Route::put('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
+
 Route::get('/staff/create', 'StaffController@create')->name('staff.create');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');

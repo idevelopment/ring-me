@@ -77,15 +77,9 @@ class StaffController extends Controller
      */
     public function update(Requests\NewStaffValidator $input, $id)
     {
-        $user = auth()->user();
-
-        if (! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
-        }
-
         User::find($id)-update($input->except('_token'));
-        session()->flash('message', 'Staff member has been updated');
-        return redirect()->back(302);
+        //session()->flash('message', 'Staff member has been updated');
+
     }
 
     /**
@@ -188,6 +182,6 @@ class StaffController extends Controller
 
         }
         return json_encode($data2);
-    } 
+    }
 
 }
