@@ -101,6 +101,8 @@
 
                 <form method="post" action="{{url('callbacks')}}" class="form-horizontal">
                   {{csrf_field() }}
+                  <input type="hidden" name="type" value="Administration">
+
                 <div class="modal-body">
                         <div class="form-group">
                             <label for="product" class="col-sm-3 control-label">Product <strong class="text-danger">*</strong></label>

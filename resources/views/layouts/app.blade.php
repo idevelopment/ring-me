@@ -28,6 +28,43 @@
             crossorigin="anonymous"></script>
    <script src="{!! asset('js/vue.js') !!}"></script>
 
+<style>
+.info_box_var_1 {
+  color: #ffffff;
+}
+.info_box_var_1.box_bg_a {
+  background: #37BC9B;
+}
+.info_box_var_1.box_bg_b {
+  background: #DA4453;
+}
+.info_box_var_1.box_bg_c {
+  background: #F6BB42;
+}
+
+.info_box_var_1 .info_box_body {
+  padding: 10px 20px;
+  height: 60px;
+  font: 300 32px / 38px "Open Sans", Arial, sans-serif;
+  position: relative;
+}
+.info_box_var_1 .info_box_body .info_box_icon {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  font-size: 32px;
+  color: #ffffff;
+}
+.info_box_var_1 .info_box_footer {
+  padding: 4px 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+
+.user-list {list-style: none;margin:0;padding:0}
+.user-list li {padding:0 8px 8px;margin-bottom:8px;border-bottom: 1px dashed #dcdcdc;line-height:normal }
+.user-list small {font-size: 11px;color:#9b9b9b}
+</style>
 
 </head>
 <body id="app-layout">
@@ -78,6 +115,15 @@
                             <li><a href="{!! url('settings') !!}">{{ trans('app.general') }}</a></li>
                             <li><a href="{!! url('settings/backups') !!}">{{ trans('app.backups') }}</a></li>
                             <li><a href="{!! url('settings/email') !!}">{{ trans('app.email') }}</a></li>
+
+                            <li role="separator" class="divider"></li>
+                           <li class="navbar-menu-item">
+                             <div class="label">{{ Lang::get('app.customers') }}</div>
+                           </li>
+                           <li><a href="{!! url('customers.segments') !!}">{{ Lang::get('customers.segments') }}</a></li>
+                           <li><a href="{!! url('staff') !!}">{{ Lang::get('products.index') }}</a></li>
+                           <li><a href="{!! url('roles') !!}">{{ Lang::get('products.groups') }}</a></li>
+
                              <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">
                               <div class="label">{{ Lang::get('app.staff') }}</div>

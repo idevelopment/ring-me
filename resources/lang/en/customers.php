@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Customers 
+    | Customers
     |--------------------------------------------------------------------------
     |
     | The following language lines are used for the customers pages
@@ -24,7 +24,7 @@ return [
     'phone'      => 'Phone',
     'mobile'     => 'Mobile',
     'email'      => 'Email',
-    
+
     'number'     => 'Customer number',
     'vat'        => 'VAT identification number',
 
@@ -33,4 +33,6 @@ return [
     'search'     => 'Search customer',
     'register'   => 'New customer',
     'details'    => 'Customer Details',
+
+    'segments'  => 'Segments'
 ];

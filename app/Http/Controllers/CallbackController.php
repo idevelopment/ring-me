@@ -31,7 +31,7 @@ class CallbackController extends Controller
      */
     public function index()
     {
-        $data['query'] = Callback::all();
+        $data['callback'] = Callback::all();
         $data['users'] = User::all();
     	return view('callbacks/list', $data);
     }
@@ -58,18 +58,27 @@ class CallbackController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(Request $request)
     {
         $user = auth()->user();
 
-        Callback::create($input->except('_token'));
+      //  Callback::create($input->except('_token', 'product', 'description'));
 
-        Mail::send('emails.request', ['user' => $user], function ($m) use ($user) {
+      $Callback = new Callback;
+
+      $Callback->type = $request->type;
+      $Callback->customer = $user->id;
+      $Callback->agent_id = '1';
+      $Callback->description = $request->description;
+
+      $Callback->save();
+
+        Mail::send('emails.request', ['user' => $user, 'callback' => $Callback], function ($m) use ($user) {
            $m->from('requests@ringme.eu', 'Ring Me');
 
            $m->to("glenn.hermans@idevelopment.be", 'Glenn')->subject('Call back request!');
        });
-        return redirect()->back();
+        return back();
     }
 
     /**
