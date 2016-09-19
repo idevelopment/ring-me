@@ -121,8 +121,8 @@
                              <div class="label">{{ Lang::get('app.customers') }}</div>
                            </li>
                            <li><a href="{!! url('customers.segments') !!}">{{ Lang::get('customers.segments') }}</a></li>
-                           <li><a href="{!! url('staff') !!}">{{ Lang::get('products.index') }}</a></li>
-                           <li><a href="{!! url('roles') !!}">{{ Lang::get('products.groups') }}</a></li>
+                           <li><a href="{!! route('products.index') !!}">{{ Lang::get('products.index') }}</a></li>
+                           <li><a href="{!! route('products.categories') !!}">{{ Lang::get('products.groups') }}</a></li>
 
                              <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">

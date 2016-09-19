@@ -17,6 +17,7 @@ return [
     'dateregistered' => 'Date registered',
     'setStatus' => 'Change status',
     'general'  => 'General',
+    'select' => '-- Please select --',
     /*
     |--------------------------------------------------------------------------
     | Menu Links
@@ -35,6 +36,7 @@ return [
     'settings' => 'Settings',
     'email'   => 'Email',
     'backups' => 'Backups',
+    'products' => 'Products',
 
     /*
     |--------------------------------------------------------------------------

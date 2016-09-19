@@ -43,6 +43,10 @@ Route::post('/customers', 'CustomersController@store')->name('customers.store');
 Route::get('/status/available', 'StaffController@setAvailable')->name('status.available');
 Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('status.unavailable');
 
+// Products routes
+Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::get('/products/categories', 'ProductsController@categories')->name('products.categories');
+
 // Profile routes
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
 Route::post('/profile/update/password', 'ProfileController@updateSecurity')->name('profile.update.security');
