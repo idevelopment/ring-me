@@ -29,7 +29,8 @@ class ProductsController extends Controller
 
     public function categories()
     {
-        return view('products.categories');
+        $data['category'] = ProductsCategories::paginate(15)->sortBy("name");
+        return view('products.categories', $data);
     }
 
     /**
