@@ -16,6 +16,10 @@ Route::get('/', 'WelcomeController@index');
 // Authencation routes.
 Route::auth();
 
+// Assets routes
+Route::get('/assets', 'AssetsController@index')->name('assets.index');
+Route::post('/assets/register', 'AssetsController@register')->name('assets.register');
+
 // Department routes.
 Route::resource('departments', 'DepartmentController');
 Route::post('departments/search', 'DepartmentController@search')->name('departments.search');
