@@ -21,8 +21,8 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $data['products'] = Products::paginate(15);
-        $data['category'] = ProductsCategories::paginate(15);
+        $data['products'] = Products::with('category')->paginate(15);
+        $data['category'] = ProductsCategories::paginate(15)->sortBy("name");
 
         return view('products.index', $data);
     }
@@ -43,6 +43,11 @@ class ProductsController extends Controller
      */
     public function store(Requests\ProductValidator $input)
     {
+        $this->validate($input, [
+          'name' => 'required',
+          'category' => 'required',
+         ]);
+
         $product       = new Products();
         $product->name = $input->name;
 

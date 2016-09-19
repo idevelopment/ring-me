@@ -13,18 +13,13 @@ class ProductCategorySeeder extends Seeder
     {
         $data = [
             // ['name' => ''],
-            ['name' => 'Fibernet XL'],
-            ['name' => 'iFiber'],
-            ['name' => 'Small'],
-            ['name' => 'Medium'],
-            ['name' => 'Large'],
-            ['name' => 'Small Cloud'],
-            ['name' => 'Medium Cloud'],
-            ['name' => 'Large Cloud'],
+            ['name' => 'Webhosting'],
+            ['name' => 'Internet Connection'],
+            ['name' => 'Pay-as-you-go'],
         ];
-        
-        $table = DB::table('products_categories'); 
-        $table->delete(); 
+
+        $table = DB::table('products_categories');
+        $table->delete();
         $table->insert($data);
     }
 }

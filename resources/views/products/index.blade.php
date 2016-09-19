@@ -11,6 +11,17 @@
             </div>
         </div>
         {{-- END pagination --}}
+
+        @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
         <div class="row">
             <div class="col-md-12">
                <button data-toggle="modal" data-target="#newProduct" class="btn btn-sm btn-primary">{{ trans('products.new') }}</button>
@@ -27,83 +38,18 @@
                           <th>{{ trans('products.updated') }}</th>
                         </thead>
                         <tbody>
+                          @foreach($products as $item)
                           <tr>
-                            <td>Fibernet XL</td>
-                            <td>Internet Connection</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->category->name }}</td>
+                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->updated_at }}</td>
                           </tr>
-
-                          <tr>
-                            <td>iFiber</td>
-                            <td>Internet Connection</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Small</td>
-                            <td>Webhosting</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Medium</td>
-                            <td>Webhosting</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Large</td>
-                            <td>Webhosting</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Small Cloud</td>
-                            <td>Pay-as-you-go</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Medium Cloud</td>
-                            <td>Pay-as-you-go</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
-
-                          <tr>
-                            <td>Large Cloud</td>
-                            <td>Pay-as-you-go</td>
-                            <td>19-09-2016 3:40</td>
-                            <td>19-09-2016 3:40</td>
-                          </tr>
+                          @endforeach
                         </tbody>
                       </table>
                       <div class="pull-right">
-                        <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+                        {{ $products->links() }}
                       </div>
                     </div>
                 </div>
@@ -128,7 +74,7 @@
           <label for="category" class="control-label col-md-3">{{ trans('products.category') }} <span class="text-danger">*</span></label>
           <div class="col-md-9">
             <select name="category" id="category" class="form-control">
-              <option selected="">{{ trans('app.select') }}</option>
+              <option value="" selected="">{{ trans('app.select') }}</option>
 
                 @foreach($category as $data)
                 <option value="{{ $data->id }}">{{ $data->name }}</option>
