@@ -45,6 +45,7 @@ Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('statu
 
 // Products routes
 Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::post('/products/save', 'ProductsController@store')->name('products.save');
 Route::get('/products/categories', 'ProductsController@categories')->name('products.categories');
 
 // Profile routes

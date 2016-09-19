@@ -119,7 +119,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="newProductLabel">{{ trans('products.new') }}</h4>
       </div>
-      <form action="" method="post" class="form-horizontal">
+      <form action="{{ route('products.save') }}" method="post" class="form-horizontal">
+        {{ csrf_field() }}
+
       <div class="modal-body">
 
         <div class="form-group">
@@ -127,6 +129,10 @@
           <div class="col-md-9">
             <select name="category" id="category" class="form-control">
               <option selected="">{{ trans('app.select') }}</option>
+
+                @foreach($category as $data)
+                <option value="{{ $data->id }}">{{ $data->name }}</option>
+                @endforeach
             </select>
           </div>
         </div>
@@ -134,14 +140,14 @@
         <div class="form-group">
           <label for="name" class="control-label col-md-3">{{ trans('products.name') }} <span class="text-danger">*</span></label>
           <div class="col-md-9">
-            <input type="text" name="product" id="name" class="form-control">
+            <input type="text" name="name" id="name" class="form-control">
           </div>
       </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">{{ trans('app.close') }}</button>
-        <button type="button" class="btn btn-primary">{{ trans('app.save') }}</button>
+        <button type="submit" class="btn btn-primary">{{ trans('app.save') }}</button>
       </div>
     </form>
     </div>

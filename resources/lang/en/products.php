@@ -18,5 +18,6 @@ return [
     'category' => 'Category',
     'created' => 'Created at',
     'updated' => 'Last updated at',
+    'flashInsert' => 'The product has been created',
 
 ];
