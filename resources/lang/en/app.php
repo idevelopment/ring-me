@@ -37,6 +37,7 @@ return [
     'email'   => 'Email',
     'backups' => 'Backups',
     'products' => 'Products',
+    'assets'  => 'Assets',
 
     /*
     |--------------------------------------------------------------------------

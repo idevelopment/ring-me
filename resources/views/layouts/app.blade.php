@@ -120,7 +120,7 @@
                            <li class="navbar-menu-item">
                              <div class="label">{{ Lang::get('app.customers') }}</div>
                            </li>
-                           <li><a href="{!! url('customers.segments') !!}">{{ Lang::get('customers.segments') }}</a></li>
+                           <li><a href="{!! route('assets.index') !!}">{{ Lang::get('app.assets') }}</a></li>
                            <li><a href="{!! route('products.index') !!}">{{ Lang::get('products.index') }}</a></li>
                            <li><a href="{!! route('products.categories') !!}">{{ Lang::get('products.groups') }}</a></li>
 
