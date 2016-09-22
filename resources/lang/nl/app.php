@@ -12,11 +12,15 @@ return [
     'close' => 'Sluiten',
     'save' => 'Opslaan',
     'update' => 'Wijzigingen opslaan',
-    'details' => 'Meer info',
+    'details' => 'Lees verder',
     'search'  => 'Zoeken',
-    'dateregistered' => 'Datum geregistreerd',
+    'edit'   => 'Wijzig',
+    'delete'  => 'Verwijderen',
+
+    'dateregistered' => 'Date registered',
     'setStatus' => 'Wijzig status',
     'general'  => 'Algemeen',
+    'select' => '-- Maak uw keuze --',
     /*
     |--------------------------------------------------------------------------
     | Menu Links

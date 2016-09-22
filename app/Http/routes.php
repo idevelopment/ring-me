@@ -50,7 +50,14 @@ Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('statu
 // Products routes
 Route::get('/products', 'ProductsController@index')->name('products.index');
 Route::post('/products/save', 'ProductsController@store')->name('products.save');
+Route::get('/products/edit/{id}', 'ProductsController@edit')->name('products.edit');
+Route::get('/products/remove/{id}', 'ProductsController@remove')->name('products.remove');
+
 Route::get('/products/categories', 'ProductsController@categories')->name('products.categories');
+Route::get('/products/categories/edit/{id}', 'ProductsController@edit_categories')->name('products.editCat');
+Route::get('/products/categories/remove/{id}', 'ProductsController@remove_category')->name('products.removeCat');
+
+Route::post('/products/categories/save', 'ProductsController@saveCat')->name('products.saveCategory');
 
 // Profile routes
 Route::get('/profile', 'StaffController@profile')->name('staff.index');

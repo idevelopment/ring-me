@@ -12,12 +12,21 @@ return [
     'index'  => 'Products',
     'groups' => 'Product Categories',
     'new'    => 'New product',
+    'new_category'    => 'New category',
+    'edit_category'    => 'Edit category',
+
 
     // Product List
     'name' => 'Product name',
     'category' => 'Category',
+    'categories' => 'Categories',
+
     'created' => 'Created at',
     'updated' => 'Last updated at',
-    'flashInsert' => 'The product has been created',
+
+    'saved' => 'The new item has been saved.',
+    'category_saved' => 'The new item has been saved.',
+    'removed_category'    => 'The category has been removed.',
+    'removed' => 'The product has been removed.'
 
 ];

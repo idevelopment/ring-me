@@ -12,6 +12,15 @@
         </div>
         {{-- END pagination --}}
 
+        @if(session('message'))
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{session('message')}}
+        </div>
+        @endif
+
         @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -24,7 +33,7 @@
 
         <div class="row">
             <div class="col-md-12">
-               <button data-toggle="modal" data-target="#newProduct" class="btn btn-sm btn-primary">{{ trans('products.new') }}</button>
+               <button data-toggle="modal" data-target="#newProduct" class="btn btn-primary">{{ trans('products.new') }}</button>
                <div class="clearfix">&nbsp;</div>
 
                 <div class="panel panel-default">
@@ -32,10 +41,11 @@
                     <div class="panel-body">
                       <table class="table table-striped">
                         <thead>
-                          <th>{{ trans('products.name') }}</th>
+                          <th class="col-md-3">{{ trans('products.name') }}</th>
                           <th>{{ trans('products.category') }}</th>
                           <th>{{ trans('products.created') }}</th>
                           <th>{{ trans('products.updated') }}</th>
+                          <th></th>
                         </thead>
                         <tbody>
                           @foreach($products as $item)
@@ -44,20 +54,26 @@
                             <td>{{ $item->category->name }}</td>
                             <td>{{ $item->created_at }}</td>
                             <td>{{ $item->updated_at }}</td>
+                            <td class="text-right">
+                              <a href="{{route('products.edit', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i> {{trans('app.edit')}}</a>
+                              <a href="{{route('products.remove', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-times"></i> {{trans('app.delete')}}</a>
+                            </td>
                           </tr>
                           @endforeach
                         </tbody>
                       </table>
-                      <div class="pull-right">
+                      <div class="text-right">
                         {{ $products->links() }}
                       </div>
+                    </div>
+
                     </div>
                 </div>
             </div>
        </div>
 
 
-       <!-- New product -->
+<!-- New product -->
 <div class="modal fade" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="newProductLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
