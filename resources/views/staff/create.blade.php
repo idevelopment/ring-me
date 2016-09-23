@@ -77,9 +77,7 @@
                                 <label class="col-md-4 control-label">{{trans('staff.bio')}} <span class="text-danger">*</span></label>
 
                                 <div class="col-md-6">
-                                    <textarea name="biography" class="form-control">
-                                      {{ old('biography') }}
-                                    </textarea>
+                                    <textarea name="biography" class="form-control"></textarea>
 
                                     @if ($errors->has('biography'))
                                         <span class="help-block">

@@ -41,6 +41,7 @@
        <button data-toggle="modal" data-target="#newCategory" class="btn btn-primary">{{ trans('products.new_category') }}</button>
        <div class="clearfix">&nbsp;</div>
 
+
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('products.groups') }}</div>
             <div class="panel-body">

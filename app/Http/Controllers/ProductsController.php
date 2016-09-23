@@ -22,14 +22,14 @@ class ProductsController extends Controller
     public function index()
     {
         $data['products'] = Products::with('category')->paginate(10);
-        $data['category'] = ProductsCategories::paginate(10)->sortBy("name");
+        $data['category'] = ProductsCategories::with('products')->paginate(10)->sortBy("name")->all();
 
         return view('products.index', $data);
     }
 
     public function categories()
     {
-        $data['category'] = ProductsCategories::paginate(10)->sortBy("name");
+        $data['category'] = ProductsCategories::with('products')->paginate(10)->sortBy("name")->all();
         return view('products.categories', $data);
     }
 

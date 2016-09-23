@@ -6,11 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AssetsController extends Controller
+class SegmentsController extends Controller
 {
-  /**
-   * AssetsController constructor.
-   */
   public function __construct()
   {
       $this->middleware('auth');
@@ -19,16 +16,21 @@ class AssetsController extends Controller
 
   public function index()
   {
-    return view('assets.index');
+    return view('segments.index');
+  }
+
+  public function store()
+  {
+    return view('segments.register');
   }
 
   public function edit()
   {
-    return view('assets.edit');
+    return view('segments.edit');
   }
 
-  public function remove()
+  public function update()
   {
-    
+
   }
 }

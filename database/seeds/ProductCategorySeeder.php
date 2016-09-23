@@ -12,10 +12,9 @@ class ProductCategorySeeder extends Seeder
     public function run()
     {
         $data = [
-            // ['name' => ''],
-            ['name' => 'Webhosting'],
-            ['name' => 'Internet Connection'],
-            ['name' => 'Pay-as-you-go'],
+          ['name' => 'Cloud Hosting'],
+          ['name' => 'Dedicated Servers'],
+          ['name' => 'Webhosting'],
         ];
 
         $table = DB::table('products_categories');

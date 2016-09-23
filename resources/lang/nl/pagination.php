@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'previousButton' => '&laquo; Previous',
+    'previous' => '&laquo; Vorige',
+    'previousButton' => '&laquo; Vorige',
 
-    'next'     => 'Next &raquo;',
-    'nextButton'     => 'Next &raquo;',
+    'next'     => 'Volgende &raquo;',
+    'nextButton'     => 'Volgende &raquo;',
 ];

@@ -39,6 +39,37 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">{{ trans('products.index') }}</div>
                     <div class="panel-body">
+
+
+                      <table class="table table-striped">
+                        @foreach($category as $item)
+                        <tr>
+                          <td colspan="3" style="background-color:#f1f1f1;">{!! $item["name"] !!}</td>
+                        </tr>
+                        @foreach($item["products"] as $product_item)
+                          <tr>
+                            <td class="col-md-1"><input type="checkbox"></td>
+                            <td>{!! $product_item["name"] !!}</td>
+                            <td class="text-right">
+                              <a href="{{route('products.edit', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i> {{trans('app.edit')}}</a>
+                              <a href="{{route('products.remove', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-times"></i> {{trans('app.delete')}}</a>
+                            </td>
+                          </tr>
+
+                          @endforeach
+                          @endforeach
+                        </table>
+
+
+
+
+
+
+
+
+
+
+
                       <table class="table table-striped">
                         <thead>
                           <th class="col-md-3">{{ trans('products.name') }}</th>

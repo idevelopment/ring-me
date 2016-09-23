@@ -15,18 +15,17 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
-    <link rel="stylesheet" href="{!! asset('js/icheck-1/skins/all.css') !!}">
 
     <link rel="stylesheet" href="{!! asset('css/pickList.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
             integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
             crossorigin="anonymous"></script>
    <script src="{!! asset('js/vue.js') !!}"></script>
+   <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
+
 
 <style>
 .info_box_var_1 {
@@ -59,7 +58,6 @@
   padding: 4px 20px;
   background: rgba(0, 0, 0, 0.2);
 }
-
 
 .user-list {list-style: none;margin:0;padding:0}
 .user-list li {padding:0 8px 8px;margin-bottom:8px;border-bottom: 1px dashed #dcdcdc;line-height:normal }
@@ -96,9 +94,20 @@
 
                 {{-- Right Side Of Navbar --}}
                 <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                         aria-expanded="false">
+                          <span class="fa fa-language"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a href="?lang=nl"><span class="bfh-languages" data-language="nl_NL" data-flags="true"></span></a></li>
+                          <li><a href="?lang=fr"><span class="bfh-languages" data-language="fr_FR" data-flags="true"></span></a></li>
+                          <li><a href="?lang=en"><span class="bfh-languages" data-language="en_US" data-flags="true"></span></a></li>
+                      </ul>
+                  </li>
                     {{-- Authentication Links --}}
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/signup') }}">Register</a></li>
                 </ul>
             @else
                 {{-- Left Side Of Navbar --}}
@@ -241,16 +250,9 @@
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
 <script src="{!! asset('js/bootstrap-formhelpers.js') !!}"></script>
-<script src="{!! asset('js/icheck-1/icheck.js') !!}"></script>
-<script src="{!! asset('js/pickList.js') !!}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-grey',
-            radioClass: 'iradio_square-grey',
-        });
     });
 </script>
 </body>

@@ -15,6 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 // Authencation routes.
 Route::auth();
+Route::get('/signup', 'WelcomeController@signup');
 
 // Assets routes
 Route::get('/assets', 'AssetsController@index')->name('assets.index');

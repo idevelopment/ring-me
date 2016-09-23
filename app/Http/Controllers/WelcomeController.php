@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Departments;
+use App\Segments;
 use App\User;
+use App\ProductsCategories;
 
 class WelcomeController extends Controller
 {
@@ -29,5 +31,19 @@ class WelcomeController extends Controller
         $data["agents"] = User::all();
         return view('welcome', $data);
     }
-}
 
+    /**
+     * Show the customer registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function signup()
+    {
+      $data["segments"] = Segments::all();
+      $data['category'] = ProductsCategories::with('products')->paginate(10)->sortBy("name")->all();
+
+      return view('auth.register', $data);
+    }
+
+
+}
