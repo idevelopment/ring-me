@@ -124,6 +124,7 @@
                             <li><a href="{!! url('settings') !!}">{{ trans('app.general') }}</a></li>
                             <li><a href="{!! url('settings/backups') !!}">{{ trans('app.backups') }}</a></li>
                             <li><a href="{!! url('settings/email') !!}">{{ trans('app.email') }}</a></li>
+                            <li><a href="{!! url('settings/logs') !!}" target="_blank">{{ trans('app.logs') }}</a></li>
 
                             <li role="separator" class="divider"></li>
                            <li class="navbar-menu-item">

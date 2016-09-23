@@ -89,6 +89,8 @@ Route::post('/settings/backups', 'BackupController@storeBackup')->name('settings
 Route::get('/settings/email', 'SettingsController@email')->name('settings.email');
 Route::post('/settings/email', 'SettingsController@updateEmail')->name('settings.updateEmail');
 
+Route::get('settings/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
 Route::get('/roles/create', 'RolesController@create')->name('roles.create');
