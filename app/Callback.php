@@ -13,7 +13,7 @@ class Callback extends Model
      */
     public function customers()
     {
-        return $this->belongsToMany('App\Customer');
+        return $this->belongsTo('App\Customer', 'customer');
     }
 
     /**
@@ -23,7 +23,7 @@ class Callback extends Model
      */
     public function departments()
     {
-        return $this->belongsToMany('App\Departments');
+        return $this->belongsTo('App\Departments', 'type');
     }
 
 
@@ -34,6 +34,6 @@ class Callback extends Model
      */
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsTo('App\User', 'agent_id');
     }
 }

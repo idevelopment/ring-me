@@ -31,7 +31,7 @@ class CallbackController extends Controller
      */
     public function index()
     {
-        $data['callback'] = Callback::with('customers')->get();
+        $data['callback'] = Callback::with('users', 'customers', 'departments')->get();
         $data['users'] = User::all();
     	return view('callbacks/list', $data);
     }
@@ -66,7 +66,7 @@ class CallbackController extends Controller
 
       $Callback = new Callback;
 
-      $Callback->type = $request->type;
+      $Callback->type = '1';
       $Callback->customer = $user->id;
       $Callback->agent_id = '1';
       $Callback->description = $request->description;

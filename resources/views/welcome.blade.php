@@ -24,7 +24,7 @@
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label>
-                                          <input type="radio" id="{!! $department_item['name'] !!}"> {!! $department_item['name'] !!}
+                                          <input type="radio" id="{!! $department_item['id'] !!}"> {!! $department_item['name'] !!}
                                         </label>
                                     </div>
                                 </div>

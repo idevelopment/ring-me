@@ -36,6 +36,7 @@
 
   <div class="clearfix">&nbsp;</div>
   <div class="clearfix">&nbsp;</div>
+
   <table class="table table-striped">
    <thead>
      <th>{{ trans('callbacks.customer') }}</th>
@@ -48,10 +49,10 @@
    <tbody>
      @foreach($callback as $item)
     <tr>
-      <td><a href="javascript:;">{!! $item["customer"] !!}</a></td>
-      <td><a href="javascript:;">{!! $item["agent"] !!}</a></td>
-      <td>{!! $item["type"] !!}</td>
-      <td><span class="text-danger">12 min</span></td>
+      <td><a href="javascript:;">{!! $item["customers"]["fname"] !!} {!! $item["customers"]["name"] !!}</a></td>
+      <td><a href="javascript:;">{!! $item["users"]["fname"] !!} {!! $item["users"]["name"] !!}</a></td>
+      <td>{!! $item["departments"]["name"] !!}</td>
+      <td><span class="text-danger">{!! $item["created_at"] !!}</span></td>
       <td><span class="badge bg-red">Waiting</span></td>
       <td><a href="{{ url('callbacks/display') }}/1" data-toggle="tooltip" data-placement="bottom"
       title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
@@ -60,10 +61,6 @@
     </tbody>
    </table>
 
-   <pre>
-     <?php print_r($callback); ?>
-   </pre>
-   
   </div>
  </div>
  </div>

@@ -35,11 +35,11 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Callback::class, function (Faker\Generator $faker) {
     return [
-        'type'        => $faker->numberBetween(0, 120),
-        'customer'    => $faker->name,
-        'agent'       => $faker->name,
+        'type'        => '1',
+        'customer'    => '1',
+        'agent'       => '1',
         'description' => $faker->text(150),
-        'agent_id'    => $faker->numberBetween(0, 120)
+        'agent_id'    => '1'
     ];
 });
 
@@ -62,6 +62,3 @@ $factory->define(App\Customer::class, function (Faker\Generator $faker) {
 $factory->define(App\Roles::class, function(Faker\Generator $faker) {
     return ['name' => 'Administrator'];
 });
-
-
-

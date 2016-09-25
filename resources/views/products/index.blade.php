@@ -61,38 +61,6 @@
                         </table>
 
 
-
-
-
-
-
-
-
-
-
-                      <table class="table table-striped">
-                        <thead>
-                          <th class="col-md-3">{{ trans('products.name') }}</th>
-                          <th>{{ trans('products.category') }}</th>
-                          <th>{{ trans('products.created') }}</th>
-                          <th>{{ trans('products.updated') }}</th>
-                          <th></th>
-                        </thead>
-                        <tbody>
-                          @foreach($products as $item)
-                          <tr>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->category->name }}</td>
-                            <td>{{ $item->created_at }}</td>
-                            <td>{{ $item->updated_at }}</td>
-                            <td class="text-right">
-                              <a href="{{route('products.edit', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i> {{trans('app.edit')}}</a>
-                              <a href="{{route('products.remove', $item['id'])}}" class="btn btn-sm btn-default"><i class="fa fa-times"></i> {{trans('app.delete')}}</a>
-                            </td>
-                          </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
                       <div class="text-right">
                         {{ $products->links() }}
                       </div>
