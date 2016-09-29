@@ -78,10 +78,12 @@ class CustomersController extends Controller
         $user = auth()->user();
 
         if (! $user->is('Customer') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
-        }
+          $data['customer'] = Customer::where('id', $id)->get();
+          return view('customers/edit', $data);
 
-        $data['customer'] = Customer::where('id', $id)->get();
-        return view('customers/edit', $data);
+          }
+
+          return redirect()->back();
+
     }
 }

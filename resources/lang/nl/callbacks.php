@@ -11,6 +11,7 @@ return [
     'assigned' => 'Toegewezen aan',
     'status'   => 'Status',
     'queue'    => 'Watchttijd',
+    'description' => 'Omschrijving',
 
     // dashboard widgets
     'MyCallbacks' => 'Mijn aanvragen',

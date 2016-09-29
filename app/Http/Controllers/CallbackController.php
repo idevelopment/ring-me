@@ -8,6 +8,8 @@ use App\User;
 use Mail;
 use App\Http\Requests;
 
+use Faker\Factory as Faker;
+
 /**
  * Class CallbackController
  * @package App\Http\Controllers
@@ -63,11 +65,11 @@ class CallbackController extends Controller
         $user = auth()->user();
 
       //  Callback::create($input->except('_token', 'product', 'description'));
-
+      $faker = \Faker\Factory::create();
       $Callback = new Callback;
 
-      $Callback->type = '1';
-      $Callback->customer = $user->id;
+      $Callback->type = $faker->numberBetween($min = 1, $max = 3);
+      $Callback->customer = $faker->numberBetween($min = 1, $max = 9);
       $Callback->agent_id = '1';
       $Callback->description = $request->description;
 
@@ -90,9 +92,10 @@ class CallbackController extends Controller
     public function edit($id)
     {
         $user = auth()->user();
+        $data['item'] = Callback::find($id);
 
         if ($user->is('Agent') || $user->is('Manager') || $user->is('Administrator')) {
-            return view('callbacks/details');
+            return view('callbacks/details', $data);
         }
 
         return redirect()->back();

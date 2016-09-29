@@ -11,36 +11,52 @@
             <div class="col-md-12">
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
-                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Call attempts</a></li>
-                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Statistics</a></li>
+                <li role="presentation" class="dropdown">
+                  <a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents"><i class="fa fa-comment"></i> Call attempts <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                    <li role="presentation">
+                      <a href="#unanswered-calls" aria-controls="unanswered-calls" role="tab" data-toggle="tab">List all</a>
+                    </li>
+                    <li><a href="#" data-toggle="modal" data-target="#callattempt">Register call attempt</a></li>
+                  </ul>
+                </li>
+                <li role="presentation"><a href="#stats" aria-controls="messages" role="tab" data-toggle="tab">Statistics</a></li>
+                <li role="presentation" class="dropdown">
+                  <a href="#" class="dropdown-toggle" id="myTabDrop2" data-toggle="dropdown" aria-controls="myTabDrop2-contents">Actions <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="myTabDrop2" id="myTabDrop2-contents">
+                    <li><a href="#"><i class="fa fa-lock"></i> End call</a></li>
+                    <li><a href="#"><i class="fa fa-trash"></i> Remove request</a></li>
+                  </ul>
+                </li>
               </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="home">
     <div class="panel panel-default">
-        <div class="panel-heading">{{ trans('callbacks.details') }}
-         <span class="pull-right">
-          <div class="dropdown">
-           <button class="btn btn-default btn-xs dropdown-toggle " type="button" data-toggle="dropdown"> <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right">
-             <li><a href="#" data-toggle="modal" data-target="#callattempt">Call attempt</a></li>
-             <li><a href="#">Add comment</a></li>
-             <li class="divider"></li>
-             <li><a href="#"><i class="fa fa-lock"></i> End call</a></li>
-            </ul>
-          </div>
-
-         </span>
-         </div>
         <div class="panel-body">
             <form action="{{ url('customers') }}" method="post" class="form-horizontal">
+              <div class="form-group form-sep">
+                  <label for="firstname"
+                         class="col-md-3 control-label">{{ trans('callbacks.type') }}</label>
+                  <div class="col-md-8">
+                      <p class="form-control-static">Administration</p>
+                  </div>
+              </div>
+
+              <div class="form-group form-sep">
+                  <label for="firstname"
+                         class="col-md-3 control-label">{{ trans('callbacks.status') }}</label>
+                  <div class="col-md-8">
+                      <p class="form-control-static"><a href="" class="badge">Open</a></p>
+                  </div>
+              </div>
 
                     <div class="form-group form-sep">
                         <label for="company"
                                class="col-md-3 control-label">{{ trans('callbacks.customer') }}</label>
                         <div class="col-md-8">
-                            <p class="form-control-static"> Telenet NV </p>
+                            <p class="form-control-static">{!! $item["customers"]["fname"] !!} {!! $item["customers"]["name"] !!} </p>
                         </div>
                     </div>
 
@@ -48,23 +64,7 @@
                         <label for="company"
                                class="col-md-3 control-label">{{ trans('callbacks.phone') }}</label>
                         <div class="col-md-8">
-                            <p class="form-control-static"><a href="callto:+3215666666">+3215666666</a></p>
-                        </div>
-                    </div>
-
-                    <div class="form-group form-sep">
-                        <label for="firstname"
-                               class="col-md-3 control-label">{{ trans('callbacks.type') }}</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static"><a href="#" id="type" data-type="select" data-pk="1" data-url="/update" data-title="Change type">Administration</a> </p>
-                        </div>
-                    </div>
-
-                    <div class="form-group form-sep">
-                        <label for="firstname"
-                               class="col-md-3 control-label">{{ trans('callbacks.queue') }}</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static text-danger"> 12 min</p>
+                            <p class="form-control-static"><a href="callto:{!! $item["customers"]["phone"] !!}">{!! $item["customers"]["phone"] !!}</a></p>
                         </div>
                     </div>
 
@@ -72,88 +72,91 @@
                         <label for="firstname"
                                class="col-md-3 control-label">{{ trans('callbacks.assigned') }}</label>
                         <div class="col-md-8">
-                            <p class="form-control-static"><a href="">Glenn Hermans</a> </p>
+                            <p class="form-control-static">Glenn Hermans</p>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="firstname"
-                               class="col-md-3 control-label">{{ trans('callbacks.status') }}</label>
+                               class="col-md-3 control-label">{{ trans('callbacks.description') }}</label>
                         <div class="col-md-8">
-                            <p class="form-control-static"><a href="">Open</a></p>
+                            <p class="form-control-static">{!! nl2br(e($item["description"])) !!}</p>
                         </div>
                     </div>
             </form>
         </div>
     </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">{{ trans('callbacks.activity') }}</div>
-        <div class="panel-body">
-        <ul class="notifications">
-
-                <li class="notification">
-                    <div class="media">
-                        <div class="media-left">
-                            <div class="media-object">
-                                <img src="{{ asset('img/user-icon.png') }}" width="50" height="50"
-                                     class="img-circle" alt="Name">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <strong class="notification-title"><a href="#">Telenet NV</a> requested a call with
-                                <a href="#">Glenn Hermans</a></strong>
-                            <p class="notification-desc">I would like to ask if it is possible to call us back regarding our latest invoice</p>
-
-                            <div class="notification-meta">
-                                <small class="timestamp">19/05/2016, 15:00</small>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="notification">
-                    <div class="media">
-                        <div class="media-left">
-                            <div class="media-object">
-                                <img src="{{ asset('img/user-icon.png') }}" width="50" height="50"
-                                     class="img-circle" alt="Name">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <strong class="notification-title"><a href="#">Glenn Hermans</a> started a call with <a href="#">Telenet NV</a></strong>
-                            <div class="notification-meta">
-                                <small class="timestamp">19/05/2016, 15:00</small>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="notification">
-                    <div class="media">
-                        <div class="media-left">
-                            <div class="media-object">
-                                <img src="{{ asset('img/user-icon.png') }}" width="50" height="50"
-                                     class="img-circle" alt="Name">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <strong class="notification-title"><a href="#">Glenn Hermans</a> ended call with
-                                <a href="#">Telenet NV</a></strong>
-                            <p class="notification-desc">Made credit note for latest invoice..</p>
-
-                            <div class="notification-meta">
-                                <small class="timestamp">19/05/2016, 15:30</small>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-          </ul>
-       </div>
-    </div>
   </div>
-  <div role="tabpanel" class="tab-pane" id="profile">...</div>
-  <div role="tabpanel" class="tab-pane" id="messages">...</div>
+
+  <div role="tabpanel" class="tab-pane" id="unanswered-calls">
+    <table class="table table-striped">
+      <thead>
+        <th>Date & time</th>
+        <th>Agent</th>
+        <th>Reason</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>29/09/2016 04:51</td>
+          <td>Glenn Hermans</td>
+          <td>Number is incorrect</td>
+        </tr>
+
+        <tr>
+          <td>29/09/2016 06:51</td>
+          <td>Glenn Hermans</td>
+          <td>out of office</td>
+        </tr>
+
+        <tr>
+          <td>29/09/2016 04:51</td>
+          <td>Glenn Hermans</td>
+          <td>Number is incorrect</td>
+        </tr>
+
+        <tr>
+          <td>29/09/2016 06:51</td>
+          <td>Glenn Hermans</td>
+          <td>out of office</td>
+        </tr>
+
+        <tr>
+          <td>29/09/2016 04:51</td>
+          <td>Glenn Hermans</td>
+          <td>Number is incorrect</td>
+        </tr>
+
+        <tr>
+          <td>29/09/2016 06:51</td>
+          <td>Glenn Hermans</td>
+          <td>out of office</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="stats">
+    <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+             <div class="form-group form-sep">
+               <label for="company" class="col-md-3 control-label">Total call attempts</label>
+                <div class="col-md-8">
+                  <p class="form-control-static">6</p>
+              </div>
+            </div>
+
+            <div class="form-group form-sep">
+              <label for="company" class="col-md-3 control-label">Requested time</label>
+               <div class="col-md-8">
+                 <p class="form-control-static">{!! $item["created_at"] !!}</p>
+             </div>
+           </div>
+
+            </div>
+          </div>
+  </div>
 </div>
 
 
@@ -198,18 +201,4 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-
-	    $(document).ready(function() {
-	    $.fn.editable.defaults.mode = 'inline';
-        $('#type').editable({
-        value: 1,
-        source: [
-              {value: 1, text: 'Administration'},
-              {value: 2, text: 'Technical'},
-           ]
-    });
-    });
-</script>
 @endsection

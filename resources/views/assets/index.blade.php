@@ -11,6 +11,7 @@
             </div>
         </div>
         {{-- END pagination --}}
+        
         <div class="row">
             <div class="col-md-12">
                <button data-toggle="modal" data-target="#newProduct" class="btn btn-sm btn-primary">{{ trans('products.new') }}</button>
@@ -35,34 +36,30 @@
                           </tr>
                         </tbody>
                       </table>
+
                       <div class="pull-right">
                         <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+                           <ul class="pagination">
+                             <li>
+                                <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a>
+                              </li>
+                              <li><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li>
+                                <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a>
+                              </li>
+                            </ul>
+                          </nav>
                       </div>
                     </div>
                 </div>
             </div>
        </div>
 
-
-       <!-- New product -->
+ <!-- New product -->
 <div class="modal fade" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="newProductLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

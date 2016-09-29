@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
 
     <link rel="stylesheet" href="{!! asset('css/pickList.css') !!}">
+    <link rel='stylesheet' href="{!! asset('fullcalendar/fullcalendar.css')!!}" />
+
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
@@ -25,6 +27,9 @@
             crossorigin="anonymous"></script>
    <script src="{!! asset('js/vue.js') !!}"></script>
    <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
+   <script src="{!! asset('js/moment.js') !!}"></script>
+
+   <script src="{!! asset('js/fullcalendar.js') !!}"></script>
 
 
 <style>

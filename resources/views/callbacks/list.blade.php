@@ -10,10 +10,8 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Callback Requests</div>
-
                     <div class="panel-body">
-
-<form class="form-group">
+                      <form class="form-group">
   <div class="col-md-4">
     <label for="customer">Customer</label> <input type="text" id="customer" name="customer" class="form-control">
   </div>
@@ -54,7 +52,7 @@
       <td>{!! $item["departments"]["name"] !!}</td>
       <td><span class="text-danger">{!! $item["created_at"] !!}</span></td>
       <td><span class="badge bg-red">Waiting</span></td>
-      <td><a href="{{ url('callbacks/display') }}/1" data-toggle="tooltip" data-placement="bottom"
+      <td><a href="{{ url('callbacks/display', $item["id"]) }}" data-toggle="tooltip" data-placement="bottom"
       title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
     </tr>
     @endforeach
