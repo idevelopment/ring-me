@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-9 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('staff.store') }}">
+                        <form action="{{ route('staff.store') }}" method="POST" class="form-horizontal" role="form">
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
@@ -68,6 +68,20 @@
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('biography') ? ' has-error' : '' }}">
+                                <label class="col-md-4 control-label">{{trans('staff.bio')}} <span class="text-danger">*</span></label>
+
+                                <div class="col-md-6">
+                                    <textarea name="biography" class="form-control"></textarea>
+
+                                    @if ($errors->has('biography'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('biography') }}</strong>
                                     </span>
                                     @endif
                                 </div>

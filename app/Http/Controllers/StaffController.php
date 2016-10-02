@@ -36,24 +36,34 @@ class StaffController extends Controller
      */
     public function create()
     {
-        $data['departments'] = Departments::all();
-        return view('staff.create', $data);
+        $user = auth()->user();
+
+        if ($user->is('Manager') || $user->is('Administrator')) {
+            $data['departments'] = Departments::all();
+            return view('staff.create', $data);
+        }
+
+        return redirect()->back();
     }
 
     /**
      * Store the new member in the database
      *
      * @TODO:  Needs phpunit test.
-     * @TODO:  Build up the controller logic.
      * @param  Requests\NewStaffValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Requests\NewStaffValidator $input)
     {
-        $newUser = User::create($input->except(['_token', 'department']))->id;
-        User::find($newUser)->departments()->attach($input->department);
+        $user = auth()->user();
 
-        session()->flash('message', 'New staff member created');
+        if ($user->is('Manager') || $user->is('Administrator')) {
+            $newUser = User::create($input->except(['_token', 'department']))->id;
+            User::find($newUser)->departments()->attach($input->department);
+
+            session()->flash('message', 'New staff member created');
+        }
+
         return redirect()->back(302);
     }
 
@@ -61,13 +71,15 @@ class StaffController extends Controller
      * Update the staff member.
      *
      * @TODO:  Needs phpunit test
-     * @TODO:  Build up the controller.
+     * @param  Requests\NewStaffValidator $input
      * @param  int $id The staff member id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update(Requests\NewStaffValidator $input, $id)
     {
-        return redirect()->back(302);
+        User::find($id)-update($input->except('_token'));
+        //session()->flash('message', 'Staff member has been updated');
+
     }
 
     /**
@@ -89,6 +101,7 @@ class StaffController extends Controller
      */
     public function index()
 	{
+        $data["departments"] = Departments::all();
 		$data['users'] = User::paginate(15);
     	return view('users/index', $data);
     }
@@ -141,6 +154,12 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+        $user = auth()->user();
+
+        if (! $user->is('Manager') || ! $user->is('Administrator')) {
+            return redirect()->back();
+        }
+
         $user = User::find($id);
         $user->roles()->sync([]);
 
@@ -163,6 +182,6 @@ class StaffController extends Controller
 
         }
         return json_encode($data2);
-    } 
+    }
 
 }

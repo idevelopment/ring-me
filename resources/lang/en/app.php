@@ -14,9 +14,13 @@ return [
     'update' => 'Save changes',
     'details' => 'Read more',
     'search'  => 'Search',
+    'edit'   => 'Edit',
+    'delete'  => 'Remove',
+
     'dateregistered' => 'Date registered',
     'setStatus' => 'Change status',
     'general'  => 'General',
+    'select' => '-- Please select --',
     /*
     |--------------------------------------------------------------------------
     | Menu Links
@@ -35,6 +39,8 @@ return [
     'settings' => 'Settings',
     'email'   => 'Email',
     'backups' => 'Backups',
+    'products' => 'Products',
+    'assets'  => 'Assets',
 
     /*
     |--------------------------------------------------------------------------

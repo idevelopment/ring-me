@@ -81,13 +81,10 @@
 
                                             <td>
                                                 <div class="btn-group btn-group-xs">
-                                                    <a class="btn btn-link">
-                                                        <span class="fa fa-info-circle"></span>
-                                                    </a>
-                                                    <a href="" class="btn btn-link">
+                                                    <a href="{{ url('staff/departments/edit/')}}/{!! $data->id !!}" class="btn btn-link">
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
-                                                    <a href="" class="btn btn-link">
+                                                    <a href="{{ route('staff.getdepartments')}}/{!! $data->id !!}" class="btn btn-link">
                                                         <span class="fa fa-times"></span>
                                                     </a>
                                                 </div>

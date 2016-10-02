@@ -2,20 +2,57 @@
 
 @section('content')
     <div class="container">
+      <div class="row">
+                              <div class="col-lg-4 col-sm-6">
+                                  <div class="info_box_var_1 box_bg_a">
+                                      <div class="info_box_body">
+                                          <span class="info_box_icon icon_group"></span>
+                                          <span>1342</span>
+                                      </div>
+                                      <div class="info_box_footer">
+                                          Closed Requests
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-4 col-sm-6">
+                                  <div class="info_box_var_1 box_bg_b">
+                                      <div class="info_box_body">
+                                          <span class="info_box_icon icon_cart_alt"></span>
+                                          <span>1</span>
+                                      </div>
+                                      <div class="info_box_footer">
+                                          Overdue SLA time
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-4 col-sm-6">
+                                  <div class="info_box_var_1 box_bg_c">
+                                      <div class="info_box_body">
+                                          <span class="info_box_icon icon_wallet"></span>
+                                        <span>2</span>
+                                      </div>
+                                      <div class="info_box_footer">
+                                          Open Requests
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="clearfix">&nbsp;</div>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Open Call Requests</div>
+                    <div class="panel-heading">{{ trans('callbacks.MyCallbacks') }}</div>
 
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
-                            <th>Customer</th>
-                            <th>Agent</th>
-                            <th>Type</th>
-                            <th>Queue time</th>
-                            <th>Status</th>
+                            <th>{{ trans('callbacks.customer') }}</th>
+                            <th>{{ trans('callbacks.assigned') }}</th>
+                            <th>{{ trans('callbacks.type') }}</th>
+                            <th>{{ trans('callbacks.queue') }}</th>
+                            <th>{{ trans('callbacks.status') }}</th>
                             <th class="col-md-1"></th>
                             </thead>
                             <tbody>
@@ -24,7 +61,18 @@
                                 <td><a href="javascript:;">Glenn Hermans</a></td>
                                 <td>Administration</td>
                                 <td><span class="text-danger">12 min</span></td>
-                                <td><span class="badge bg-red">Waiting</span></td>
+                                <td><span class="badge bg-red">Overdue SLA time</span></td>
+                                <td><a href="#" data-toggle="tooltip" data-placement="bottom"
+                                       title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="javascript:;">Tim Joosten</a></td>
+                                <td><a href="javascript:;">Glenn Hermans</a></td>
+                                <td>Technical</td>
+                                <td><span class="text-success">7 min</span></td>
+                                <td><span class="badge bg-green">Completed</span></td>
                                 <td><a href="#" data-toggle="tooltip" data-placement="bottom"
                                        title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a>
                                 </td>
@@ -37,7 +85,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="panel panel-default">
                     <div class="panel-heading">Recent activity</div>
                     <div class="panel-body">
@@ -108,9 +156,9 @@
                 </div>
             </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                 <div class="panel panel-default">
-                    <div class="panel-heading">My Employees</div>
+                    <div class="panel-heading">{{ trans('callbacks.MyCallbacks') }} </div>
                     <div class="panel-body">
                      <ul class="user-list">
                      <li>
@@ -123,11 +171,11 @@
                 </li>
                 <li>
                     <span class="badge bg-red pull-right">offline</span>
-                    <a href="#" class="">James Vandenberg</a><br>                   
+                    <a href="#" class="">James Vandenberg</a><br>
                 </li>
                 <li>
                     <span class="badge bg-red pull-right">offline</span>
-                    <a href="#" class="">Donna Doerr</a><br>                    
+                    <a href="#" class="">Donna Doerr</a><br>
                 </li>
                     </div>
                 </div>

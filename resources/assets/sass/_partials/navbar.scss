@@ -19,19 +19,19 @@
 }
 
 .navbar-menu-item {
+  color: $navbar-dark-gray;
   padding: .1em 1.5em;
-  color: #333;
 
   // .navbar-menu-item .label
   .label {
-    color: #000;
+    color: $black;
     font-size: 1em;
     padding: 0;
   }
 }
 
 .menu-language {
-  padding-top: .1em;
+  color: $navbar-dark-gray;
   padding-bottom: .1em;
-  color: #333;
+  padding-top: .1em;
 }

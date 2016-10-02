@@ -13,6 +13,27 @@ class Callback extends Model
      */
     public function customers()
     {
-        return $this->belongsToMany('App\Customer');
+        return $this->belongsTo('App\Customer', 'customer');
+    }
+
+    /**
+     * Callback -> Departments relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function departments()
+    {
+        return $this->belongsTo('App\Departments', 'type');
+    }
+
+
+    /**
+     * Callback -> User Relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'agent_id');
     }
 }

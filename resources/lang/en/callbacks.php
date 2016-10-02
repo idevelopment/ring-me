@@ -11,4 +11,11 @@ return [
     'assigned' => 'Assigned to',
     'status'   => 'Status',
     'queue'    => 'Queue Time',
+    'description' => 'Description',
+
+    // dashboard widgets
+    'MyCallbacks' => 'My Call requests',
+
+    // Confirmation Mail
+    'confirmationTitle' => "Request Confirmed",
     ];

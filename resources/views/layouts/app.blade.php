@@ -15,17 +15,59 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
-    <link rel="stylesheet" href="{!! asset('js/icheck-1/skins/all.css') !!}">
 
     <link rel="stylesheet" href="{!! asset('css/pickList.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
+    <link rel='stylesheet' href="{!! asset('fullcalendar/fullcalendar.css')!!}" />
 
+    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
             integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
             crossorigin="anonymous"></script>
+   <script src="{!! asset('js/vue.js') !!}"></script>
+   <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
+   <script src="{!! asset('js/moment.js') !!}"></script>
+
+   <script src="{!! asset('js/fullcalendar.js') !!}"></script>
+
+
+<style>
+.info_box_var_1 {
+  color: #ffffff;
+}
+.info_box_var_1.box_bg_a {
+  background: #37BC9B;
+}
+.info_box_var_1.box_bg_b {
+  background: #DA4453;
+}
+.info_box_var_1.box_bg_c {
+  background: #F6BB42;
+}
+
+.info_box_var_1 .info_box_body {
+  padding: 10px 20px;
+  height: 60px;
+  font: 300 32px / 38px "Open Sans", Arial, sans-serif;
+  position: relative;
+}
+.info_box_var_1 .info_box_body .info_box_icon {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  font-size: 32px;
+  color: #ffffff;
+}
+.info_box_var_1 .info_box_footer {
+  padding: 4px 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.user-list {list-style: none;margin:0;padding:0}
+.user-list li {padding:0 8px 8px;margin-bottom:8px;border-bottom: 1px dashed #dcdcdc;line-height:normal }
+.user-list small {font-size: 11px;color:#9b9b9b}
+</style>
 
 </head>
 <body id="app-layout">
@@ -57,9 +99,20 @@
 
                 {{-- Right Side Of Navbar --}}
                 <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                         aria-expanded="false">
+                          <span class="fa fa-language"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a href="?lang=nl"><span class="bfh-languages" data-language="nl_NL" data-flags="true"></span></a></li>
+                          <li><a href="?lang=fr"><span class="bfh-languages" data-language="fr_FR" data-flags="true"></span></a></li>
+                          <li><a href="?lang=en"><span class="bfh-languages" data-language="en_US" data-flags="true"></span></a></li>
+                      </ul>
+                  </li>
                     {{-- Authentication Links --}}
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/signup') }}">Register</a></li>
                 </ul>
             @else
                 {{-- Left Side Of Navbar --}}
@@ -76,6 +129,16 @@
                             <li><a href="{!! url('settings') !!}">{{ trans('app.general') }}</a></li>
                             <li><a href="{!! url('settings/backups') !!}">{{ trans('app.backups') }}</a></li>
                             <li><a href="{!! url('settings/email') !!}">{{ trans('app.email') }}</a></li>
+                            <li><a href="{!! url('settings/logs') !!}" target="_blank">{{ trans('app.logs') }}</a></li>
+
+                            <li role="separator" class="divider"></li>
+                           <li class="navbar-menu-item">
+                             <div class="label">{{ Lang::get('app.customers') }}</div>
+                           </li>
+                           <li><a href="{!! route('assets.index') !!}">{{ Lang::get('app.assets') }}</a></li>
+                           <li><a href="{!! route('products.index') !!}">{{ Lang::get('products.index') }}</a></li>
+                           <li><a href="{!! route('products.categories') !!}">{{ Lang::get('products.groups') }}</a></li>
+
                              <li role="separator" class="divider"></li>
                             <li class="navbar-menu-item">
                               <div class="label">{{ Lang::get('app.staff') }}</div>
@@ -192,18 +255,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-<script src="{!! asset('js/vue.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-formhelpers.js') !!}"></script>
-<script src="{!! asset('js/icheck-1/icheck.js') !!}"></script>
-<script src="{!! asset('js/pickList.js') !!}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-grey',
-            radioClass: 'iradio_square-grey',
-        });
     });
 </script>
 </body>

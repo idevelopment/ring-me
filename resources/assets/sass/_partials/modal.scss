@@ -3,33 +3,32 @@
 }
 
 .white-overlay {
-  background-color: rgba(255, 255, 255, .85);
+  background-color: $rgb-black2;
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, .85);
+  background-color: $rgb-black2;
 }
 
+// scss-lint:disable DuplicateProperty
 .modal-content {
+  border: 0;
   border-radius: 4px !important;
+  border-radius: 0 !important;
+  box-shadow: 0 5px 10px $rgb-black;
+
+  // .modal-content .form-horizontal .control-label
+  .form-horizontal .control-label {
+    text-align: left;
+  }
 }
 
 .modal-title {
-  margin-bottom: 0;
   font-weight: bold;
-}
-
-.modal-content {
-  border: none;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-  border-radius: 0 !important;
-}
-
-.modal-content .form-horizontal .control-label {
-  text-align: left;
+  margin-bottom: 0;
 }
 
 .modal-header,
 .modal-footer {
-  border: none;
+  border: 0;
 }

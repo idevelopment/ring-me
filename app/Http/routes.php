@@ -15,10 +15,15 @@ Route::get('/', 'WelcomeController@index');
 
 // Authencation routes.
 Route::auth();
+Route::get('/signup', 'WelcomeController@signup');
+
+// Assets routes
+Route::get('/assets', 'AssetsController@index')->name('assets.index');
+Route::post('/assets/register', 'AssetsController@register')->name('assets.register');
 
 // Department routes.
 Route::resource('departments', 'DepartmentController');
-Route::post('departments/search', 'DepartmentController@search')->name('departments.search'); 
+Route::post('departments/search', 'DepartmentController@search')->name('departments.search');
 
 // API token routes.
 Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');
@@ -43,6 +48,18 @@ Route::post('/customers', 'CustomersController@store')->name('customers.store');
 Route::get('/status/available', 'StaffController@setAvailable')->name('status.available');
 Route::get('/status/unavailable', 'StaffController@setUnavailable')->name('status.unavailable');
 
+// Products routes
+Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::post('/products/save', 'ProductsController@store')->name('products.save');
+Route::get('/products/edit/{id}', 'ProductsController@edit')->name('products.edit');
+Route::get('/products/remove/{id}', 'ProductsController@remove')->name('products.remove');
+
+Route::get('/products/categories', 'ProductsController@categories')->name('products.categories');
+Route::get('/products/categories/edit/{id}', 'ProductsController@edit_categories')->name('products.editCat');
+Route::get('/products/categories/remove/{id}', 'ProductsController@remove_category')->name('products.removeCat');
+
+Route::post('/products/categories/save', 'ProductsController@saveCat')->name('products.saveCategory');
+
 // Profile routes
 Route::get('/profile', 'StaffController@profile')->name('staff.index');
 Route::post('/profile/update/password', 'ProfileController@updateSecurity')->name('profile.update.security');
@@ -51,19 +68,28 @@ Route::post('/profile/update/profile', 'ProfileController@updateProfile')->name(
 // Staff routes
 Route::get('/staff', 'StaffController@index')->name('profile');
 Route::get('/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
-Route::post('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
+Route::put('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
+
 Route::get('/staff/create', 'StaffController@create')->name('staff.create');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');
 
 Route::get('/staff/getdepartments', 'DepartmentController@get_departments')->name('staff.getdepartments');
+Route::get('/staff/departments/edit/{id}', 'DepartmentController@edit')->name('staff.editdepartment');
+
 Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles');
+
 
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');
 
 Route::get('/settings/backups', 'BackupController@index')->name('settings.backup');
-Route::put('/settings/backups', 'BackupController@index')->name('settings.saveBackup');
+Route::post('/settings/backups', 'BackupController@storeBackup')->name('settings.saveBackup');
+
+Route::get('/settings/email', 'SettingsController@email')->name('settings.email');
+Route::post('/settings/email', 'SettingsController@updateEmail')->name('settings.updateEmail');
+
+Route::get('settings/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 // Roles routes
 Route::get('/roles', 'RolesController@index')->name('roles');
