@@ -25,7 +25,7 @@
                   <a href="#" class="dropdown-toggle" id="myTabDrop2" data-toggle="dropdown" aria-controls="myTabDrop2-contents">Actions <span class="caret"></span></a>
                   <ul class="dropdown-menu" aria-labelledby="myTabDrop2" id="myTabDrop2-contents">
                     <li><a href="#"><i class="fa fa-lock"></i> End call</a></li>
-                    <li><a href="#"><i class="fa fa-trash"></i> Remove request</a></li>
+                    <li><a href="{{route('callbacks.destroy', $item["id"])}}"><i class="fa fa-trash"></i> Remove request</a></li>
                   </ul>
                 </li>
               </ul>

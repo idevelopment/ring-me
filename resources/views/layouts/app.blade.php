@@ -27,8 +27,8 @@
             crossorigin="anonymous"></script>
    <script src="{!! asset('js/vue.js') !!}"></script>
    <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
-   <script src="{!! asset('js/moment.js') !!}"></script>
-
+   <script src="{!! asset('js/moment.min.js') !!}"></script>
+   <script src="{!! asset('js/bootstrap-datetimepicker.js') !!}"></script>
    <script src="{!! asset('js/fullcalendar.js') !!}"></script>
 
 
@@ -163,48 +163,6 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown dropdown-notifications">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i data-count="{!! Auth::user()->countNotificationsNotRead() !!}" class="fa fa-bell notification-icon"></i>
-                        </a>
-
-                        <div class="dropdown-container dropdown-menu-right">
-
-                            <div class="dropdown-toolbar">
-                                <div class="dropdown-toolbar-actions">
-                                    <a href="#">{{ trans('notifications.markAll') }}</a>
-                                </div>
-                                <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => Auth::user()->countNotificationsNotRead()]) }}</h3>
-                            </div>{{-- /dropdown-toolbar --}}
-
-                            <ul class="dropdown-menu">
-                                <li class="notification">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <div class="media-object">
-                                                <img src="{{ asset('img/user-icon.png') }}" width="50" height="50"
-                                                     class="img-circle" alt="Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="media-body">
-                                            <strong class="notification-title">
-                                                <a href="#">Glenn Hermans</a> resolved <a href="#">B-007 - Desolve
-                                                    Spectre organization</a></strong>
-                                            <div class="notification-meta">
-                                                <small class="timestamp">1. 9. 2015, 08:00</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="dropdown-footer text-center">
-                                <a href="{{ url('notifications') }}">{{ trans('notifications.viewAll') }}</a>
-                            </div>{{-- /dropdown-footer --}}
-
-                        </div>{{-- /dropdown-container --}}
-                    </li>{{-- /dropdown --}}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-user"></i> <span class="caret"></span>
