@@ -9,7 +9,7 @@ use Fenos\Notifynder\Notifable;
 class User extends Authenticatable
 {
     use HasRolesAndAbilities, Notifable;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -35,4 +35,5 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Departments');
     }
+
 }
