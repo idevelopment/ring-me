@@ -1,5 +1,43 @@
 @extends('layouts.app')
 @section('content')
+
+<style>
+.team {
+	clear: both;
+	position: relative;
+	text-align: center;
+	background: #fafafa;
+	margin-bottom: 20px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+  border-left: 15px solid transparent;
+	box-shadow: none;
+}
+.team-content {
+	padding: 30px 20px;
+	background: #ffffff;
+	color: inherit;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.team-content h4 {
+	color: #36414d;
+	font-weight: bold;
+	line-height: 1.2;
+}
+.team-content small {
+	color: inherit;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+</style>
     <div class="container">
         <div class="row">
             <div class="jumbotron">
@@ -15,6 +53,15 @@
 
             <div class="row">
                 <div class="col-md-12">
+                  @if(session('message'))
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{session('message')}}
+                  </div>
+                  @endif
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <form action="" method="post" class="form-inline">
@@ -38,31 +85,44 @@
                       </div>
 
                         <div class="panel-body">
-                            <section class="team">
-                              <div class="agents">
+                            <section class="  ">
                                 @foreach($agents as $agent_item)
                                 @foreach($agent_item['departments'] as $department)
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile" data-id="stench-blossom" data-category="{!! $department['name'] !!}">
-                                    <div class="img-box">
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                  <div class="team">
+                                    <figure class="effect-phoebe">
                                       @if(empty($agent_item['avatar']))
-                                          <img src="{{asset('img/user-icon.png')}}"  max-width="300" height="230"/>
-                                         @else
+                                      <img src="{{asset('img/user-icon.png')}}"  max-width="300" height="230"/>
+                                      @else
                                       <img src="{{ asset('avatars/' . $agent_item['avatar']) }}"  max-width="300" height="230"/>
-                                  @endif
+                                      @endif
 
-                                    </div>
-                                    <h1>{!! $agent_item['fname'] !!}</h1>
-                                    <h2>
-                                       {!! $department['name'] !!}
+                          <figcaption>
+                            <p> <a href="about-me.html"><i class="fa fa-link effect-3"></i></a>
+                                <a class="nivo-lightbox" href="images/team/1.jpg"> <i class="fa fa-search effect-3"></i>
+                                </a>
+                           </p>
+            </figcaption>
+          </figure>
+          <div class="clearfix"></div>
+          <div class="team-content">
+            <h4>{!! $agent_item['fname'] !!} {!! $agent_item['name'] !!}<br>
+              <small>{!! $department['name'] !!}</small>
+            </h4>
+            <p>
+              {!! $agent_item['biography'] !!}
+            </p>
+            <div class="clearfix"></div>
+          </div>
+          <!-- end .team-content -->
+        </div>
+        <!-- end .team -->
+      </div>
+      <!-- end .col-md-3 col-sm-6 col-xs-12 -->
+@endforeach
+@endforeach
 
-                                    </h2>
-                                    <p>{!! $agent_item['biography'] !!}</p>
-                                    <p class="text-center">
-                                      <button class="btn btn-success" data-toggle="modal" data-target="#myModal">{{ trans('app.available') }}</button>
-                                    </p>
-                                </div>
-                              @endforeach
-                        @endforeach
                       </div>
 
                             </section>
@@ -72,7 +132,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
     {{-- Modal --}}

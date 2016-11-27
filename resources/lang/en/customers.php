@@ -23,17 +23,20 @@ return [
     'mobile'     => 'Mobile',
     'email'      => 'Email',
     'number'     => 'Customer number',
-    'vat'        => 'VAT identification number',
+    'vat'        => 'VAT number',
     'recent'     => 'Recently registered customers',
     'history'    => 'Customer history',
     'search'     => 'Search customer',
     'register'   => 'New customer',
     'details'    => 'Customer Details',
-    'segment'  => 'Type',
+    'segment'  => 'Customer Type',
 
     // Customer registration wizard
     'basicInfo'   => 'Basic information',
     'productsInfo' => 'Please select your products',
 
+
+    // Customer registration success
+    'registered' => 'Your account registration has been submitted'
 
 ];

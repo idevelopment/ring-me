@@ -55,7 +55,8 @@ $factory->define(App\Customer::class, function (Faker\Generator $faker) {
         'phone'   => $faker->phoneNumber,
         'mobile'  => $faker->phoneNumber,
         'email'   => $faker->email,
-        'vat'     => $faker->creditCardNumber
+        'vat'     => $faker->creditCardNumber,
+        'status'  => 'validated'
     ];
 });
 

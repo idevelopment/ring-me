@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
 
         /*
@@ -214,7 +215,8 @@ return [
         'Bouncer' => Silber\Bouncer\BouncerFacade::class,
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Notifynder'    => Fenos\Notifynder\Facades\Notifynder::class
+        'Notifynder'    => Fenos\Notifynder\Facades\Notifynder::class,
+        'Charts' => ConsoleTVs\Charts\Charts::class
     ],
 
 ];

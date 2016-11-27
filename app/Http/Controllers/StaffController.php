@@ -10,7 +10,9 @@ use Chrisbjr\ApiGuard\Models\ApiKey;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Faker\Factory as Faker;
 use Bouncer;
+use Mail;
 
 /**
  * Class StaffController
@@ -40,6 +42,8 @@ class StaffController extends Controller
 
         if ($user->is('Manager') || $user->is('Administrator')) {
             $data['departments'] = Departments::all();
+            $data['roles'] = Roles::all();
+
             return view('staff.create', $data);
         }
 
@@ -56,16 +60,40 @@ class StaffController extends Controller
     public function store(Requests\NewStaffValidator $input)
     {
         $user = auth()->user();
+        $faker = Faker::create();
 
-        if ($user->is('Manager') || $user->is('Administrator')) {
-            $newUser = User::create($input->except(['_token', 'department']))->id;
-            User::find($newUser)->departments()->attach($input->department);
-
-            session()->flash('message', 'New staff member created');
-        }
-
-        return redirect()->back(302);
-    }
+        if ($user->is('Manager') || $user->is('Administrator'))
+        {
+          $password = $faker->password;
+          // Save the user to the database.
+          $NewUser = User::create(
+            [
+              'fname'     => $input->fname,
+              'name'      => $input->name,
+              'email'     => $input->email,
+              'password'  => \Hash::make($password),
+              'biography' => nl2br($input->biography),
+            ]
+          )->id;
+          // Assign the user to the selected department
+            User::find($NewUser)->departments()->attach($input->department);
+          // Assign the user to the selected role.
+            Bouncer::assign($input->role)->to($user);
+         // Send a confirmation mail to the user.
+            Mail::send('emails.welcome', ['user' => $NewUser, 'password' => $password], function ($message) use ($user)
+            {
+              $message->from(env('MAIL_USERNAME'));
+              $message->to('glenn.hermans@idevelopment.be', 'John Smith')->subject('Welcome to Ring Me!');
+            }
+          );
+          session()->flash('message', 'The new user has been created and is assigned to his department and role.');
+          return redirect("staff");
+         }
+         else
+         {
+          return redirect()->back(302);
+         }
+       }
 
     /**
      * Update the staff member.
@@ -157,16 +185,19 @@ class StaffController extends Controller
         $user = auth()->user();
 
         if (! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
-        }
 
         $user = User::find($id);
         $user->roles()->sync([]);
 
         User::destroy($id);
-        session()->flash('message', 'User deleted');
+        session()->flash('message', 'The user has been removed.');
 
         return redirect()->to('/staff');
+      }
+      else
+      {
+        return redirect()->back();
+      }
     }
 
     public function get_roles()

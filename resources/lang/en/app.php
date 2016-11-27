@@ -30,17 +30,18 @@ return [
     |
     */
 
-    'home' => 'Home',
-    'customers' => 'Customers',
-    'callbacks' => 'Callbacks',
+    'home'        => 'Home',
+    'customers'   => 'Customers',
+    'callbacks'   => 'Callbacks',
     'departments' => 'Departments',
-    'roles' => 'Roles',
-    'staff' => 'Staff',
-    'settings' => 'Settings',
-    'email'   => 'Email',
-    'backups' => 'Backups',
-    'products' => 'Products',
-    'assets'  => 'Assets',
+    'roles'       => 'Roles',
+    'staff'       => 'Staff',
+    'settings'    => 'Settings',
+    'email'       => 'Email',
+    'logs'        => 'Logs',
+    'backups'     => 'Backups',
+    'products'    => 'Products',
+    'assets'      => 'Assets',
 
     /*
     |--------------------------------------------------------------------------

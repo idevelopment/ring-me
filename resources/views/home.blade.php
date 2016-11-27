@@ -3,42 +3,20 @@
 @section('content')
     <div class="container">
       <div class="row">
-                              <div class="col-lg-4 col-sm-6">
-                                  <div class="info_box_var_1 box_bg_a">
-                                      <div class="info_box_body">
-                                          <span class="info_box_icon icon_group"></span>
-                                          <span>1342</span>
-                                      </div>
-                                      <div class="info_box_footer">
-                                          Closed Requests
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-sm-6">
-                                  <div class="info_box_var_1 box_bg_b">
-                                      <div class="info_box_body">
-                                          <span class="info_box_icon icon_cart_alt"></span>
-                                          <span>1</span>
-                                      </div>
-                                      <div class="info_box_footer">
-                                          Overdue SLA time
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-sm-6">
-                                  <div class="info_box_var_1 box_bg_c">
-                                      <div class="info_box_body">
-                                          <span class="info_box_icon icon_wallet"></span>
-                                        <span>2</span>
-                                      </div>
-                                      <div class="info_box_footer">
-                                          Open Requests
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+        <div class="col-md-4 col-sm-4 text-left">
+          {!! $chart->render() !!}
+        </div>
 
-                          <div class="clearfix">&nbsp;</div>
+        <div class="col-md-4 col-sm-4 text-left">
+          {!! $overdue->render() !!}
+        </div>
+
+      <div class="col-lg-4 col-sm-4 text-left">
+        {!! $assigned->render() !!}
+      </div>
+    </div>
+
+    <div class="clearfix">&nbsp;</div>
 
         <div class="row">
             <div class="col-md-12">

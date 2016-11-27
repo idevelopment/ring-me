@@ -93,17 +93,17 @@
                <form class="form-horizontal">
                 <fieldset>
                  <div class="form-group form-sep">
-                  <label for="firstname" class="col-md-3 control-label">{{ trans('staff.department') }}</label>
+                  <label for="department" class="col-md-3 control-label">{{ trans('staff.department') }}</label>
                   <div class="col-md-8">
-                  <p class="form-control-static"><a href="#" id="department" data-type="select" data-pk="1" data-url="/update" data-title="Change type">Administration</a> </p>
+                  <p class="form-control-static"><a href="#" id="department">Administration</a> </p>
                   </div>
                 </div>
 
                  <div class="form-group form-sep">
-                  <label for="firstname" class="col-md-3 control-label">{{ trans('staff.role') }}</label>
+                  <label for="role" class="col-md-3 control-label">{{ trans('staff.role') }}</label>
                   <div class="col-md-8">
                    <p class="form-control-static">
-                    <a href="#" id="role" data-type="select" data-pk="1" data-url="{{ url('staff/edit/') }}" data-title="Change role">Administrator</a>
+                    <a href="#" id="role"></a>
                    </p>
                   </div>
                 </div>
@@ -116,22 +116,4 @@
             </div>
         </div>
     </div>
-
-<script type="text/javascript">
-
-        $(document).ready(function() {
-        $.fn.editable.defaults.mode = 'inline';
-        $('#department').editable({
-        value: 1,
-        source: "<?php echo url('staff/getdepartments'); ?>",
-        sourceCache: false
-        });
-
-        $('#role').editable({
-        value: 1,
-        source: "<?php echo url('staff/getroles'); ?>",
-        sourceCache: false
-        });
-    });
-</script>
 @endsection

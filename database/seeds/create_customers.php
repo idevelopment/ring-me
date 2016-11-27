@@ -18,15 +18,17 @@ class create_customers extends Seeder
 {
         Customer::create(array(
         	'company' =>  $faker->company,
+          'vat' =>  $faker->randomNumber($nbDigits = NULL),
         	'fname' => $faker->firstName,
-            'name' => $faker->lastName,
-            'address' => $faker->address,
-            'zipcode' => $faker->postcode,
-            'city' => $faker->city,
-            'country' => $faker->country,
-            'email' => $faker->email,
-            'phone' => $faker->e164PhoneNumber,
-            'mobile' => $faker->e164PhoneNumber,
+          'name' => $faker->lastName,
+          'address' => $faker->address,
+          'zipcode' => $faker->postcode,
+          'city' => $faker->city,
+          'country' => $faker->country,
+          'email' => $faker->email,
+          'phone' => $faker->e164PhoneNumber,
+          'mobile' => $faker->e164PhoneNumber,
+          'status' => 'validated'
         ));
       }
     }

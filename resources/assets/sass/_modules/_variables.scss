@@ -1,4 +1,5 @@
 // Color palette
+$background:              #fcfdff;
 $primary:                 #dd4b39;
 $secondary:               #dd4b39;
 $gray-white:              #dcdcdc;
@@ -22,7 +23,7 @@ $panel-heading-border:    #f1f1f1;
 
 $border-h6:               rgba(0, 0, 0, .1);
 
-$navbar-background:       #fff;
+$navbar-background:       $background;
 $navbar-border:           #4a88ce;
 $navbar-link:             #000;
 $navbar-hover:            #3668a0;

@@ -13,17 +13,22 @@
                       <div class="form-group form-sep {{ $errors->has('company') ? ' has-error' : '' }}">
                         <label for="company" class="col-md-3 control-label">{{trans('customers.segment')}} <span class="text-danger">*</span></label>
                          <div class="col-md-8">
-                          @foreach($segments as $segment_item)
                           <div class="radio">
                             <label>
-                              <input name="segment" type="radio" value="company"> {!! $segment_item["name"] !!}
+                              <input name="segment" id="personal" type="radio" value="personal"> Personal
                             </label>
                           </div>
-                          @endforeach
+
+                          <div class="radio">
+                            <label>
+                              <input name="segment" id="organisation" type="radio" value="organisation"> Organisation
+                            </label>
+                          </div>
                         </div>
                       </div>
 
-                      <div class="form-group form-sep {{ $errors->has('company') ? ' has-error' : '' }}">
+            <div class="companyDetails" style='display:none'>
+                      <div class="form-group form-sep {{ $errors->has('company') ? ' has-error' : ''}}">
                         <label for="company" class="col-md-3 control-label">{{trans('customers.company')}} <span class="text-danger">*</span></label>
                          <div class="col-md-8">
                            <input type="text"name="company" id="company" value="{{ old('company') }}" class="form-control">
@@ -37,6 +42,7 @@
                   <input type="text" name="vat" id="vat" value="{!! old('vat') !!}" class="form-control">
               </div>
           </div>
+        </div>
 
           <div class="form-group form-sep {{ $errors->has('name') ? ' has-error' : '' }}">
               <label for="name" class="col-md-3 control-label">
@@ -118,7 +124,7 @@
           </div>
 
           <div class="form-group form-sep {{ $errors->has('mobile') ? ' has-error' : '' }}">
-              <label for="name" class="col-md-3 control-label">
+              <label for="mobile" class="col-md-3 control-label">
                   {{trans('customers.mobile')}}
               </label>
               <div class="col-md-8">
@@ -155,10 +161,14 @@
 </div>
 
 <script>
-        $( function() {
-            var $signupForm = $( '#SignupForm' );
+$("input[name='segment']").click(function () {
+    $('#companyDetails').css('display', ($(this).val() === 'organisation') ? 'block':'none');
+});
 
-            $signupForm.formToWizard({
+  $( function() {
+        var $signupForm = $( '#SignupForm' );
+
+        $signupForm.formToWizard({
                 nextBtnName: '{{ trans('pagination.nextButton')}}',
                 prevBtnName: '{{ trans('pagination.previousButton')}}',
 
@@ -171,6 +181,7 @@
                 }
             });
         });
-    </script>
+
+        </script>
 
 @endsection
