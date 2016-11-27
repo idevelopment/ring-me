@@ -15,7 +15,9 @@ Route::get('/', 'WelcomeController@index');
 
 // Authencation routes.
 Route::auth();
+
 Route::get('/signup', 'WelcomeController@signup');
+Route::post('/signup', 'WelcomeController@registerCustomer');
 
 // Assets routes
 Route::get('/assets', 'AssetsController@index')->name('assets.index');
@@ -72,7 +74,7 @@ Route::put('/staff/edit/{id}', 'StaffController@update')->name('staff.update');
 
 Route::get('/staff/create', 'StaffController@create')->name('staff.create');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
-Route::get('/staff/delete/{id}', 'StaffController@destroy')->name('staff.delete');
+Route::get('/staff/destroy/{id}', 'StaffController@destroy')->name('staff.delete');
 
 Route::get('/staff/getdepartments', 'DepartmentController@get_departments')->name('staff.getdepartments');
 Route::get('/staff/departments/edit/{id}', 'DepartmentController@edit')->name('staff.editdepartment');

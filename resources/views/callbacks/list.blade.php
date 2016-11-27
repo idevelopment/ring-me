@@ -24,7 +24,7 @@
   </select>
   </div>
   <div class="col-md-3">
-    <label for="date">Date:</label> <input type="date" id="date" name="date" class="form-control">
+    <label for="date">Date:</label> <input type="date" id='datetimepicker1' name="date" class="form-control">
   </div>
   <div class="col-md-1">
     <label>&nbsp;</label> <br>
@@ -50,10 +50,20 @@
       <td><a href="javascript:;">{!! $item["customers"]["fname"] !!} {!! $item["customers"]["name"] !!}</a></td>
       <td><a href="javascript:;">{!! $item["users"]["fname"] !!} {!! $item["users"]["name"] !!}</a></td>
       <td>{!! $item["departments"]["name"] !!}</td>
-      <td><span class="text-danger">{!! $item["created_at"] !!}</span></td>
-      <td><span class="badge bg-red">Waiting</span></td>
-      <td><a href="{{ url('callbacks/display', $item["id"]) }}" data-toggle="tooltip" data-placement="bottom"
-      title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a></td>
+      <td>
+        {!! \Carbon\Carbon::parse($item["created_at"])->diffForHumans(); !!}
+      </td>
+      @if($item["status"] === 'Open')
+      <td><span class="badge bg-orange">{!! $item["status"] !!}</span></td>
+      @elseif($item["status"] === 'In Progress')
+      <td><span class="badge bg-orange">{!! $item["status"] !!}</span></td>
+      @else
+      <td><span class="badge bg-red">{!! $item["status"] !!}</span></td>
+      @endif
+      <td>
+       <a href="{{ url('callbacks/display', $item["id"]) }}" data-toggle="tooltip" data-placement="bottom"
+       title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i></a>
+     </td>
     </tr>
     @endforeach
     </tbody>
@@ -64,4 +74,13 @@
  </div>
 </div>
 </div>
+
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                  locale: '{!! Lang::getLocale() !!}'
+                }
+                );
+            });
+        </script>
 @endsection

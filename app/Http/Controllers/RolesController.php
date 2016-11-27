@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Roles;
+use App\Permissions;
 
 class RolesController extends Controller
 {
@@ -75,6 +76,8 @@ class RolesController extends Controller
     public function edit($id)
     {
         $data['query'] = Roles::find($id);
+        $data['permissions'] = Permissions::orderBy('name', 'asc')->get();
+
         return view('roles.edit', $data);
     }
 
@@ -104,4 +107,3 @@ class RolesController extends Controller
         return redirect()->back(302);
     }
 }
-

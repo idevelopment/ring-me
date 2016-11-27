@@ -1,4 +1,5 @@
 body {
+  background-color: $background;
   font-family: 'Lato';
 }
 
@@ -24,6 +25,10 @@ h6 .description {
 
 .bg-green {
   background-color: $bg-green;
+}
+
+.bg-orange {
+  background-color: $bg-orange;
 }
 
 .jumbotron {

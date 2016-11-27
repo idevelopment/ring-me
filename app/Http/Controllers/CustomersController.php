@@ -27,8 +27,13 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $data['customers'] = Customer::paginate(15);
+      $user = auth()->user();
+
+      if ($user->is('Agent') || $user->is('Manager') || $user->is('Administrator')) {
+        $data['customers'] = Customer::orderBy('status' , 'asc')->paginate(15);
         return view('customers/index', $data);
+      }
+        return redirect()->back();
     }
 
     /**
@@ -58,13 +63,14 @@ class CustomersController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Guest') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
+        if (! $user->is('Guest') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator'))
+        {
+          Customer::create($input->except('_token'));
+          session()->flash('message', 'Customer created');
+          return redirect()->to('/customers');
         }
 
-        Customer::create($input->except('_token'));
-        session()->flash('message', 'Customer created');
-        return redirect()->to('/customers');
+        return redirect()->back();
     }
 
     /**
@@ -77,13 +83,12 @@ class CustomersController extends Controller
     {
         $user = auth()->user();
 
-        if (! $user->is('Customer') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
+        if(! $user->is('Customer') || ! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
           $data['customer'] = Customer::where('id', $id)->get();
           return view('customers/edit', $data);
 
-          }
+      }
 
-          return redirect()->back();
-
+        return redirect()->back();
     }
 }

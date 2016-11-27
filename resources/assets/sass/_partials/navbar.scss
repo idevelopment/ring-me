@@ -16,19 +16,20 @@
 .navbar-default .navbar-nav > .active > a:focus {
   box-shadow: 0 3px 0 $navbar-active-bg;
   color: $primary;
+  background-color: $navbar-active-bg;
 }
 
 .navbar-menu-item {
   color: $navbar-dark-gray;
   padding: .1em 1.5em;
-
-  // .navbar-menu-item .label
-  .label {
-    color: $black;
-    font-size: 1em;
-    padding: 0;
-  }
 }
+
+.navbar-menu-item .label {
+  color: $black;
+  font-size: 1em;
+  padding: 0;
+  }
+
 
 .menu-language {
   color: $navbar-dark-gray;

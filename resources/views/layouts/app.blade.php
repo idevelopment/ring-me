@@ -10,60 +10,29 @@
 
     {{-- Fonts --}}
     <link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/bootstrap.css') !!}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
-
-    <link rel="stylesheet" href="{!! asset('css/pickList.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/bootstrap-duallistbox.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
     <link rel='stylesheet' href="{!! asset('fullcalendar/fullcalendar.css')!!}" />
 
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
-            integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
-            crossorigin="anonymous"></script>
-   <script src="{!! asset('js/vue.js') !!}"></script>
-   <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
-   <script src="{!! asset('js/moment.js') !!}"></script>
 
-   <script src="{!! asset('js/fullcalendar.js') !!}"></script>
-
+   {!! Charts::assets() !!}
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
+           integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
+           crossorigin="anonymous"></script>
+           <script src="{!! asset('js/vue.js') !!}"></script>
+           <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
+           <script src="{!! asset('js/moment.min.js') !!}"></script>
+           <script src="{!! asset('js/jquery.bootstrap-duallistbox.js') !!}"></script>
+           <script src="{!! asset('js/bootstrap-datetimepicker.js') !!}"></script>
+           <script src="{!! asset('js/fullcalendar.js') !!}"></script>
 
 <style>
-.info_box_var_1 {
-  color: #ffffff;
-}
-.info_box_var_1.box_bg_a {
-  background: #37BC9B;
-}
-.info_box_var_1.box_bg_b {
-  background: #DA4453;
-}
-.info_box_var_1.box_bg_c {
-  background: #F6BB42;
-}
-
-.info_box_var_1 .info_box_body {
-  padding: 10px 20px;
-  height: 60px;
-  font: 300 32px / 38px "Open Sans", Arial, sans-serif;
-  position: relative;
-}
-.info_box_var_1 .info_box_body .info_box_icon {
-  position: absolute;
-  right: 20px;
-  top: 14px;
-  font-size: 32px;
-  color: #ffffff;
-}
-.info_box_var_1 .info_box_footer {
-  padding: 4px 20px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
 .user-list {list-style: none;margin:0;padding:0}
 .user-list li {padding:0 8px 8px;margin-bottom:8px;border-bottom: 1px dashed #dcdcdc;line-height:normal }
 .user-list small {font-size: 11px;color:#9b9b9b}
@@ -163,48 +132,6 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown dropdown-notifications">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i data-count="{!! Auth::user()->countNotificationsNotRead() !!}" class="fa fa-bell notification-icon"></i>
-                        </a>
-
-                        <div class="dropdown-container dropdown-menu-right">
-
-                            <div class="dropdown-toolbar">
-                                <div class="dropdown-toolbar-actions">
-                                    <a href="#">{{ trans('notifications.markAll') }}</a>
-                                </div>
-                                <h3 class="dropdown-toolbar-title">{{ trans('notifications.title', ['count' => Auth::user()->countNotificationsNotRead()]) }}</h3>
-                            </div>{{-- /dropdown-toolbar --}}
-
-                            <ul class="dropdown-menu">
-                                <li class="notification">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <div class="media-object">
-                                                <img src="{{ asset('img/user-icon.png') }}" width="50" height="50"
-                                                     class="img-circle" alt="Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="media-body">
-                                            <strong class="notification-title">
-                                                <a href="#">Glenn Hermans</a> resolved <a href="#">B-007 - Desolve
-                                                    Spectre organization</a></strong>
-                                            <div class="notification-meta">
-                                                <small class="timestamp">1. 9. 2015, 08:00</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="dropdown-footer text-center">
-                                <a href="{{ url('notifications') }}">{{ trans('notifications.viewAll') }}</a>
-                            </div>{{-- /dropdown-footer --}}
-
-                        </div>{{-- /dropdown-container --}}
-                    </li>{{-- /dropdown --}}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-user"></i> <span class="caret"></span>

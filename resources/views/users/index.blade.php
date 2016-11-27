@@ -12,8 +12,21 @@
         </div>
         {{-- END pagination --}}
 
+        <div class="row">
+            <div class="col-md-12">
+              @if(session('message'))
+              <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                {{session('message')}}
+              </div>
+              @endif
+            </div>
+        </div>
 
-{{-- Search panel --}}
+
+        {{-- Search panel --}}
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -33,7 +46,7 @@
                                         <div class="col-md-8">
                                             <input type="text" id="fname" name="fname" class="form-control">
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
@@ -45,14 +58,14 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                       <div class="form-group">
                                         <label for="department" class="col-md-3 control-label">Email</label>
                                         <div class="col-md-8">
                                          <input type="email" id="email" name="email" class="form-control">
                                         </div>
-                                    </div>  
+                                    </div>
                                  </div>
                             </div>
                             <div class="row">
@@ -87,7 +100,7 @@
                                         <th>Email</th>
                                         <th>Created:</th>
                                         <th>Last updated:</th>
-                                        <th></th> {{-- Reserved for functions --}}
+                                        <th>{{-- Reserved for functions --}}</th>
                                     </tr>
                                 </thead>
                                 <tbody>

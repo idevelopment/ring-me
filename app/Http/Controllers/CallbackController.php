@@ -72,14 +72,23 @@ class CallbackController extends Controller
       $Callback->customer = $faker->numberBetween($min = 1, $max = 9);
       $Callback->agent_id = '1';
       $Callback->description = $request->description;
+      $Callback->status = 'Open';
 
       $Callback->save();
 
+      // Send confirmation email to the customer.
         Mail::send('emails.request', ['user' => $user, 'callback' => $Callback], function ($m) use ($user) {
            $m->from('requests@ringme.eu', 'Ring Me');
 
-           $m->to("glenn.hermans@idevelopment.be", 'Glenn')->subject('Call back request!');
+           $m->to($user->email, $user->fname)->subject('Call back requested');
        });
+
+     // Send request email to the agent.
+       Mail::send('emails.request', ['user' => $user, 'callback' => $Callback], function ($m) use ($user) {
+          $m->from('requests@ringme.eu', 'Ring Me');
+
+          $m->to("support@idevelopment.be")->subject('Call back request!');
+      });
         return back();
     }
 
@@ -112,7 +121,10 @@ class CallbackController extends Controller
         $user = auth()->user();
 
         if (! $user->is('Agent') || ! $user->is('Manager') || ! $user->is('Administrator')) {
-            return redirect()->back();
+
+          $callback = Callback::find($id);
+          $callback->delete();
+          return redirect('callbacks');
         }
 
         return redirect()->back(302);

@@ -15,10 +15,15 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
         $this->call(create_customers::class);
         $this->call(create_departments::class);
-        $this->call(userTableSeeder::class);
         $this->call(ProductCategorySeeder::class);
         $this->call(CountrySeed::class);
-        $this->call(SegmentsSeeder::class);        
+        $this->call(SegmentsSeeder::class);
+        $this->call(RolesSeeder::class);
+        $this->call(ProductsSeeder::class);
+        $this->call(userTableSeeder::class);
+        $this->call(AgentSeeder::class);
+        $this->call(DepartmentUsers::class);
+
         Model::reguard();
     }
 }
