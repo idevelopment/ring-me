@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 use App\Departments;
 use App\Segments;
+use App\Customer;
 use App\User;
 use App\ProductsCategories;
 
@@ -29,6 +30,7 @@ class WelcomeController extends Controller
     {
         $data["department"] = Departments::all();
         $data["agents"] = User::all();
+
         return view('welcome', $data);
     }
 
@@ -43,6 +45,32 @@ class WelcomeController extends Controller
       $data['category'] = ProductsCategories::with('products')->paginate(10)->sortBy("name")->all();
 
       return view('auth.register', $data);
+    }
+
+    /**
+     * Save the customer.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function registerCustomer(Request $request)
+    {
+      $customer = new Customer;
+      $customer->fname   = $request->fname;
+      $customer->name    = $request->name;
+      $customer->address = $request->address;
+      $customer->zipcode = $request->zipcode;
+      $customer->city    = $request->city;
+      $customer->country = $request->country;
+      $customer->email   = $request->email;
+      $customer->phone   = $request->phone;
+      $customer->mobile  = $request->mobile;
+      $customer->status  = 'new';
+
+      $customer->save();
+
+      session()->flash('message', trans('customers.registered'));
+
+      return redirect()->to('/');
     }
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\DB;
 
-class AgentSeeder extends Seeder
+class CustomerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,10 @@ class AgentSeeder extends Seeder
     public function run()
     {
         $data['fname']    = 'Ringme';
-        $data['name']     = 'Demo';
-        $data['email']    = 'demo@ringme.eu';
+        $data['name']     = 'Customer';
+        $data['email']    = 'customer@ringme.eu';
         $data['password'] = bcrypt('demo123456');
         $user = User::create($data);
-        Bouncer::assign('Agent')->to($user);
+        Bouncer::assign('Customer')->to($user);
     }
 }
