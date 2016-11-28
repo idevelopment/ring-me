@@ -44,6 +44,25 @@ class AuthController extends Controller
     }
 
 
+    protected function authenticated()
+    {
+      $user = auth()->user();
+
+            if(Bouncer::is($user)->a('Administrator', 'Manager')) {
+                return redirect()->route('dashboard.administration');
+            }
+
+            elseif(Bouncer::is($user)->an('Agents')) {
+              return redirect()->route('dashboard.agent');
+            }
+
+            elseif(Bouncer::is($user)->an('Customer')) {
+                return redirect('/');
+            }
+
+            return redirect('/');
+     }
+
     /**
      * Get a validator for an incoming registration request.
      *

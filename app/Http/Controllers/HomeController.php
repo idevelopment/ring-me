@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
+use Bouncer;
 use Charts;
 
 class HomeController extends Controller
@@ -24,6 +25,29 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+      $user = auth()->user();
+
+      if(Bouncer::is($user)->a('Administrator', 'Manager')) {
+          return redirect()->route('dashboard.administration');
+      }
+
+      elseif(Bouncer::is($user)->an('Agent')) {
+        return redirect()->route('dashboard.agent');
+      }
+
+      elseif(Bouncer::is($user)->an('Customer')) {
+          return redirect('/');
+      }
+        return redirect('/');
+    }
+
+    /**
+     * Show the administration dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function administration()
     {
 
       if (\Auth::check()) {
@@ -52,11 +76,26 @@ class HomeController extends Controller
 ->setHeight(250)
 ->setWidth(0);
 
-        return view('home', $data);
+        return view('home/administration', $data);
 
         }
-        else{
-        redirect("/");
+    }
+
+    /**
+     * Show the administration dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function agent()
+    {
+
+      if (\Auth::check()) {
+    // The user is logged in...
+
+
+        return view('home/agent');
+
         }
     }
+
 }

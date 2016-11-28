@@ -31,7 +31,9 @@ Route::post('departments/search', 'DepartmentController@search')->name('departme
 Route::post('api/token/create', 'ApiKeyController@makeKey')->name('token.create');
 
 // Home routes
-Route::get('/home', 'HomeController@index');
+Route::get('/home/administration', 'HomeController@administration')->name('dashboard.administration');
+Route::get('/home/agent', 'HomeController@agent')->name('dashboard.agent');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Callback routes
 Route::get('/callbacks', 'CallbackController@index')->name('callbacks.index');
@@ -81,10 +83,8 @@ Route::get('/staff/departments/edit/{id}', 'DepartmentController@edit')->name('s
 
 Route::get('/staff/getroles', 'StaffController@get_roles')->name('staff.getroles');
 
-
 // Settings routes
 Route::get('/settings', 'SettingsController@index')->name('settings');
-
 Route::get('/settings/backups', 'BackupController@index')->name('settings.backup');
 Route::post('/settings/backups', 'BackupController@storeBackup')->name('settings.saveBackup');
 
