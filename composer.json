@@ -18,7 +18,8 @@
         "doctrine/dbal": "^2.5",
         "larapack/config-writer": "^1.0",
         "rap2hpoutre/laravel-log-viewer": "^0.7.0",
-        "consoletvs/charts": "^2.0"
+        "consoletvs/charts": "^3.0",
+        "arrilot/laravel-widgets": "^3.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

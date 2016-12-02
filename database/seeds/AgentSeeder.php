@@ -14,9 +14,10 @@ class AgentSeeder extends Seeder
     public function run()
     {
         $data['fname']    = 'Ringme';
-        $data['name']     = 'Demo';
-        $data['email']    = 'demo@ringme.eu';
+        $data['name']     = 'Agent';
+        $data['email']    = 'agent@ringme.eu';
         $data['password'] = bcrypt('demo123456');
+        $data['biography'] = nl2br('Lorem ipsum dolor sit amet, velit putant referrentur in cum, vix admodum tractatos necessitatibus ad, dolore libris eu eum.');        
         $user = User::create($data);
         Bouncer::assign('Agent')->to($user);
     }

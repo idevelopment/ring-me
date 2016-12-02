@@ -12,7 +12,10 @@ class DepartmentUsers extends Seeder
     public function run()
     {
       $data = [
-        ['user_id' => '2', 'departments_id' => '1'],
+        [
+          'user_id' => '2',
+          'departments_id' => '1'
+        ],
       ];
 
       $table = DB::table('departments_user');

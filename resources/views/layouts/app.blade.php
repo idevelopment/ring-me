@@ -7,30 +7,23 @@
 
     <title>Ring Me</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-
-    {{-- Fonts --}}
-    <link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    {{-- Styles --}}
+    <link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/bootstrap-duallistbox.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
-    <link rel='stylesheet' href="{!! asset('fullcalendar/fullcalendar.css')!!}" />
-
-    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
 
 
-   {!! Charts::assets() !!}
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
            integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
            crossorigin="anonymous"></script>
            <script src="{!! asset('js/vue.js') !!}"></script>
+           {!! Charts::assets(['chartjs', 'justgage']) !!}
            <script src="{!! asset('js/jquery.formtowizard.js') !!}"></script>
            <script src="{!! asset('js/moment.min.js') !!}"></script>
            <script src="{!! asset('js/jquery.bootstrap-duallistbox.js') !!}"></script>
            <script src="{!! asset('js/bootstrap-datetimepicker.js') !!}"></script>
-           <script src="{!! asset('js/fullcalendar.js') !!}"></script>
 
 <style>
 .user-list {list-style: none;margin:0;padding:0}

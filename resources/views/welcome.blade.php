@@ -1,41 +1,51 @@
 @extends('layouts.app')
 @section('content')
-
 <style>
-.team {
-	clear: both;
-	position: relative;
-	text-align: center;
-	background: #fafafa;
-	margin-bottom: 20px;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-  border-left: 15px solid transparent;
-	box-shadow: none;
-}
-.team-content {
-	padding: 30px 20px;
-	background: #ffffff;
-	color: inherit;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-.team-content h4 {
-	color: #36414d;
-	font-weight: bold;
-	line-height: 1.2;
-}
-.team-content small {
-	color: inherit;
-	font-size: 13px;
-	font-weight: normal;
-}
+.team-box {
+	         margin-top:80px;
+					 position: relative;padding: 30px;
+	         padding-top: 5em;
+					 background: #fff;
+					 float: left;
+					 width: 100%;
+					 -webkit-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
+					 -moz-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
+					 -ms-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
+					 -o-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
+					 box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
+					 -webkit-border-radius: 5px;
+					 -moz-border-radius: 5px;
+					 -ms-border-radius: 5px;
+					 border-radius: 5px;
+				 }
+
+@media screen and (max-width: 992px) {.team-box { margin-bottom: 110px;}}
+.team-box .user {
+	               position: absolute;
+								 top: 0;
+								 left: 50%;
+								 margin-top: -73px;
+								 margin-left: -73px;
+								 width: 147px;
+								 height: 147px;
+							 }
+
+.team-box .user img {
+	                   width: 149px;
+										 height: 149px;
+										 -webkit-border-radius: 50%;
+										 -moz-border-radius: 50%;
+										 -ms-border-radius: 50%;
+										 border-radius: 50%;
+										 border: 5px solid #f2f2f2;
+									 }
+.team-box h3 {margin-bottom: 10px;font-weight: 700;font-size: 16px;text-transform: uppercase;}
+.team-box .position {font-size: 16px; color: #8f989f; display: block;margin-bottom: 30px;}
+.team-box .social-media {margin: 0;padding: 0;}
+.team-box .social-media li {display: inline-block; margin: 0; padding: 0; font-size: 24px; margin-right: 10px;}
+.team-box .social-media li a {color: #333;}
+.team-box .social-media li a:hover, .team-box .social-media li a:focus, .team-box .social-media li a:active {text-decoration: none;color: #666;}
+
 
 </style>
     <div class="container">
@@ -85,48 +95,31 @@
                       </div>
 
                         <div class="panel-body">
-                            <section class="  ">
+                            <section class="">
                                 @foreach($agents as $agent_item)
                                 @foreach($agent_item['departments'] as $department)
-
-                                <div class="col-md-3 col-sm-6 col-xs-12">
-                                  <div class="team">
-                                    <figure class="effect-phoebe">
-                                      @if(empty($agent_item['avatar']))
-                                      <img src="{{asset('img/user-icon.png')}}"  max-width="300" height="230"/>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+																	<div class="team-box text-center">
+																		<div class="user">
+																			@if(empty($agent_item['avatar']))
+                                      <img src="{{asset('img/user-icon.png')}}" class="img-reponsive"  max-width="300" height="230"/>
                                       @else
-                                      <img src="{{ asset('avatars/' . $agent_item['avatar']) }}"  max-width="300" height="230"/>
+                                      <img src="{{ asset('avatars/' . $agent_item['avatar']) }}"  class="img-reponsive" max-width="300" height="230"/>
                                       @endif
-
-                          <figcaption>
-                            <p> <a href="about-me.html"><i class="fa fa-link effect-3"></i></a>
-                                <a class="nivo-lightbox" href="images/team/1.jpg"> <i class="fa fa-search effect-3"></i>
-                                </a>
-                           </p>
-            </figcaption>
-          </figure>
-          <div class="clearfix"></div>
-          <div class="team-content">
-            <h4>{!! $agent_item['fname'] !!} {!! $agent_item['name'] !!}<br>
-              <small>{!! $department['name'] !!}</small>
-            </h4>
-            <p>
-              {!! $agent_item['biography'] !!}
-            </p>
-            <div class="clearfix"></div>
-          </div>
-          <!-- end .team-content -->
-        </div>
-        <!-- end .team -->
-      </div>
-      <!-- end .col-md-3 col-sm-6 col-xs-12 -->
-@endforeach
-@endforeach
-
-                      </div>
-
-                            </section>
-
+																		</div>
+																		 <h3>{!! $agent_item['fname'] !!} {!! $agent_item['name'] !!}</h3>
+																		 <span class="position">{!! $department['name'] !!}</span>
+																		 <p>{!! $agent_item['biography'] !!}</p>
+																		  <div class="social-media">
+																				<a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-success"><i class="fa fa-phone"></i> Please call me</a>
+																			</div>
+																	 </div>
+																 </div>
+																<!-- end .col-md-4 col-sm-4 col-xs-12 -->
+															@endforeach
+														@endforeach
+													</div>
+                        </section>
                       </div>
                     </div>
                 </div>
@@ -135,7 +128,7 @@
 
 
     {{-- Modal --}}
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

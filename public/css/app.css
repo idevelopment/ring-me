@@ -5731,7 +5731,7 @@ button.close {
     display: none !important; } }
 
 body {
-  background-color: #fcfdff;
+  background-color: #fffdff;
   font-family: 'Lato'; }
 
 .fa-btn {
@@ -5788,8 +5788,11 @@ h6 .description {
     opacity: 1;
     position: relative; }
 
+.navbar {
+  margin-bottom: 2px; }
+
 .navbar-default {
-  background-color: #fcfdff;
+  background-color: #fffdff;
   border: 0;
   box-shadow: 0 3px 0 #4a88ce;
   font-size: 15px; }

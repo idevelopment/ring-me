@@ -47,7 +47,7 @@
    <tbody>
      @foreach($callback as $item)
     <tr>
-      <td><a href="javascript:;">{!! $item["customers"]["fname"] !!} {!! $item["customers"]["name"] !!}</a></td>
+      <td><a href="javascript:;">{!! $item["customers"]["name"] !!}</a></td>
       <td><a href="javascript:;">{!! $item["users"]["fname"] !!} {!! $item["users"]["name"] !!}</a></td>
       <td>{!! $item["departments"]["name"] !!}</td>
       <td>

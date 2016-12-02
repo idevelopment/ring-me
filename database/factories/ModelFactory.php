@@ -35,19 +35,19 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Callback::class, function (Faker\Generator $faker) {
     return [
-        'type'        => '1',
+        'department'  => '1',
+        'agent_id'    => '1',
         'customer'    => '1',
-        'agent'       => '1',
         'description' => $faker->text(150),
-        'agent_id'    => '1'
+        'status'      => 'open'
     ];
 });
 
 $factory->define(App\Customer::class, function (Faker\Generator $faker) {
     return [
-        'company' => $faker->company,
+        'name'    => $faker->firstName.$faker->lname,
         'fname'   => $faker->firstName,
-        'name'    => $faker->name,
+        'lname'   => $faker->lname,
         'address' => $faker->address,
         'zipcode' => $faker->citySuffix,
         'city'    => $faker->city,

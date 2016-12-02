@@ -45,7 +45,7 @@ class CustomersController extends Controller
     {
         $user = auth()->user();
 
-        if ($user->is('Guest') || $user->is('Agent') || $user->is('Manager') || $user->is('Administrator')) {
+        if ($user->is('Agent') || $user->is('Manager') || $user->is('Administrator')) {
             $data['countries'] = Countries::all();
             return view('customers/register', $data);
         }

@@ -164,7 +164,8 @@ return [
         Themsaid\Langman\LangmanServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Fenos\Notifynder\NotifynderServiceProvider::class
+        Fenos\Notifynder\NotifynderServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
 
     ],
 
@@ -216,7 +217,9 @@ return [
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Notifynder'    => Fenos\Notifynder\Facades\Notifynder::class,
-        'Charts' => ConsoleTVs\Charts\Charts::class
-    ],
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Widget'       => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
+      ],
 
 ];
