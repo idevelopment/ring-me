@@ -14,13 +14,19 @@ class create_customers extends Seeder
     public function run()
     {
         $faker = Faker::create();
+
         for ($i = 0; $i < 10; $i++)
 {
+
+  $fname = $faker->firstName;
+  $lname = $faker->lastName;
+
         Customer::create(array(
+          'name' =>  $fname .' '.$lname,
         	'company' =>  $faker->company,
           'vat' =>  $faker->randomNumber($nbDigits = NULL),
-        	'fname' => $faker->firstName,
-          'name' => $faker->lastName,
+        	'fname' => $fname,
+          'lname' =>  $lname,
           'address' => $faker->address,
           'zipcode' => $faker->postcode,
           'city' => $faker->city,

@@ -23,7 +23,7 @@ class Callback extends Model
      */
     public function departments()
     {
-        return $this->belongsTo('App\Departments', 'type');
+        return $this->belongsTo('App\Departments', 'department');
     }
 
 

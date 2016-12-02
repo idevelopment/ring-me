@@ -38,5 +38,4 @@ return [
 
     // Customer registration success
     'registered' => 'Your account registration has been submitted'
-
 ];

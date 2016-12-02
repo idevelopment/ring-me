@@ -60,7 +60,7 @@
                                                     class="btn btn-sm btn-primary">{{ trans('app.search')}}</button>
                                             <button type="button"
                                                     onclick="location.href='{{url('customers/register')}}';"
-                                                    class="btn btn-sm btn-default">{{ trans('customers.register')}}
+                                                    class="btn btn-sm btn-success">{{ trans('customers.register')}}
                                            </button>
                                         </div>
                                     </div>
@@ -80,22 +80,18 @@
                         <table class="table table-striped">
                             <thead>
                             <th>{{trans('customers.company')}}</th>
-                            <th>{{trans('customers.contact')}}</th>
-                            <th>Status</th>
                             <th>{{trans('customers.phone')}}</th>
                             <th>{{trans('app.dateregistered')}}</th>
+                            <th>Status</th>
                             <th class="col-md-1"></th>
                             </thead>
                             <tbody>
                             @foreach($customers as $customer_item)
                                 <tr @if($customer_item->status == 'new') class="warning" @endif>
-                                    <td><a href="javascript:;">{{ $customer_item->company }}</a></td>
-                                    <td>
-                                        <a href="javascript:;">{{ $customer_item->fname }} {{ $customer_item->name }}</a>
-                                    </td>
-                                    <td>{{ $customer_item->status }}</td>
+                                    <td><a href="{{url('/customers/display/')}}/{{ $customer_item->id }}">{{ $customer_item->name }}</a></td>
                                     <td><a href="callto:{{$customer_item->phone}}">{{ $customer_item->phone }}</a></td>
                                     <td><span class="text-center">{{ $customer_item->created_at->format('d F Y') }}</span></td>
+                                    <td>{{ $customer_item->status }}</td>
                                     <td><a href="{{url('/customers/display/')}}/{{ $customer_item->id }}"
                                            data-toggle="tooltip" data-placement="bottom"
                                            title="{{ trans('app.details')}}"><i class="fa fa-info-circle fa-lg"></i>

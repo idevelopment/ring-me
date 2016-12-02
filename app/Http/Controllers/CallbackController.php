@@ -35,6 +35,15 @@ class CallbackController extends Controller
     {
         $data['callback'] = Callback::with('users', 'customers', 'departments')->get();
         $data['users'] = User::all();
+/**
+ *      $callback = Callback::with('users', 'customers', 'departments')->get();
+ *
+ *        echo "<pre>";
+ *        print_r($callback);
+ *        echo "</pre>";
+ */
+
+
     	return view('callbacks/list', $data);
     }
 

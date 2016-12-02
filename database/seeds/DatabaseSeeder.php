@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call(create_customers::class);
         $this->call(create_departments::class);
         $this->call(ProductCategorySeeder::class);
         $this->call(CountrySeed::class);
@@ -23,7 +22,10 @@ class DatabaseSeeder extends Seeder
         $this->call(userTableSeeder::class);
         $this->call(AgentSeeder::class);
         $this->call(CustomerSeeder::class);
+        $this->call(create_customers::class);
         $this->call(DepartmentUsers::class);
+        $this->call(create_callbacks::class);
+
 
         Model::reguard();
     }

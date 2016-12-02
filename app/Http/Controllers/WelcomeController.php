@@ -55,8 +55,9 @@ class WelcomeController extends Controller
     public function registerCustomer(Request $request)
     {
       $customer = new Customer;
+      $customer->name    = $request->fname.$request->lname;
       $customer->fname   = $request->fname;
-      $customer->name    = $request->name;
+      $customer->lname   = $request->name;
       $customer->address = $request->address;
       $customer->zipcode = $request->zipcode;
       $customer->city    = $request->city;

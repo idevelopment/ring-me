@@ -29,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    // protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -52,7 +52,7 @@ class AuthController extends Controller
                 return redirect()->route('dashboard.administration');
             }
 
-            elseif(Bouncer::is($user)->an('Agents')) {
+            elseif(Bouncer::is($user)->an('Agent')) {
               return redirect()->route('dashboard.agent');
             }
 

@@ -40,7 +40,7 @@
                                       <label for="firstname"
                                              class="col-md-3 control-label">{{trans('customers.contact')}}</label>
                                       <div class="col-md-8">
-                                          <p class="form-control-static">{!! $customer_item['fname'] !!} {!! $customer_item['name'] !!}</p>
+                                          <p class="form-control-static">{!! $customer_item['fname'] !!} {!! $customer_item['lname'] !!}</p>
                                       </div>
                                   </div>
 

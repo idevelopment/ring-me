@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
+use App\Callback;
 use Bouncer;
 use Charts;
 
@@ -53,28 +54,31 @@ class HomeController extends Controller
       if (\Auth::check()) {
     // The user is logged in...
 
+  $CountOpenRequests = Callback::where('status', 'open')->count();
   $data["chart"] = Charts::create('percentage', 'justgage')
-  ->setTitle('')
-  ->setElementLabel('Open requests')
-  ->setValues([1,0,2])
-  ->setResponsive(false)
-  ->setHeight(250)
-  ->setWidth(0);
+  ->Title('')
+  ->values([$CountOpenRequests, 0, 4])
+  ->ElementLabel('Open requests')
+  ->Responsive(false)
+  ->Height(250)
+  ->Width(0);
 
+  $CountOverdueRequests = Callback::where('status', 'overdue')->count();
   $data["overdue"] = Charts::create('percentage', 'justgage')
-  ->setElementLabel('Overdue requests')
-  ->setValues([65,0,100])
-  ->setResponsive(false)
-  ->setHeight(300)
-  ->setWidth(0);
+  ->Title('')
+  ->ElementLabel('Overdue requests')
+  ->values([$CountOverdueRequests, 0 ,1])
+  ->Responsive(false)
+  ->Height(250)
+  ->Width(0);
 
   $data["assigned"] = Charts::create('percentage', 'justgage')
-->setTitle('')
-->setElementLabel('Tasks assigned')
-->setValues([10, 0, 2])
-->setResponsive(false)
-->setHeight(250)
-->setWidth(0);
+->Title('')
+->ElementLabel('Tasks assigned')
+->Values([10, 0, 2])
+->Responsive(false)
+->Height(250)
+->Width(0);
 
         return view('home/administration', $data);
 
@@ -88,12 +92,39 @@ class HomeController extends Controller
      */
     public function agent()
     {
+      $user = auth()->user();
 
       if (\Auth::check()) {
-    // The user is logged in...
 
+        $CountOpenRequests = Callback::where('status', 'open')->count();
+        $data["chart"] = Charts::create('percentage', 'justgage')
+        ->Title('')
+        ->values([$CountOpenRequests, 0, 10])
+        ->ElementLabel('Open requests')
+        ->Responsive(false)
+        ->Height(200)
+        ->Width(0);
 
-        return view('home/agent');
+        $CountOverdueRequests = Callback::where('status', 'overdue')->count();
+        $data["overdue"] = Charts::create('percentage', 'justgage')
+        ->Title('')
+        ->ElementLabel('Overdue requests')
+        ->values([$CountOverdueRequests, 0 ,100])
+        ->Responsive(false)
+        ->Height(200)
+        ->Width(0);
+
+        $data["assigned"] = Charts::create('percentage', 'justgage')
+      ->Title('')
+      ->ElementLabel('Tasks assigned')
+      ->values([80,0,100])
+      ->Responsive(false)
+      ->Height(200)
+      ->Width(0);
+
+      $data["callbacks"] = Callback::where('agent_id', $user->id)->with('users', 'customers', 'departments')->get();
+
+        return view('home/agent', $data);
 
         }
     }

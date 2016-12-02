@@ -45,12 +45,12 @@
         </div>
 
           <div class="form-group form-sep {{ $errors->has('name') ? ' has-error' : '' }}">
-              <label for="name" class="col-md-3 control-label">
+              <label for="lname" class="col-md-3 control-label">
                   {{trans('customers.name')}}
                   <span class="text-danger">*</span>
               </label>
               <div class="col-md-8">
-                  <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control">
+                  <input type="text" name="lname" id="lname" value="{{ old('name') }}" class="form-control">
               </div>
           </div>
 
