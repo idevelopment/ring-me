@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Hello world
+                    You are logged in!
                 </div>
             </div>
         </div>
