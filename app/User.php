@@ -2,13 +2,13 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Silber\Bouncer\Database\HasRolesAndAbilities;
-use Fenos\Notifynder\Notifable;
 
 class User extends Authenticatable
 {
-    use HasRolesAndAbilities, Notifable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fname', 'name', 'email', 'password', 'biography', 'avatar'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -27,13 +27,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function departments()
-    {
-        return $this->belongsToMany('App\Departments');
-    }
-
 }

@@ -1,189 +1,99 @@
-@extends('layouts.app')
-@section('content')
-<style>
-.team-box {
-	         margin-top:80px;
-					 position: relative;padding: 30px;
-	         padding-top: 5em;
-					 background: #fff;
-					 float: left;
-					 width: 100%;
-					 -webkit-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
-					 -moz-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
-					 -ms-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
-					 -o-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
-					 box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.19);
-					 -webkit-border-radius: 5px;
-					 -moz-border-radius: 5px;
-					 -ms-border-radius: 5px;
-					 border-radius: 5px;
-				 }
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@media screen and (max-width: 992px) {.team-box { margin-bottom: 110px;}}
-.team-box .user {
-	               position: absolute;
-								 top: 0;
-								 left: 50%;
-								 margin-top: -73px;
-								 margin-left: -73px;
-								 width: 147px;
-								 height: 147px;
-							 }
+        <title>Laravel</title>
 
-.team-box .user img {
-	                   width: 149px;
-										 height: 149px;
-										 -webkit-border-radius: 50%;
-										 -moz-border-radius: 50%;
-										 -ms-border-radius: 50%;
-										 border-radius: 50%;
-										 border: 5px solid #f2f2f2;
-									 }
-.team-box h3 {margin-bottom: 10px;font-weight: 700;font-size: 16px;text-transform: uppercase;}
-.team-box .position {font-size: 16px; color: #8f989f; display: block;margin-bottom: 30px;}
-.team-box .social-media {margin: 0;padding: 0;}
-.team-box .social-media li {display: inline-block; margin: 0; padding: 0; font-size: 24px; margin-right: 10px;}
-.team-box .social-media li a {color: #333;}
-.team-box .social-media li a:hover, .team-box .social-media li a:focus, .team-box .social-media li a:active {text-decoration: none;color: #666;}
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
 
-</style>
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron">
-                <h2>Ring me</h2>
-                {{ trans("welcome.intro") }}
-                <div class="clearfix">&nbsp;</div>
-                <ul>
-                    <li>{{trans('welcome.feature1')}}</li>
-                    <li>{{trans('welcome.feature2')}}</li>
-                </ul>
+            .full-height {
+                height: 100vh;
+            }
 
-            </div>
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
 
-            <div class="row">
-                <div class="col-md-12">
-                  @if(session('message'))
-                  <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    {{session('message')}}
-                  </div>
-                  @endif
+            .position-ref {
+                position: relative;
+            }
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <form action="" method="post" class="form-inline">
-                              <div class="departments-wrap">
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
 
-                               @foreach($department as $department_item)
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" name="department[]"  value="{!! $department_item['id'] !!}"> {!! $department_item['name'] !!}
-                                        </label>
-                                    </div>
-                                </div>
-                                &nbsp;
-                                @endforeach
-                                <div class="form-group">
-                                  <button name="filter" id="filter" class="btn btn-sm btn-default">Filter</button>
-                                </div>
-                              </div>
-                            </form>
-                      </div>
+            .content {
+                text-align: center;
+            }
 
-                        <div class="panel-body">
-                            <section class="">
-                                @foreach($agents as $agent_item)
-                                @foreach($agent_item['departments'] as $department)
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-																	<div class="team-box text-center">
-																		<div class="user">
-																			@if(empty($agent_item['avatar']))
-                                      <img src="{{asset('img/user-icon.png')}}" class="img-reponsive"  max-width="300" height="230"/>
-                                      @else
-                                      <img src="{{ asset('avatars/' . $agent_item['avatar']) }}"  class="img-reponsive" max-width="300" height="230"/>
-                                      @endif
-																		</div>
-																		 <h3>{!! $agent_item['fname'] !!} {!! $agent_item['name'] !!}</h3>
-																		 <span class="position">{!! $department['name'] !!}</span>
-																		 <p>{!! $agent_item['biography'] !!}</p>
-																		  <div class="social-media">
-																				<a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-success"><i class="fa fa-phone"></i> Please call me</a>
-																			</div>
-																	 </div>
-																 </div>
-																<!-- end .col-md-4 col-sm-4 col-xs-12 -->
-															@endforeach
-														@endforeach
-													</div>
-                        </section>
-                      </div>
-                    </div>
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
-
-
-    {{-- Modal --}}
-    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-toggle="tooltip" data-placement="bottom"
-                            title="{{ trans('app.close')}}" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Callback request</h4>
-                </div>
-                @if (Auth::guest())
-                <div class="modal-body">
-                  <div class="clearfix">&nbsp;</div>
-                You need to be logged in before you can send us your request.
-                <div class="clearfix">&nbsp;</div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-                @else
-
-
-                <form method="post" action="{{url('callbacks')}}" class="form-horizontal">
-                  {{csrf_field() }}
-                  <input type="hidden" name="type" value="Administration">
-
-                <div class="modal-body">
-                        <div class="form-group">
-                            <label for="product" class="col-sm-3 control-label">Product <strong class="text-danger">*</strong></label>
-                            <div class="col-sm-7">
-                              <select id='product' name="product" class="form-control">
-                                  <option value="" selected>-- Please select your product --</option>
-                                  <option value="business_fibernet">Business Fibernet</option>
-                                  <option value="corporate_fibernet">Corporate Fibernet</option>
-                                  <option value="ifiber">iFiber</option>
-                              </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description" class="col-sm-3 control-label">Question <strong class="text-danger">*</strong></label>
-                            <div class="col-sm-7">
-                                <textarea name="description" id="description" rows="10" class="form-control"></textarea>
-                            </div>
-                        </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-                @endif
-                </form>
-
-            </div>
-        </div>
-    </div>
-@endsection
+    </body>
+</html>
