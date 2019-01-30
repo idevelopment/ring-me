@@ -1,21 +1,11 @@
-/resources/views/auth/register.blade.php
-/Homestead.yaml
-/offline-issues
-vendor/
-node_modules/
-
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-/.vagrant
-/coverage
-/.idea
-bootstrap/cache/
-storage/
-.env.*.php
-.env.php
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
 .env
-.env.example
-.composer.lock
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
