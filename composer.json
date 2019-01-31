@@ -1,9 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "idevelopment/RingMe",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Customer support",
     "keywords": [
-        "framework",
+        "customer-support",
+        "contact-centers",
         "laravel"
     ],
     "license": "MIT",
